@@ -1,5 +1,9 @@
 StreetHeartProject::Application.routes.draw do
   resources :users
+  resources :sessions
+  
+  match '/login' => "sessions#new", :as => "Login"
+  match '/logout'=> "sessions#destroy", :as => "Logout"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
