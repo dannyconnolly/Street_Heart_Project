@@ -19,7 +19,6 @@ class ApplicationController < ActionController::Base
 	end
 	
 	def access_denied
-		redirect_to login_path, :notice => "Please Log in to access this page"
-		and return false
+		redirect_to login_path, :notice => "Please Log in to access this page" and return false
 	end
 end
