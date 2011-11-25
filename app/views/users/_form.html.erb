@@ -1,29 +1,39 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="sign_up_form">
+	
+	<%= form_for(@user) do |f| %>
+			<% if @user.errors.any? %>
+				<div id="error_explanation">
+					<h2><%= pluralize(@user.errors.count, "error") %> 
+					prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :hashed_password %><br />
-    <%= f.text_field :hashed_password %>
-  </div>
-  <div class="field">
-    <%= f.label :salt %><br />
-    <%= f.text_field :salt %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+					<ul>
+						<% @user.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+			<% end %>
+					</ul>
+				</div>
+		<% end %>
+		
+		<fieldset>
+			<legend>Please Enter Your Details</legend>
+			
+			<div class="field">
+				<%= f.label :name %><br />
+				<%= f.text_field :name, :size => 40 %>
+			</div>
+	  
+			<div class="field">
+				<%= f.label :password, 'Password' %><br />
+				<%= f.password_field :password, :size => 40 %>
+			</div>
+	  
+			<div class="field">
+				<%= f.label :password_confirmation, 'Please confirm your password' %><br />
+				<%= f.password_field :password_confirmation, :size => 40 %>
+			</div>
+			
+		<div class="actions">
+			<%= f.submit %>
+		</div>
+	<% end %>
+</div>
