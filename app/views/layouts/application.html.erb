@@ -2,24 +2,46 @@
 <html>
 <head>
   <title>Street Heart Project</title>
-  <%= stylesheet_link_tag :all %>
+  <%= stylesheet_link_tag "scaffold" %>
+  <%= stylesheet_link_tag "Street_Heart_Styles", :media => "all" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body>
 
-<%= link_to "Register with Street Heart", new_user_path %> |
-	<div id="header">
-		<% if logged_in? %>
-			<%= current_user.email %> |
-			<%= link_to "Logout", logout_path %> |
-		<% else %>
-			<%= link_to "Login", login_path %> |
-		<% end %>
-	</div><!--End Header-->
+<body id="store">
 
+<div id="header">		
+<%= link_to "Register with Street Heart", new_user_path %> |	
+	<% if logged_in? %>
+		<%= current_user.name %> |
+		<%= link_to "Logout", logout_path %> |
+		<%= link_to "Create User", new_user_path %> |
+	<% else %>
+		<link_to "Login", login_path %>
+	<% end %>
+</div><!--End Header-->
 
+<div id="banner">
+  <%= image_tag("Street_Heart_Logo.jpg") %>
+</div>
+
+	
+
+<div class="clear" id="columns">
+  <div id="side">
+	<%= link_to "Products", products_path %> |
+    <a href="http://www....">Home</a><br/>
+    <a href="http://www..../about">About</a><br/>
+    <a href="http://www..../Focus_Ireland">Focus Ireland</a><br/>
+    <a href="http://www..../Clothing">Clothing</a><br/>
+    <a href="http://www..../Gifts">Gifts</a><br/>
+    <a href="http://www..../Skins">Skins</a><br/>
+    <a href="http://www..../Blog">Blog</a><br/>
+    <a href="http://www..../Contact">Contact</a><br/>
+  </div>
+  <div id="main">
 <%= yield %>
-
+ </div>
+</div>
 </body>
 </html>

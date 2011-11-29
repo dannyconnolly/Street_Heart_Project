@@ -13,6 +13,15 @@
 
 ActiveRecord::Schema.define(:version => 20111129092958) do
 
+  create_table "products", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "image_url"
+    t.float    "unit_price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
     t.text     "data"

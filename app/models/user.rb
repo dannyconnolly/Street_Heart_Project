@@ -1,6 +1,8 @@
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
+	has_many :products
+
 	validates :name, 	:presence => true, 
 						:uniqueness => true
 						

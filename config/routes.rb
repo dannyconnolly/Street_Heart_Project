@@ -1,17 +1,20 @@
 StreetHeartProject::Application.routes.draw do
-  get "admin/index"
+	get 'admin/index'
 
-  get "sessions/new"
+	get 'sessions/new'
 
-  get "sessions/create"
+	get 'sessions/create'
 
-  get "sessions/destroy"
+	get 'sessions/destroy'
+	
+	get 'store/index'
 
-  resources :users
-  resources :sessions
+	resources :products
+	resources :users
+	resources :sessions, :only => [:new, :create, :destroy]
   
-  match '/login' => "sessions#new", :as => "Login"
-  match '/logout'=> "sessions#destroy", :as => "Logout"
+  match '/login' 	 => "sessions#new", 		:as => "login"
+  match '/logout' 	 => "sessions#destroy", 	:as => "logout"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -62,7 +65,7 @@ StreetHeartProject::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "products#index"
+  root :to => 'store#index', :as => 'store'
   
   # See how all your routes lay out with "rake routes"
 
