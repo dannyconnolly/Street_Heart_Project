@@ -62,12 +62,8 @@ StreetHeartProject::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-#<<<<<<< HEAD
-#  root :to => "users#index"
-##=======
-	#root :to => "users#index"
-#>>>>>>> 57b708b1a9ae292257b2b4b513be26ebdca95a94
-
+  root :to => "products#index"
+  
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

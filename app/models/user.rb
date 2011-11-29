@@ -1,9 +1,15 @@
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
-	validates :name, :presence => true, :uniqueness => true
-	
+	validates :name, 	:presence => true, 
+						:uniqueness => true
+						
+	validates :email,	:uniqueness	=> true,
+						:length 	=> {:within => 5..50},
+						:format 	=> {:with =>/^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i}
+						
 	validates :password, :confirmation => true
+	
 	attr_accessor 	:password_confirmation
 	attr_reader		:password
 	
