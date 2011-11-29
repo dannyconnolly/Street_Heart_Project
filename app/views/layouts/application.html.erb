@@ -8,6 +8,17 @@
 </head>
 <body>
 
+<%= link_to "Register with Street Heart", new_user_path %> |
+	<div id="header">
+		<% if logged_in? %>
+			<%= current_user.email %> |
+			<%= link_to "Logout", logout_path %> |
+		<% else %>
+			<%= link_to "Login", login_path %> |
+		<% end %>
+	</div><!--End Header-->
+
+
 <%= yield %>
 
 </body>

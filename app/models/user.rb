@@ -8,7 +8,9 @@ class User < ActiveRecord::Base
 						:length 	=> {:within => 5..50},
 						:format 	=> {:with =>/^[^@][\w.-]+@[\w.-]+[.][a-z]{2,4}$/i}
 						
-	validates :password, :confirmation => true
+	validates :password, :confirmation => true,
+						:length => {:within => 4..20},
+						:presence => true
 	
 	attr_accessor 	:password_confirmation
 	attr_reader		:password
