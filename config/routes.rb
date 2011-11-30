@@ -1,4 +1,8 @@
 StreetHeartProject::Application.routes.draw do
+  resources :line_items
+
+  resources :carts
+
 	get 'admin/index'
 
 	get 'sessions/new'
