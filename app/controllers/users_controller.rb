@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+	before_filter :admin_user, :only => :destroy
+	
   # GET /users
   # GET /users.xml
   def index
@@ -83,4 +86,14 @@ class UsersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  private
+  
+	def admin_user
+		redirect_to(root_path) unless current_user.admin?
+    end
+	
+	def admin?
+		@user 
+    end
 end

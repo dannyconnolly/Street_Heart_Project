@@ -10,13 +10,13 @@
 
 <body id="store">
 
-<div id="header">		
-<%= link_to "Register with Street Heart", new_user_path %> |	
+<div id="header">	
+	
 	<% if logged_in? %>
 		<%= current_user.name %> |
 		<%= link_to "Logout", logout_path %> |
-		<%= link_to "Create User", new_user_path %> |
 	<% else %>
+		<%= link_to "Register with Street Heart", new_user_path %> |
 		<%= link_to "Login", login_path %>
 	<% end %>
 </div><!--End Header-->
