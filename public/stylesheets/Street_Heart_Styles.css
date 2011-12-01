@@ -8,14 +8,61 @@
         background-color: #f0f0f0;
         font: bold smaller sans-serif;
 }
-
-
 #store h1 {
         font:  150% sans-serif;
         color: #226;
         border-bottom: 3px dotted #77d;
 }
 
+/* Styles for Welcome Page==============Danny================= */
+#header {
+    overflow: auto;
+}
+.welcome-title img {
+    width: 788px;
+    height: 174px;
+    margin:  0 auto;
+    display: block;
+}
+.social-media-links {
+    width: 250px;
+    float: left;
+}
+.site-login {
+    width: 250px;
+    float:right;
+}
+.welcome-tagline h2 {
+    margin: 10px auto;
+    text-align: center;
+}
+.welcome-navigation ul {
+    list-style: none;
+    margin:  20px 0;
+    text-align: center;
+}
+.welcome-navigation ul li {
+    display: inline;
+    margin: 0 30px;
+}
+.welcome-navigation ul li a {
+
+}
+.welcome-tshirts {
+    width: 737px;
+    margin:  0 auto;
+}
+.welcome-tshirts img {
+    margin:  10px;
+}
+.welcome-statement p {
+    text-align: center;
+}
+.welcome-focus-logo {
+    width: 100px;
+    float: right;
+}
+/* ====================End Danny styles========================>
 /* Styles for products/index */
 
 #product_list table {
@@ -126,6 +173,7 @@
     font: small-caps 40px/40px "calibri", sans-serif;
     color: #ffffff;
     text-align: center;
+    clear: both;
 }
 
 #banner img {

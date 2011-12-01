@@ -10,27 +10,35 @@
 
 <body id="store">
 
-<div id="header">		
-<%= link_to "Register with Street Heart", new_user_path %> |	
-	<% if logged_in? %>
-		<%= current_user.name %> |
-		<%= link_to "Logout", logout_path %> |
-		<%= link_to "Create User", new_user_path %> |
-	<% else %>
-		<%= link_to "Login", login_path %>
-	<% end %>
-</div><!--End Header-->
+<div id="header">
 
-<div id="banner">
-  <%= image_tag("Street_Heart_Logo.jpg") %>
+  <div class="social-media-links">
+    <%= link_to "Twitter", "https://twitter.com/#!/StreetHeart2011" %>
+  </div>
+
+  <div class="site-login">
+    <% if logged_in? %>
+        <%= current_user.name %> |
+        <%= link_to "Logout", logout_path %> |
+        <%= link_to "Profile", profile_path %> |
+    <% else %>
+        <%= link_to "Register with Street Heart", new_user_path %> |
+        <%= link_to "Login", login_path %>
+    <% end %>
+  </div>
+</div>
+<!--End Header-->
+<div class="welcome-title">
+  <%= image_tag("Street_Art_Title_Welcome.jpg") %>
 </div>
 
-	
 
 <div class="clear" id="columns">
   <div id="side">
-	<%= link_to "Products", products_path %> |
-    <a href="http://www....">Home</a><br/>
+    <%= link_to "Products", products_path %>
+    <br/>
+    <%= link_to "Home", home_path %>
+    <br/>
     <a href="http://www..../about">About</a><br/>
     <a href="http://www..../Focus_Ireland">Focus Ireland</a><br/>
     <a href="http://www..../Clothing">Clothing</a><br/>
@@ -40,11 +48,11 @@
     <a href="http://www..../Contact">Contact</a><br/>
   </div>
   <div id="main">
-  <% if notice %>
-		<p class="notice"><%= notice %></p>
-	<% end %>
-<%= yield %>
- </div>
+    <% if notice %>
+        <p class="notice"><%= notice %></p>
+    <% end %>
+    <%= yield %>
+  </div>
 </div>
 </body>
 </html>
