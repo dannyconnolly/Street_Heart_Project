@@ -17,7 +17,7 @@
 		<%= link_to "Logout", logout_path %> |
 		<%= link_to "Create User", new_user_path %> |
 	<% else %>
-		<link_to "Login", login_path %>
+		<%= link_to "Login", login_path %>
 	<% end %>
 </div><!--End Header-->
 
@@ -40,6 +40,9 @@
     <a href="http://www..../Contact">Contact</a><br/>
   </div>
   <div id="main">
+  <% if notice %>
+		<p class="notice"><%= notice %></p>
+	<% end %>
 <%= yield %>
  </div>
 </div>
