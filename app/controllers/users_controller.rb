@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
-	before_filter :admin_user, :only => :destroy
+  before_filter :authenticate, :only => [:index, :show, :edit, :update, :destroy]
+  before_filter :correct_user, :only => [:edit, :update]
+  before_filter :admin_user, :only => :destroy
 	
   # GET /users
   # GET /users.xml
@@ -88,12 +90,17 @@ class UsersController < ApplicationController
   end
   
   private
-  
-	def admin_user
+  def authenticate
+    deny_access unless signed_in?
+  end
+
+  def correct_user
+     @user = User.find(params[:id])
+     redirect_to(root_path) unless current_user?(@user)
+  end
+
+  def admin_user
 		redirect_to(root_path) unless current_user.admin?
-    end
-	
-	def admin?
-		@user 
-    end
+  end
+
 end

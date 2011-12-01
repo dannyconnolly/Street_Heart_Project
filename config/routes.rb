@@ -64,7 +64,7 @@ StreetHeartProject::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'products#index', :as => 'product'
+  root :to => 'store#index', :as => 'store'
   
   # See how all your routes lay out with "rake routes"
 

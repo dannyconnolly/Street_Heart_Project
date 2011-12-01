@@ -17,7 +17,7 @@
         </dl>
        </td>
 	   
-		<% if current_user.admin? %>
+		<% if current_user(admin?) %>
 		  <td class = "list_actions">
 			<%= link_to 'Show', product %><br/>
 			<%= link_to 'Edit', edit_product_path(product) %><br/>
