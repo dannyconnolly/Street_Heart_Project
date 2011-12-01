@@ -1,21 +1,7 @@
 StreetHeartProject::Application.routes.draw do
-<<<<<<< HEAD
-=======
-  resources :line_items
 
-  resources :carts
-
-	get 'admin/index'
-
-	get 'sessions/new'
-
-	get 'sessions/create'
-
-	get 'sessions/destroy'
-	
-	get 'store/index'
-
->>>>>>> 113efad143453114608deec45f51c706cd8a0895
+	resources :line_items
+	resources :carts
 	resources :products
 	resources :users
 	resources :sessions, :only => [ :new, :create, :destroy ]
