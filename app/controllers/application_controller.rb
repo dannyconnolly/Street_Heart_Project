@@ -20,13 +20,9 @@ class ApplicationController < ActionController::Base
 	
 	helper_method :logged_in?
 	def access_denied
-<<<<<<< HEAD
 		redirect_to login_url, :notice => "Please log in to continue" and return false
 	end
-=======
-		redirect_to login_path, :notice => "Please log in to continue" and return false
-  end
-
+		
   private
 
   def current_cart
@@ -36,5 +32,4 @@ class ApplicationController < ActionController::Base
     session[cart.id] = cart.id
     cart
   end
->>>>>>> 113efad143453114608deec45f51c706cd8a0895
 end
