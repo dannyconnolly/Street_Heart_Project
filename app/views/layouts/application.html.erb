@@ -20,7 +20,6 @@
     <% if logged_in? %>
         <%= current_user.name %> |
         <%= link_to "Logout", logout_path %> |
-        <%= link_to "Profile", profile_path %> |
     <% else %>
         <%= link_to "Register with Street Heart", new_user_path %> |
         <%= link_to "Login", login_path %>
