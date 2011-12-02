@@ -103,4 +103,10 @@ class UsersController < ApplicationController
 		redirect_to(root_path) unless current_user.admin?
   end
 
+  def admin?
+      unless User.find_by_id(session[:user_id]) and
+          User.find_by_id(session[:user_id]).admin == true
+      end
+  end
+
 end
