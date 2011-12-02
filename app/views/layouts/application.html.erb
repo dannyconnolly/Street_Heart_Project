@@ -23,13 +23,15 @@
 
 <div id="banner">
   <%= image_tag("Street_Heart_Logo.jpg") %>
+  <%= @page_title || "Street Heart" %>
 </div>
+
 
 	
 
 <div class="clear" id="columns">
   <div id="side">
-	<%= link_to "Products", products_path %> |
+	<%= link_to "Products", store_path %> |
     <a href="http://www....">Home</a><br/>
     <a href="http://www..../about">About</a><br/>
     <a href="http://www..../Focus_Ireland">Focus Ireland</a><br/>
