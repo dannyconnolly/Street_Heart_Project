@@ -11,9 +11,11 @@ StreetHeartProject::Application.routes.draw do
 	get "sessions/create"
 	get "sessions/destroy"
 	get "store/index"
-  
-	match '/login' 	 => "sessions#new", 		:as => "login"
-	match '/logout' 	 => "sessions#destroy", 	:as => "logout"
+  get "welcome/home"
+
+	match '/login'  	=> "sessions#new", 		  :as => "login"
+	match '/logout'   => "sessions#destroy", 	:as => "logout"
+  match '/home'     => "welcome#home",      :as => "home"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -64,8 +66,9 @@ StreetHeartProject::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'store#index', :as => 'store'
-  
+
+  root :to => "welcome", :action => "home"
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
