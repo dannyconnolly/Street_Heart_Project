@@ -10,41 +10,41 @@
 
 <body id="store">
 
-<div id="header">	
-	
-	<% if logged_in?%>
-		<%= current_user.name %> |
-		<%= link_to "Logout", logout_path %> |
-	<% else %>
-		<%= link_to "Register with Street Heart", new_user_path %> |
-		<%= link_to "Login", login_path %>
-	<% end %>
-</div><!--End Header-->
+<div id="header">
+
+  <% if logged_in? %>
+      <%= current_user.name %> |
+      <%= link_to "Logout", logout_path, :method => :delete %> |
+  <% else %>
+      <%= link_to "Register with Street Heart", register_path %> |
+      <%= link_to "Login", login_path %>
+  <% end %>
+</div>
+<!--End Header-->
 
 <div id="banner">
   <%= image_tag("Street_Heart_Logo.jpg") %>
 </div>
 
-	
+<% if logged_in? && current_user.admin? %>
+    <%= render 'layouts/adminSide' %>
+<% else %>
+    <div id="side">
+      <%= link_to "Products", products_path %> |
+      <a href="http://www....">Home</a><br/>
+      <a href="http://www..../about">About</a><br/>
+      <a href="http://www..../Focus_Ireland">Focus Ireland</a><br/>
+      <a href="http://www..../Clothing">Clothing</a><br/>
+      <a href="http://www..../Gifts">Gifts</a><br/>
+      <a href="http://www..../Skins">Skins</a><br/>
+      <a href="http://www..../Blog">Blog</a><br/>
+      <a href="http://www..../Contact">Contact</a><br/>
+    </div>
+<% end %>
 
-<div class="clear" id="columns">
-  <div id="side">
-	<%= link_to "Products", products_path %> |
-    <a href="http://www....">Home</a><br/>
-    <a href="http://www..../about">About</a><br/>
-    <a href="http://www..../Focus_Ireland">Focus Ireland</a><br/>
-    <a href="http://www..../Clothing">Clothing</a><br/>
-    <a href="http://www..../Gifts">Gifts</a><br/>
-    <a href="http://www..../Skins">Skins</a><br/>
-    <a href="http://www..../Blog">Blog</a><br/>
-    <a href="http://www..../Contact">Contact</a><br/>
-  </div>
   <div id="main">
-  <% if notice %>
-		<p class="notice"><%= notice %></p>
-	<% end %>
-<%= yield %>
- </div>
+    <%= yield %>
+  </div>
 </div>
 </body>
 </html>

@@ -1,18 +1,25 @@
 class SessionsController < ApplicationController
-	
-	def create
-		if user = User.authenticate(params[:email], params[:password])
-			session[:user_id] = user.id
-			redirect_to products_path, :notice => "You have logged in successfully"
-		else
-			flash.now[:alert] = "Invalid login/password combination"
-			render :action => 'new'
-		end
-	end
-	
-	def destroy
-		reset_session
-		redirect_to products_path, :notice => "You have successfully logged out"
-	end
-	
+  skip_before_filter :authorize
+
+  def new
+  end
+
+  def create
+    if user = User.authenticate(params[:email], params[:password])
+      session[:user_id] = user.id
+      if current_user.admin?
+        redirect_to admin_url, :notice => "You have logged in successfully"
+      else
+        redirect_to store_url, :notice => "You have logged in successfully"
+      end
+    else
+      redirect_to login_url, :alert => "Invalid email/password combination"
+    end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to store_url, :notice => "You have successfully logged out"
+  end
+
 end

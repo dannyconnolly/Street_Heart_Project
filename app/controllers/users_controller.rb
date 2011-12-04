@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
-
-  before_filter :authenticate, :only => [:index, :edit, :update, :destroy]
-  before_filter :correct_user, :only => [:edit, :update]
-  before_filter :admin_user, :only => :destroy
-	
+  skip_before_filter :authorize
   # GET /users
   # GET /users.xml
   def index
@@ -49,8 +45,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to(users_url, 
-					:notice => "User #{@user.name} was successfully created") }
+        format.html { redirect_to @user,
+					:notice => "User #{@user.name} was successfully created" }
         format.xml  { render :xml => @user, 
 					:status => :created, :location => @user }
       else
@@ -80,9 +76,13 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.xml
   def destroy
-    @user = User.find(params[:id]).destroy
-    flash[:success] = "User deleted."
-    redirect_to users_path
+    @user = User.find(params[:id])
+	begin 
+		@user.destroy
+		flash[:notice] = "User #{@user.name} deleted."
+	rescue Exception => e
+		flash[:notice] = e.message
+	end
 
     respond_to do |format|
       format.html { redirect_to(users_url) }
@@ -99,9 +99,5 @@ class UsersController < ApplicationController
      @user = User.find(params[:id])
      redirect_to(root_path) unless current_user?(@user)
   end
-
-  def admin_user
-		redirect_to(root_path) unless current_user.admin?
-  end
-
+  
 end

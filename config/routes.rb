@@ -1,19 +1,27 @@
 StreetHeartProject::Application.routes.draw do
 
-	resources :line_items
-	resources :carts
-	resources :products
-	resources :users
-	resources :sessions, :only => [ :new, :create, :destroy ]
-	
-	get "admin/index"
-	get "sessions/new"
-	get "sessions/create"
-	get "sessions/destroy"
-	get "store/index"
-  
-	match '/login' 	 => "sessions#new", 		:as => "login"
-	match '/logout' 	 => "sessions#destroy", 	:as => "logout"
+  get 'admin' => 'admin#index'
+
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
+  resources :users
+  resources :line_items
+  resources :carts
+
+  get "store/index"
+  resources :products do
+    get :who_bought, :on => :member
+  end
+
+  resources :sessions, :only => [:new, :create, :destroy]
+
+  match '/login' => "sessions#new", :as => "login"
+  match '/logout' => "sessions#destroy", :as => "logout"
+  match '/register' => "users#new", :as => "register"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -65,7 +73,7 @@ StreetHeartProject::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'store#index', :as => 'store'
-  
+
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
