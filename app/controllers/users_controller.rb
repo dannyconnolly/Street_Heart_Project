@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_filter :authorize
   # GET /users
   # GET /users.xml
   def index
@@ -44,8 +45,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to(users_url, 
-					:notice => "User #{@user.name} was successfully created") }
+        format.html { redirect_to @user,
+					:notice => "User #{@user.name} was successfully created" }
         format.xml  { render :xml => @user, 
 					:status => :created, :location => @user }
       else
@@ -76,11 +77,27 @@ class UsersController < ApplicationController
   # DELETE /users/1.xml
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
+	begin 
+		@user.destroy
+		flash[:notice] = "User #{@user.name} deleted."
+	rescue Exception => e
+		flash[:notice] = e.message
+	end
 
     respond_to do |format|
       format.html { redirect_to(users_url) }
       format.xml  { head :ok }
     end
   end
+  
+  private
+  def authenticate
+    deny_access unless signed_in?
+  end
+
+  def correct_user
+     @user = User.find(params[:id])
+     redirect_to(root_path) unless current_user?(@user)
+  end
+  
 end

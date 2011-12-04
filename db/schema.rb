@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20111201133249) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
+    t.boolean  "admin",           :default => false
   end
 
 end

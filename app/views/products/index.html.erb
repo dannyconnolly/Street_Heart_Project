@@ -18,21 +18,29 @@
                   :length => 80) %></dd>
         </dl>
        </td>
-
-      <td class = "list_actions">
-        <%= link_to 'Show', product %><br/>
-        <%= link_to 'Edit', edit_product_path(product) %><br/>
-        <%= link_to 'Destroy', product,
-                    :confirm => 'Are you sure?',
-                    :method => :delete%>
-      </td>
+	   
+		<% if current_user.admin? %>
+		  <td class = "list_actions">
+			<%= link_to 'Show', product %><br/>
+			<%= link_to 'Edit', edit_product_path(product) %><br/>
+			<%= link_to 'Destroy', product,
+						:confirm => 'Are you sure?',
+						:method => :delete%>
+		  </td>
+		<% end %>
     </tr>
+	
+		
    <% end %>
   </table>
+  
+	<% if current_user.admin? %>
+		<%= link_to 'New Product', new_product_path %>
+	<% end %>
 </div>
 <br/>
 
-<%= link_to 'New Product', new_product_path %>
+
 
 
 

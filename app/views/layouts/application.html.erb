@@ -31,27 +31,26 @@
   <%= image_tag("Street_Art_Title_Welcome.jpg") %>
 </div>
 
+<% if logged_in? && current_user.admin? %>
+    <%= render 'layouts/adminSide' %>
+<% else %>
+    <div id="side">
+      <%= link_to "Products", products_path %> |
+      <a href="http://www....">Home</a><br/>
+      <a href="http://www..../about">About</a><br/>
+      <a href="http://www..../Focus_Ireland">Focus Ireland</a><br/>
+      <a href="http://www..../Clothing">Clothing</a><br/>
+      <a href="http://www..../Gifts">Gifts</a><br/>
+      <a href="http://www..../Skins">Skins</a><br/>
+      <a href="http://www..../Blog">Blog</a><br/>
+      <a href="http://www..../Contact">Contact</a><br/>
+    </div><!--End Side-->
+<% end %>
 
-<div class="clear" id="columns">
-  <div id="side">
-    <%= link_to "Products", products_path %>
-    <br/>
-    <%= link_to "Home", home_path %>
-    <br/>
-    <a href="http://www..../about">About</a><br/>
-    <a href="http://www..../Focus_Ireland">Focus Ireland</a><br/>
-    <a href="http://www..../Clothing">Clothing</a><br/>
-    <a href="http://www..../Gifts">Gifts</a><br/>
-    <a href="http://www..../Skins">Skins</a><br/>
-    <a href="http://www..../Blog">Blog</a><br/>
-    <a href="http://www..../Contact">Contact</a><br/>
-  </div>
   <div id="main">
-    <% if notice %>
-        <p class="notice"><%= notice %></p>
-    <% end %>
+
     <%= yield %>
-  </div>
+  </div><!-- End Main-->
 </div>
 </body>
 </html>
