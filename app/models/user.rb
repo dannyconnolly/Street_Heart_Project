@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 						:length => {:within => 4..20},
 						:presence => true
 
-  attr_accessible :name, :email
+
   attr_accessor 	:password_confirmation
 	attr_reader		:password
 	
