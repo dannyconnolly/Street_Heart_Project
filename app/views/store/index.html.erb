@@ -10,7 +10,7 @@
       <h3><%= product.title %></h3>
       <%= sanitize(product.description) %>
       <div class= "price_line">
-        <span class= "unit_price"><%= number_to_currency(product.unit_price) %></span>
+        <span class= "unit price"><%= number_to_currency(product.unit_price) %></span>
         <%= button_to 'Add to cart', line_items_path(:product_id => product) %>
       </div>
     </div>

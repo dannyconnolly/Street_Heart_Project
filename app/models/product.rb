@@ -1,8 +1,8 @@
 class Product < ActiveRecord::Base
 	belongs_to :user
-
-  default_scope :order => 'title'
   has_many :line_items
+  default_scope :order => 'title'
+
   before_destroy :ensure_not_referenced_by_any_line_item
 
   #validation...

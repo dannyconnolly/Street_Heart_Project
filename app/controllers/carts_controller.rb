@@ -21,7 +21,7 @@ class CartsController < ApplicationController
     else
       respond_to do |format|
         format.html # show.html.erb
-        format.xml { render :xml => @cart}
+        format.xml {render :xml => @cart}
       end
     end
   end
