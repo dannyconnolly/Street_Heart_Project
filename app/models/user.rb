@@ -13,9 +13,9 @@ class User < ActiveRecord::Base
 	validates :password, :confirmation => true,
 						:length => {:within => 4..20},
 						:presence => true
-	
-	
-	attr_accessor 	:password_confirmation
+
+  attr_accessible :name, :email
+  attr_accessor 	:password_confirmation
 	attr_reader		:password
 	
 	validate :password_must_be_present

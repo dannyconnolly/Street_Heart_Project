@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+ before_filter :authorize, :only => :destroy
 
   # GET /users
   # GET /users.xml
@@ -46,8 +46,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user,
-					:notice => "User #{@user.name} was successfully created" }
+        format.html { redirect_to(new_user_path,
+					:notice => "User #{@user.name} was successfully created") }
         format.xml  { render :xml => @user, 
 					:status => :created, :location => @user }
       else

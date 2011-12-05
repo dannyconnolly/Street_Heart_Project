@@ -1,5 +1,4 @@
 body {
-    background: #989898;
     margin: 0;
 }
 
@@ -81,6 +80,17 @@ body {
 }
 .user-listings .list_line_even td, .user-listings .list_line_odd td {
     padding: 10px;
+}
+.admin-nav {
+    float: left;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    width: 180px;
+    border-right:  solid 1px #f0f0f0;
+}
+.admin-nav ul {
+    list-style: none;
 }
 /*==============Danny Styles=================*/
 
@@ -222,11 +232,9 @@ body {
     background: #989898;
 }
 
-#main {
-    margin-left: 17em;
-    padding-top: 4ex;
-    padding-left: 2em;
-    background: #ffffff;
+.main {
+    float: left;
+    padding: 10px;
 }
 
 #side {
@@ -234,10 +242,12 @@ body {
     padding-top: 2em;
     padding-bottom: 1em;
     padding-left: 1em;
-    width: 16em;
-    background: #989898;
+    width: 180px;
+    border-right:  solid 1px #f0f0f0;
 }
-
+#side ul {
+    list-style: none;
+}
 #side.a {
     color: #989898;
     font-size: small;
