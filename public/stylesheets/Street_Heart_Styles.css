@@ -1,171 +1,216 @@
-/* Global styles */
-
-#store #notice {
-        color: #000;
-        border: 2px solid red;
-        padding: 1em;
-        margin-bottom: 2em;
-        background-color: #f0f0f0;
-        font: bold smaller sans-serif;
-}
-#store h1 {
-        font:  150% sans-serif;
-        color: #226;
-        border-bottom: 3px dotted #77d;
+body {
+    margin: 0;
 }
 
-/* Styles for Welcome Page==============Danny================= */
-#header {
+.page-wrap {
+    width: 960px;
+    padding: 0 20px;
+    margin: 0 auto;
+    background: #ffffff;
     overflow: auto;
 }
+
+/*==============Danny Styles=================*/
+.header {
+    overflow: auto;
+}
+
+.social-media-links {
+    width: 200px;
+    float: left;
+}
+
+.site-login {
+    width: 300px;
+    float: right;
+
+}
+
+.site-login ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: right;
+}
+
+.site-login ul li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+.welcome-title {
+
+}
+
 .welcome-title img {
     width: 788px;
     height: 174px;
-    margin:  0 auto;
+    margin: 0 auto;
     display: block;
 }
-.social-media-links {
-    width: 250px;
-    float: left;
-}
-.site-login {
-    width: 250px;
-    float:right;
-}
 .welcome-tagline h2 {
-    margin: 10px auto;
     text-align: center;
+
 }
+
 .welcome-navigation ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
-    margin:  20px 0;
+
+    display: block;
     text-align: center;
 }
+
 .welcome-navigation ul li {
     display: inline;
     margin: 0 30px;
+    padding: 0;
 }
-.welcome-navigation ul li a {
+.welcome-statement {
+   background-color: #f0f0f0;
+   text-align: center;
+}
+.user-listings .list_line_even {
+    background-color: #f0f0f0;
+}
+.user-listings .list_line_odd {
+    background-color: #fff;
+}
+.user-listings .list_line_even td, .user-listings .list_line_odd td {
+    padding: 10px;
+}
+.admin-nav {
+    float: left;
+    padding-top: 2em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    width: 180px;
+    border-right:  solid 1px #f0f0f0;
+}
+.admin-nav ul {
+    list-style: none;
+}
+/*==============Danny Styles=================*/
 
+#store #notice {
+    color: #000;
+    border: 2px solid red;
+    padding: 1em;
+    margin-bottom: 2em;
+    background-color: #f0f0f0;
+    font: bold smaller sans-serif;
 }
-.welcome-tshirts {
-    width: 737px;
-    margin:  0 auto;
+
+#store h1 {
+    font: 150% sans-serif;
+    color: #226;
+    border-bottom: 3px dotted #77d;
 }
-.welcome-tshirts img {
-    margin:  10px;
-}
-.welcome-statement p {
-    text-align: center;
-}
-.welcome-focus-logo {
-    width: 100px;
-    float: right;
-}
-/* ====================End Danny styles========================>
+
 /* Styles for products/index */
 
 #product_list table {
-        border-collapse: collapse;
+    border-collapse: collapse;
 }
 
 #product_list table tr td {
-        padding: 5px;
-        vertical-align: top;
+    padding: 5px;
+    vertical-align: top;
 }
 
 #product_list .list_image {
-  width:        60px;
-  height:       70px;
+    width: 60px;
+    height: 70px;
 }
 
 #product_list .list_description {
-  width:        60%;
+    width: 60%;
 }
 
 #product_list .list_description dl {
-        margin: 0;
+    margin: 0;
 }
 
 #product_list .list_description dt {
-	color:        #244;
-	font-weight:  bold;
-	font-size:    larger;
+    color: #244;
+    font-weight: bold;
+    font-size: larger;
 }
 
 #product_list .list_description dd {
-        margin: 0;
+    margin: 0;
 }
 
 #product_list .list_actions {
-  font-size:    x-small;
-  text-align:   right;
-  padding-left: 1em;
+    font-size: x-small;
+    text-align: right;
+    padding-left: 1em;
 }
 
 #product_list .list_line_even {
-  background:   #e0f8f8;
+    background: #e0f8f8;
 }
 
 #product_list .list_line_odd {
-  background:   #f8b0f8;
+    background: #f8b0f8;
 }
 
 /* An entry in the store catalog */
 
-#store  .entry {
-  overflow: auto;
-  margin-top: 1em;
-  border-bottom: 1px dotted #77d;
+#store .entry {
+    overflow: auto;
+    margin-top: 1em;
+    border-bottom: 1px dotted #77d;
 }
 
-#store  .title {
-  font-size: 120%;
-  font-family: sans-serif;
+#store .title {
+    font-size: 120%;
+    font-family: sans-serif;
 }
 
 #store .entry img {
-  width: 80px;
-  margin-right: 5px;
-  margin-bottom: 5px;
-  float: left;
+    width: 80px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    float: left;
 }
 
-
 #store .entry h3 {
- margin-top: 0;
- margin-bottom: 2px;
- color: #227;
+    margin-top: 0;
+    margin-bottom: 2px;
+    color: #227;
 }
 
 #store .entry p {
- margin-top: 0.5em;
- margin-bottom: 0.8em;
+    margin-top: 0.5em;
+    margin-bottom: 0.8em;
 }
 
 #store .entry .price_line {
- clear: both;
- margin-bottom: 0.5em;
+    clear: both;
+    margin-bottom: 0.5em;
 }
 
 #store .entry .add_to_cart {
-  position: relative;
+    position: relative;
 }
 
-#store .entry  .price {
-  color: #44a;
-  font-weight: bold;
-  margin-right: 2em;
+#store .entry .price {
+    color: #44a;
+    font-weight: bold;
+    margin-right: 2em;
 }
 
-#store .entry form, #store .entry form div{
+#store .entry form, #store .entry form div {
     display: inline;
 }
 
 /* Styles for Main Page */
 
 #banner {
-    background: #989898;
+    background: #ffffff;
     height: 108px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -173,7 +218,6 @@
     font: small-caps 40px/40px "calibri", sans-serif;
     color: #ffffff;
     text-align: center;
-    clear: both;
 }
 
 #banner img {
@@ -188,11 +232,9 @@
     background: #989898;
 }
 
-#main {
-    margin-left: 17em;
-    padding-top: 4ex;
-    padding-left: 2em;
-    background: #ffffff;
+.main {
+    float: left;
+    padding: 10px;
 }
 
 #side {
@@ -200,10 +242,12 @@
     padding-top: 2em;
     padding-bottom: 1em;
     padding-left: 1em;
-    width: 16em;
-    background: #989898;
+    width: 180px;
+    border-right:  solid 1px #f0f0f0;
 }
-
+#side ul {
+    list-style: none;
+}
 #side.a {
     color: #989898;
     font-size: small;
@@ -211,15 +255,15 @@
 
 /* Styles for the cart in the main page */
 
-#store .cart_title{
+#store .cart_title {
     font: 120% bold;
 }
 
-#store .item_price, #store .total_line{
+#store .item_price, #store .total_line {
     text-align: right;
 }
 
-#store .total_line .total_cell{
+#store .total_line .total_cell {
     font-weight: bold;
     border-top: 1px solid #595;
 }

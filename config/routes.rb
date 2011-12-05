@@ -1,21 +1,37 @@
 StreetHeartProject::Application.routes.draw do
 
-	resources :line_items
-	resources :carts
-	resources :products
-	resources :users
-	resources :sessions, :only => [ :new, :create, :destroy ]
-	
-	get "admin/index"
-	get "sessions/new"
-	get "sessions/create"
-	get "sessions/destroy"
-	get "store/index"
-  get "welcome/home"
+  get 'admin' => 'admin#index'
+  get 'welcome' => 'welcome#home'
+  get 'store' => 'store#index'
+  get 'users' => 'users#index'
+  get 'users' => 'users#new'
 
-	match '/login'  	=> "sessions#new", 		  :as => "login"
-	match '/logout'   => "sessions#destroy", 	:as => "logout"
+
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
+  resources :users
+  resources :line_items
+  resources :carts
+  resources :store
+  
+  get "store/index"
+  resources :products do
+    get :who_bought, :on => :member
+  end
+
+  resources :sessions, :only => [:new, :create, :destroy]
+
+  match '/login' => "sessions#new", :as => "login"
+  match '/logout' => "sessions#destroy", :as => "logout"
+  match '/register' => "users#new", :as => "register"
   match '/home'     => "welcome#home",      :as => "home"
+  match '/register' => "users#new", :as => "register"
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
