@@ -1,0 +1,17 @@
+<% if logged_in? && current_user.admin? %>
+    <%= render 'layouts/adminSide' %>
+<% else %>
+    <div id="side">
+      <ul>
+        <li><%= link_to "Home", home_path %></li>
+        <li><a href="http://www..../about">About</a></li>
+        <li><%= link_to "Products", store_path %></li>
+        <li><a href="http://www..../Clothing">Clothing</a></li>
+        <li><a href="http://www..../Gifts">Gifts</a></li>
+        <li><a href="http://www..../Skins">Skins</a></li>
+        <li><a href="http://www..../Focus_Ireland">Focus Ireland</a></li>
+        <li><a href="http://www..../Blog">Blog</a></li>
+        <li><a href="http://www..../Contact">Contact</a></li>
+      </ul>
+    </div><!--End Side-->
+<% end %>

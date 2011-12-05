@@ -3,6 +3,8 @@ StreetHeartProject::Application.routes.draw do
   get 'admin' => 'admin#index'
   get 'welcome' => 'welcome#home'
   get 'store' => 'store#index'
+  get 'users' => 'new'
+
 
   controller :sessions do
     get 'login' => :new
@@ -26,6 +28,7 @@ StreetHeartProject::Application.routes.draw do
   match '/logout' => "sessions#destroy", :as => "logout"
   match '/register' => "users#new", :as => "register"
   match '/home'     => "welcome#home",      :as => "home"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
