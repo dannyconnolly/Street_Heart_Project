@@ -22,6 +22,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def your_profile
+    redirect_to :action => "show", :id => current_user.id
+  end
+
   # GET /users/new
   # GET /users/new.xml
   def new

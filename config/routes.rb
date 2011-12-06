@@ -22,6 +22,7 @@ StreetHeartProject::Application.routes.draw do
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
   match '/register' => "users#new", :as => "register"
+  match '/your_profile' => "users#your_profile", :as => "your_profile"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

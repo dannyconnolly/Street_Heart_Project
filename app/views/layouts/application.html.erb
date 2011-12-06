@@ -12,13 +12,21 @@
 
 <div id="header">
 
-  <% if logged_in? %>
-      <%= current_user.name %> |
-      <%= link_to "Logout", logout_path, :method => :delete %> |
-  <% else %>
-      <%= link_to "Register", register_path %> |
-      <%= link_to "Login", login_path %>
-  <% end %>
+  <div class="site-login">
+    <% if logged_in? %>
+        <ul>
+          <li>Hello <%= current_user.name %></li>
+          <li><%= link_to "Your Profile", :controller => "users", :action => "your_profile"  %></li>
+          <li><%= link_to "Logout", logout_path %></li>
+        </ul>
+    <% else %>
+        <ul>
+          <li><%= link_to "Login", login_path %></li>
+          <li><%= link_to "Register", new_user_path %></li>
+        </ul>
+    <% end %>
+  </div>
+  <!--end site login-->
 </div>
 <!--End Header-->
 
@@ -42,9 +50,9 @@
     </div>
 <% end %>
 
-  <div id="main">
-    <%= yield %>
-  </div>
+<div id="main">
+  <%= yield %>
+</div>
 </div>
 </body>
 </html>
