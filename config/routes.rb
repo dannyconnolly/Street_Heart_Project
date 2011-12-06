@@ -28,8 +28,8 @@ StreetHeartProject::Application.routes.draw do
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
   match '/register' => "users#new", :as => "register"
-  match '/home'     => "welcome#home",      :as => "home"
-  match '/register' => "users#new", :as => "register"
+  match '/home'     => "welcome#home", :as => "home"
+  match '/your_profile' => "users#your_profile", :as => "your_profile"
 
 
 

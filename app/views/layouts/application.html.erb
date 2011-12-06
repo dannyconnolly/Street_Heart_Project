@@ -11,7 +11,7 @@
 <% if logged_in? %>
        <ul>
          <li>Hello <%= current_user.name %></li>
-         <li>Profile</li>
+         <li><%= link_to "Your Profile", :controller => "users", :action => "your_profile"  %></li>
          <li><%= link_to "Logout", logout_path %></li>
        </ul>
     <% else %>

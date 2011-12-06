@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
- before_filter :authorize, :only => :destroy
+  before_filter :authorize, :only => :destroy
 
   # GET /users
   # GET /users.xml
@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @users }
+      format.xml { render :xml => @users }
     end
   end
 
@@ -19,8 +19,12 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @user }
+      format.xml { render :xml => @user }
     end
+  end
+
+  def your_profile
+    redirect_to :action => "show", :id => current_user.id
   end
 
   # GET /users/new
@@ -30,7 +34,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @user }
+      format.xml { render :xml => @user }
     end
   end
 
@@ -47,13 +51,13 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         format.html { redirect_to(users_url,
-					:notice => "User #{@user.name} was successfully created") }
-        format.xml  { render :xml => @user, 
-					:status => :created, :location => @user }
+                                  :notice => "User #{@user.name} was successfully created") }
+        format.xml { render :xml => @user,
+                            :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @user.errors, 
-					:status => :unprocessable_entity }
+        format.xml { render :xml => @user.errors,
+                            :status => :unprocessable_entity }
       end
     end
   end
@@ -66,10 +70,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(params[:user])
         format.html { redirect_to(users_url, :notice => "User #{@user.name} was successfully updated.") }
-        format.xml  { head :ok }
+        format.xml { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -78,27 +82,27 @@ class UsersController < ApplicationController
   # DELETE /users/1.xml
   def destroy
     @user = User.find(params[:id])
-	begin 
-		@user.destroy
-		flash[:notice] = "User #{@user.name} deleted."
-	rescue Exception => e
-		flash[:notice] = e.message
-	end
+    begin
+      @user.destroy
+      flash[:notice] = "User #{@user.name} deleted."
+    rescue Exception => e
+      flash[:notice] = e.message
+    end
 
     respond_to do |format|
       format.html { redirect_to(users_url) }
-      format.xml  { head :ok }
+      format.xml { head :ok }
     end
   end
-  
+
   private
   def authenticate
     deny_access unless signed_in?
   end
 
   def correct_user
-     @user = User.find(params[:id])
-     redirect_to(root_path) unless current_user?(@user)
+    @user = User.find(params[:id])
+    redirect_to(root_path) unless current_user?(@user)
   end
-  
+
 end
