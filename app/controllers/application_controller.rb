@@ -2,7 +2,6 @@ class ApplicationController < ActionController::Base
   before_filter :authorize
   protect_from_forgery
 
-
   protected
 
   def current_user
@@ -14,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def authorize
     unless admin?
-      flash[:notice] = "Unauthorized access"
+      flash[:notice] = "Please login or register to continue"
       redirect_to store_path
       false
     end
