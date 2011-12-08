@@ -8,16 +8,19 @@
 <table>
   <% @cart.line_items.each do |item| %>
   <tr>
-    <td><%= item.quantity %> &times; <%= item.product.title %></td>
+    <td><%= item.quantity %> &times;</td>
+    <td><%= item.product.title %></td>
+    <td><%= button_to 'Remove', @line_item, :method => :delete, :confirm => 'Are you sure?' %> </td>
     <td class="item_price"><%= number_to_currency(item.total_price) %></td>
   </tr>
   <% end %>
 
-  <tr class="total_line">
+  <tr class ="total_line">
     <td colspan="2">Total</td>
     <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
   </tr>
+                                                                            1
 </table>
 
+<%= button_to 'Empty Cart', @cart, :method => :delete, :confirm => 'Are you sure?' %>
 
-<% button_to 'Empty Cart', @cart, :method => :delete, :confirm => 'Are you sure?' %>

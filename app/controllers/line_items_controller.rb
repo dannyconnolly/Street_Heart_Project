@@ -49,17 +49,18 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to(@line_item.cart, :notice => 'Line item was successfully created') }
-        format.xml  { render :xml => @line_item, :status => :created, :location => @line_item }
+        format.html { redirect_to(@line_item.cart) }
+        format.xml { render :xml => @line_item, :status => :created, :location => @line_item }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @line_item.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @line_item.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   # PUT /line_items/1
   # PUT /line_items/1.xml
+
   def update
     @line_item = LineItem.find(params[:id])
 
@@ -77,12 +78,13 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.xml
   def destroy
-    @line_item = LineItem.find(params[:id])
+    @cart = current_cart
     @line_item.destroy
+    session[:line_item_id] = nil
 
     respond_to do |format|
       format.html { redirect_to(line_items_url) }
-      format.xml  { head :ok }
+      format.xml { head :ok }
     end
   end
 end
