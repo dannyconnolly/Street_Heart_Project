@@ -1,5 +1,8 @@
-<h1>Listing line_items</h1>
-
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+<h1 class="page-titles">Listing line_items</h1>
+       <div class="line-items-listings">
 <table>
   <tr>
     <th>Product</th>
@@ -23,3 +26,4 @@
 <br />
 
 <%= link_to 'New Line item', new_line_item_path %>
+          </div>

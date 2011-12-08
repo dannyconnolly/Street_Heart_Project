@@ -1,6 +1,5 @@
-<h1>Welcome</h1>
+<h1 class="page-titles">Welcome</h1>
 <% if notice %>
     <p class="notice"><%= notice %></p>
 <% end %>
-<p>It's <%= Time.now %>
-  We have <%= pluralize(@total_orders, "order") %>
+<p>It's <%= Time.now %> We have <%= pluralize(@total_orders, "order") %></p>

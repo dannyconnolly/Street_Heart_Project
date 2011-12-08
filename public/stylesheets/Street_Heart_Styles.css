@@ -1,64 +1,92 @@
-body {
+html, body, div, h1, h2, h3, h4, h5, h6, a, p, ul, li {
     margin: 0;
+    padding: 0;
+}
+.clear {
+    clear: both;
+}
+.page-titles{
+    margin: 0 0 20px 0;
+}
+body {
+    background: #f0f0f0;
 }
 
 .page-wrap {
-    width: 960px;
-    padding: 0 20px;
+    width: 980px;
+    padding: 0 10px;
     margin: 0 auto;
     background: #ffffff;
     overflow: auto;
 }
-
-/*==============Danny Styles=================*/
-.header {
-    overflow: auto;
-}
-
 .social-media-links {
-    width: 200px;
+    width: 480px;
     float: left;
 }
 
 .site-login {
-    width: 300px;
+    width: 480px;
     float: right;
 
 }
 
 .site-login ul {
-    margin: 0;
-    padding: 0;
     list-style: none;
     float: right;
 }
 
 .site-login ul li {
     display: inline;
-    margin: 0;
-    padding: 0;
+}
+.header {
+    overflow: auto;
+}
+/*============Side Nav==============*/
+.side {
+    float: left;
+    width: 180px;
+    padding: 30px 0 0 0;
 }
 
-.welcome-title {
+.side-nav ul {
+    list-style: none;
 
 }
 
+.side-nav ul li a, .side-nav ul li a:visited {
+    display: block;
+    font-size: small;
+    text-decoration: none;
+    padding: 10px 0 3px 5px;
+}
+.side-nav ul li a:hover, .side-nav ul li a:active {
+    background-color: #c84e9d;
+}
+.welcome-focus-logo img {
+    display: block;
+    margin: 20px auto;
+}
+/*============Main Content==============*/
+.main {
+    float: left;
+    width: 790px;
+    padding: 5px;
+
+}
+/*============Home Page==============*/
 .welcome-title img {
     width: 788px;
     height: 174px;
     margin: 0 auto;
     display: block;
 }
+
 .welcome-tagline h2 {
     text-align: center;
-
 }
 
 .welcome-navigation ul {
-    margin: 0;
-    padding: 0;
     list-style: none;
-
     display: block;
     text-align: center;
 }
@@ -66,35 +94,59 @@ body {
 .welcome-navigation ul li {
     display: inline;
     margin: 0 30px;
-    padding: 0;
 }
+
 .welcome-statement {
-   background-color: #f0f0f0;
-   text-align: center;
+    background-color: #f0f0f0;
+    text-align: center;
 }
+/*============User Show Page==============*/
 .user-listings .list_line_even {
     background-color: #f0f0f0;
 }
+
 .user-listings .list_line_odd {
     background-color: #fff;
 }
+
 .user-listings .list_line_even td, .user-listings .list_line_odd td {
     padding: 10px;
 }
+/*============Admin Nav==============*/
 .admin-nav {
-    float: left;
-    padding-top: 2em;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    width: 180px;
-    border-right:  solid 1px #f0f0f0;
+
 }
+
 .admin-nav ul {
     list-style: none;
 }
-/*==============Danny Styles=================*/
 
-#store #notice {
+/*
+.wishlist-wrap table {
+   background-color: #f0f0f0;
+   width: 600px;
+}
+
+.wishlist-wrap .list_line_odd {
+   background-color: #fff;
+}
+
+.wishlist-wrap .list_line_even {
+   background-color: #f0f0f0;
+}
+
+.wishlist-wrap table tr td img {
+   width: 100px;
+}
+*/
+/*============Store Page==============*/
+.entry {
+    width: 240px;
+    float: left;
+    border: solid 1px #f0f0f0;
+    padding: 5px;
+}
+#notice {
     color: #000;
     border: 2px solid red;
     padding: 1em;
@@ -103,14 +155,63 @@ body {
     font: bold smaller sans-serif;
 }
 
-#store h1 {
+.store h1 {
     font: 150% sans-serif;
     color: #226;
     border-bottom: 3px dotted #77d;
+    margin:  0 0 10px 0;
 }
 
-/* Styles for products/index */
+.store .entry {
+    overflow: auto;
+    width: 240px;
+    float: left;
+    border: solid 1px #f0f0f0;
+    padding: 5px;
+    margin: 5px;
+}
 
+.store .title {
+    font-size: 120%;
+    font-family: sans-serif;
+}
+
+.store .entry img {
+    width: 240px;
+    margin: 0 auto 5px auto;
+    float: left;
+}
+
+.store .entry h3 {
+    margin-top: 0;
+    margin-bottom: 2px;
+    color: #227;
+}
+
+.store .entry p {
+    margin-top: 0.5em;
+    margin-bottom: 0.8em;
+}
+
+.store .entry .price_line {
+    clear: both;
+    margin-bottom: 0.5em;
+}
+
+.store .entry .add_to_cart {
+    position: relative;
+}
+
+.store .entry .price {
+    color: #44a;
+    font-weight: bold;
+    margin-right: 2em;
+}
+
+.store .entry form, #store .entry form div {
+    display: inline;
+}
+/*============Products Page==============*/
 #product_list table {
     border-collapse: collapse;
 }
@@ -140,7 +241,6 @@ body {
 }
 
 #product_list .list_description dd {
-    margin: 0;
 }
 
 #product_list .list_actions {
@@ -157,100 +257,10 @@ body {
     background: #f8b0f8;
 }
 
-/* An entry in the store catalog */
 
-#store .entry {
-    overflow: auto;
-    margin-top: 1em;
-    border-bottom: 1px dotted #77d;
-}
-
-#store .title {
-    font-size: 120%;
-    font-family: sans-serif;
-}
-
-#store .entry img {
-    width: 80px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    float: left;
-}
-
-#store .entry h3 {
-    margin-top: 0;
-    margin-bottom: 2px;
-    color: #227;
-}
-
-#store .entry p {
-    margin-top: 0.5em;
-    margin-bottom: 0.8em;
-}
-
-#store .entry .price_line {
-    clear: both;
-    margin-bottom: 0.5em;
-}
-
-#store .entry .add_to_cart {
-    position: relative;
-}
-
-#store .entry .price {
-    color: #44a;
-    font-weight: bold;
-    margin-right: 2em;
-}
-
-#store .entry form, #store .entry form div {
-    display: inline;
-}
-
-/* Styles for Main Page */
-
-#banner {
-    background: #ffffff;
-    height: 108px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 10px;
-    font: small-caps 40px/40px "calibri", sans-serif;
-    color: #ffffff;
-    text-align: center;
-}
-
-#banner img {
-    float: left;
-}
-
-.clear {
-    clear: both;
-}
 
 #columns {
     background: #989898;
-}
-
-.main {
-    float: left;
-    padding: 10px;
-}
-
-#side {
-    float: left;
-    padding-top: 2em;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    width: 180px;
-    border-right:  solid 1px #f0f0f0;
-}
-#side ul {
-    list-style: none;
-}
-#side.a {
-    color: #989898;
-    font-size: small;
 }
 
 /* Styles for the cart in the main page */

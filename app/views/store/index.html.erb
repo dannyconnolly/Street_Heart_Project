@@ -1,17 +1,22 @@
 <% if notice %>
-<p id= "notice"><%= notice %></p>
+    <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1>Street_Heart Clothing</h1>
+<h1 class="page-titles">Street Heart Clothing</h1>
 
-<% @products.each do |product| %>
-    <div class= "entry">
-      <% image_tag(product.image_url) %>
-      <h3><%= product.title %></h3>
-      <%= sanitize(product.description) %>
-      <div class= "price_line">
-        <span class= "unit_price"><%= number_to_currency(product.unit_price) %></span>
-        <%= button_to 'Add to cart', line_items_path(:product_id => product) %>
+<div class="store">
+  <% @products.each do |product| %>
+      <div class="entry">
+
+        <%= image_tag(product.image_url) %>
+        <h3><%= product.title %></h3>
+        <%= sanitize(product.description) %>
+
+        <div class="price_line">
+          <span class="unit_price"><%= number_to_currency(product.unit_price) %></span>
+          <%= button_to 'Add to cart', line_items_path(:product_id => product) %>
+        </div>
+
       </div>
-    </div>
-<%	end  %>
+  <% end %>
+</div>
