@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :authorize, :only => :destroy
+  before_filter :authenticate, :except => [:new, :create, :your_profile]
+  before_filter :authorize, :only => [:index, :destroy]
 
   # GET /users
   # GET /users.xml
@@ -50,7 +51,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to(users_url,
+        format.html { redirect_to(store_path,
                                   :notice => "User #{@user.name} was successfully created") }
         format.xml { render :xml => @user,
                             :status => :created, :location => @user }
@@ -69,7 +70,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to(users_url, :notice => "User #{@user.name} was successfully updated.") }
+        format.html { redirect_to(store_path, :notice => "User #{@user.name} was successfully updated.") }
         format.xml { head :ok }
       else
         format.html { render :action => "edit" }
@@ -97,7 +98,7 @@ class UsersController < ApplicationController
 
   private
   def authenticate
-    deny_access unless signed_in?
+    access_denied unless logged_in?
   end
 
   def correct_user

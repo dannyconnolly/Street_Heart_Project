@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
 	before_filter :authenticate, :except => [:index, :show]
-	
+
   # GET /products
   # GET /products.xml
   def index

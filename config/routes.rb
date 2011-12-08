@@ -17,7 +17,7 @@ StreetHeartProject::Application.routes.draw do
   resources :line_items
   resources :carts
   resources :store
-  
+
   get "store/index"
   resources :products do
     get :who_bought, :on => :member
