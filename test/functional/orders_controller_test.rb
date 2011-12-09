@@ -36,7 +36,9 @@ class OrdersControllerTest < ActionController::TestCase
       post :create, :order => @order.attributes
     end
 
-    assert_redirected_to order_path(assigns(:order))
+
+
+    assert_redirected_to store_path
   end
 
   test "should show order" do
