@@ -1,31 +1,10 @@
 <%= render 'layouts/header' %>
 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Street Heart</title>
-<%= stylesheet_link_tag "scaffold" %>
-<%= stylesheet_link_tag "Street_Heart_Styles" %>
-<%= javascript_include_tag :defaults %>
-<%= csrf_meta_tag %>
-
-<body id ="store">
-<div id="banner">
-  <%= image_tag("Street_Art_Title_Welcome.jpg") %>
-</div>
-<div id="columns">
-  <%= render @cart %>
-</div>
-
-
 
 <div class="header">
 
   <div class="social-media-links">
     <%= link_to "Twitter", "https://twitter.com/#!/StreetHeart2011" %>
-
-    <%= link_to "facebook", "http://www.facebook.com/StreetHeartCampaign" %>
-
   </div>
   <!--end social_media_links-->
 
@@ -48,18 +27,8 @@
 </div><!--End Header-->
 
 <div class="welcome-title">
-
+  <%= image_tag("Street_Art_Title_Welcome.jpg") %>
 </div><!--end logo area-->
-
-
-<%= render 'layouts/storeSidebar' %>
-
-<!-- Cart Sidebar-->
-
- <div id="cart">
-    <%= render @cart %>
-</div>
-
 
 <div class="side">
   <%= render 'layouts/storeSidebar' %>
@@ -68,11 +37,8 @@
   </div>
 </div>
 
-
 <div class="main">
   <%= yield %>
 </div><!-- End Main-->
 
 <%= render 'layouts/footer' %>
-</body>
-</html>
