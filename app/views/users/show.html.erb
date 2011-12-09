@@ -2,7 +2,18 @@
     <p class="notice"><%= notice %></p>
 <% end %>
 
-<h2><%= @user.name %></h2>
-<p><%= @user.email %></p>
+<div class="user-profile">
+  <div class="user-avatar">
+    <!-- photo here -->
+  </div> <!--End user-avatar-->
 
-<%= link_to 'Edit', edit_user_path(@user) %>
+  <div class="user-details">
+    <h2><%= @user.name %></h2>
+    <p><%= @user.email %></p>
+  </div><!--End user-details-->
+
+  <div class="user-edit">
+    <%= link_to 'Edit', edit_user_path(@user) %>
+  </div><!--End user-edit-->
+
+</div><!--End user-profile-->

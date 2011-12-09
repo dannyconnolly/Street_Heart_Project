@@ -23,24 +23,27 @@
 
   <div class="social-media-links">
     <%= link_to "Twitter", "https://twitter.com/#!/StreetHeart2011" %>
+
     <%= link_to "facebook", "http://www.facebook.com/StreetHeartCampaign" %>
+
   </div>
   <!--end social_media_links-->
 
   <div class="site-login">
-<% if logged_in? %>
-       <ul>
-         <li>Hello <%= current_user.name %></li>
-         <li><%= link_to "Your Profile", :controller => "users", :action => "your_profile"  %></li>
-         <li><%= link_to "Logout", logout_path %></li>
-       </ul>
+    <% if logged_in? %>
+        <ul>
+          <li>Hello <%= current_user.name %></li>
+          <li><%= link_to "Your Profile", :controller => "users", :action => "your_profile" %></li>
+          <li><%= link_to "Logout", logout_path %></li>
+        </ul>
     <% else %>
         <ul>
           <li><%= link_to "Login", login_path %></li>
           <li><%= link_to "Register", new_user_path %></li>
         </ul>
     <% end %>
-  </div><!--end site login-->
+  </div>
+  <!--end site login-->
 
 </div><!--End Header-->
 
@@ -48,12 +51,21 @@
 
 </div><!--end logo area-->
 
+
 <%= render 'layouts/storeSidebar' %>
 
 <!-- Cart Sidebar-->
 
  <div id="cart">
     <%= render @cart %>
+</div>
+
+
+<div class="side">
+  <%= render 'layouts/storeSidebar' %>
+  <div class="welcome-focus-logo">
+    <%= image_tag("Welcome_Focus_Logo.jpg") %>
+  </div>
 </div>
 
 
