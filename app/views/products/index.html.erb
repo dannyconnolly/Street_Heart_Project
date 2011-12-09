@@ -11,7 +11,7 @@
         <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
 
           <td>
-            <%= image_tag(product.image_url, :class => 'list_image') %>
+            <%= image_tag (product.productimage_url(:thumb).to_s), :class => 'list_image'%>
           </td>
 
           <td class="list_description">
