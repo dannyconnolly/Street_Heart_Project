@@ -290,3 +290,38 @@ body {
     border-bottom: 1px dotted #595;
     margin-bottom: 10px;
 }
+
+/* Styles for Order Form*/
+
+.streetHeart_form fieldset{
+
+    background: #efe;
+}
+
+.streetHeart_form legend{
+    color: #dfd;
+    background: #141;
+    font-family: calibri, sans-serif;
+    padding: 0.2em 1em;
+}
+
+.streetHeart_form label{
+    width: 5em;
+    float: left;
+    text-align: right;
+    padding-top: 0.2em;
+    margin-right: 0.1em;
+    display: block;
+}
+
+.streetHeart_form select, .streetHeart_form textarea, .streetHeart_form input{
+    margin-left: 0.5em;
+}
+
+.streetHeart_form .submit{
+    margin-left: 4em;
+}
+
+.streetHeart_form div{
+    margin: 0.5em 0;
+}

@@ -1,5 +1,7 @@
 StreetHeartProject::Application.routes.draw do
 
+  resources :orders
+
   get 'admin' => 'admin#index'
   get 'welcome' => 'welcome#home'
   get 'store' => 'store#index'
