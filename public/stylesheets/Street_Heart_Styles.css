@@ -267,3 +267,16 @@ body {
     font-weight: bold;
     border-top: 1px solid #595;
 }
+
+/* Styles for the cart in sidebar*/
+
+#cart, #cart table {
+    font-size: smaller;
+    color: black;
+}
+
+#cart table {
+    border-top: 1px dotted #595;
+    border-bottom: 1px dotted #595;
+    margin-bottom: 10px;
+}
