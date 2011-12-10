@@ -13,9 +13,10 @@
 </p>
 
 <p>
-  <b>Image url:</b>
-  <%= image_tag @product.image_url %>
+  <b>productImage</b>
+  <%= image_tag @product.productimage_url(:store_img).to_s %>
 </p>
+
 
 <p>
   <b>Unit price:</b>

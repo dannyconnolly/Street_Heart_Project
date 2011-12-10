@@ -8,7 +8,7 @@
   <% @products.each do |product| %>
       <div class="entry">
 
-        <%= image_tag(product.image_url) %>
+        <%= image_tag (product.productimage_url(:store_img).to_s) %>
         <h3><%= product.title %></h3>
         <%= sanitize(product.description) %>
 

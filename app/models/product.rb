@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+  attr_accessible :productimage
+  mount_uploader :productimage, ProductImageUploader
 	belongs_to :user
 
   default_scope :order => 'title'
