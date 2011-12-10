@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(:version => 20111209135755) do
     t.integer  "quantity",   :default => 1
   end
 
+  create_table "list_items", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "wishlist_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "orders", :force => true do |t|
     t.string   "name"
     t.text     "address"
@@ -43,6 +50,16 @@ ActiveRecord::Schema.define(:version => 20111209135755) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "productimage"
+  end
+
+  create_table "reviews", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "body"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sessions", :force => true do |t|
@@ -63,6 +80,12 @@ ActiveRecord::Schema.define(:version => 20111209135755) do
     t.datetime "updated_at"
     t.string   "email"
     t.boolean  "admin",           :default => false
+    t.string   "avatar"
+  end
+
+  create_table "wishlists", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
