@@ -1,4 +1,4 @@
-StreetHeartProject::Application.routes.draw do
+ StreetHeartProject::Application.routes.draw do
 
   resources :orders
 
