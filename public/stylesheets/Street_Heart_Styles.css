@@ -2,12 +2,15 @@ html, body, div, h1, h2, h3, h4, h5, h6, a, p, ul, li {
     margin: 0;
     padding: 0;
 }
+
 .clear {
     clear: both;
 }
-.page-titles{
+
+.page-titles {
     margin: 0 0 20px 0;
 }
+
 body {
     background: #f0f0f0;
 }
@@ -19,9 +22,11 @@ body {
     background: #ffffff;
     overflow: auto;
 }
+
 .header {
     padding: 5px 0;
 }
+
 .social-media-links {
     width: 480px;
     float: left;
@@ -30,7 +35,6 @@ body {
 .site-login {
     width: 480px;
     float: right;
-
 }
 
 .site-login ul {
@@ -41,19 +45,36 @@ body {
 .site-login ul li {
     display: inline;
 }
+
 .header {
     overflow: auto;
 }
+.search-field {
+     overflow: auto;
+ }
+.search-field h3 {
+    margin: 0 0 5px 0;
+}
+.search-field .search-box {
+    width: 110px;
+    float: left;
+}
+.search-field .search-btn {
+    width: 30px;
+    float: right;
+}
+
 /*============Side Nav==============*/
 .side {
     float: left;
     width: 150px;
-    padding: 30px 0 0 0;
+    padding: 0 5px 0 0;
+    margin: 50px 0 0 0;
+    border-right:  solid 1px #f0f0f0;
 }
 
 .side-nav ul {
     list-style: none;
-
 }
 
 .side-nav ul li a, .side-nav ul li a:visited {
@@ -62,19 +83,25 @@ body {
     text-decoration: none;
     padding: 10px 0 3px 5px;
 }
+
 .side-nav ul li a:hover, .side-nav ul li a:active {
     background-color: #c84e9d;
 }
+
 .welcome-focus-logo img {
     display: block;
     margin: 20px auto;
 }
+
 /*============Main Content==============*/
 .main {
     float: left;
-    width: 810px;
+    width: 805px;
     padding: 5px;
+
+    margin-left: 5px;
 }
+
 /*============Home Page==============*/
 .welcome-title img {
     width: 788px;
@@ -82,23 +109,29 @@ body {
     margin: 0 auto;
     display: block;
 }
+
 .welcome-tagline {
     width: 680px;
 }
+
 .welcome-tagline h2 {
     margin: 0 0 10px 0;
     text-align: center;
 }
+
 .welcome-tshirts {
     margin: 20px 0 20px 0;
 }
+
 .welcome-tshirts img {
     margin: 0 20px 0 20px;
 }
+
 .welcome-statement {
     background-color: #f0f0f0;
     text-align: center;
 }
+
 /*============User Show Page==============*/
 .user-listings .list_line_even {
     background-color: #f0f0f0;
@@ -111,6 +144,7 @@ body {
 .user-listings .list_line_even td, .user-listings .list_line_odd td {
     padding: 10px;
 }
+
 /*============Admin Nav==============*/
 .admin-nav {
 
@@ -119,6 +153,7 @@ body {
 .admin-nav ul {
     list-style: none;
 }
+
 /*============Store Page==============*/
 .entry {
     width: 240px;
@@ -126,6 +161,7 @@ body {
     border: solid 1px #f0f0f0;
     padding: 5px;
 }
+
 #notice {
     color: #000;
     border: 2px solid red;
@@ -139,7 +175,7 @@ body {
     font: 150% sans-serif;
     color: #226;
     border-bottom: 3px dotted #77d;
-    margin:  0 0 10px 0;
+    margin: 0 0 10px 0;
 }
 
 .store .entry {
@@ -191,6 +227,7 @@ body {
 .store .entry form, #store .entry form div {
     display: inline;
 }
+
 /*============Products Page==============*/
 #product_list table {
     border-collapse: collapse;
@@ -271,19 +308,19 @@ body {
 
 /* Styles for Order Form*/
 
-.streetHeart_form fieldset{
+.streetHeart_form fieldset {
 
     background: #efe;
 }
 
-.streetHeart_form legend{
+.streetHeart_form legend {
     color: #dfd;
     background: #141;
     font-family: calibri, sans-serif;
     padding: 0.2em 1em;
 }
 
-.streetHeart_form label{
+.streetHeart_form label {
     width: 5em;
     float: left;
     text-align: right;
@@ -292,14 +329,14 @@ body {
     display: block;
 }
 
-.streetHeart_form select, .streetHeart_form textarea, .streetHeart_form input{
+.streetHeart_form select, .streetHeart_form textarea, .streetHeart_form input {
     margin-left: 0.5em;
 }
 
-.streetHeart_form .submit{
+.streetHeart_form .submit {
     margin-left: 4em;
 }
 
-.streetHeart_form div{
+.streetHeart_form div {
     margin: 0.5em 0;
 }
