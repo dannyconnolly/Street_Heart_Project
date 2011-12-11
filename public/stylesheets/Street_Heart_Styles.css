@@ -19,6 +19,9 @@ body {
     background: #ffffff;
     overflow: auto;
 }
+.header {
+    padding: 5px 0;
+}
 .social-media-links {
     width: 480px;
     float: left;
@@ -44,7 +47,7 @@ body {
 /*============Side Nav==============*/
 .side {
     float: left;
-    width: 180px;
+    width: 150px;
     padding: 30px 0 0 0;
 }
 
@@ -69,9 +72,8 @@ body {
 /*============Main Content==============*/
 .main {
     float: left;
-    width: 790px;
+    width: 810px;
     padding: 5px;
-
 }
 /*============Home Page==============*/
 .welcome-title img {
@@ -80,22 +82,19 @@ body {
     margin: 0 auto;
     display: block;
 }
-
+.welcome-tagline {
+    width: 680px;
+}
 .welcome-tagline h2 {
+    margin: 0 0 10px 0;
     text-align: center;
 }
-
-.welcome-navigation ul {
-    list-style: none;
-    display: block;
-    text-align: center;
+.welcome-tshirts {
+    margin: 20px 0 20px 0;
 }
-
-.welcome-navigation ul li {
-    display: inline;
-    margin: 0 30px;
+.welcome-tshirts img {
+    margin: 0 20px 0 20px;
 }
-
 .welcome-statement {
     background-color: #f0f0f0;
     text-align: center;
@@ -120,25 +119,6 @@ body {
 .admin-nav ul {
     list-style: none;
 }
-
-/*
-.wishlist-wrap table {
-   background-color: #f0f0f0;
-   width: 600px;
-}
-
-.wishlist-wrap .list_line_odd {
-   background-color: #fff;
-}
-
-.wishlist-wrap .list_line_even {
-   background-color: #f0f0f0;
-}
-
-.wishlist-wrap table tr td img {
-   width: 100px;
-}
-*/
 /*============Store Page==============*/
 .entry {
     width: 240px;
@@ -256,8 +236,6 @@ body {
 #product_list .list_line_odd {
     background: #f8b0f8;
 }
-
-
 
 #columns {
     background: #989898;

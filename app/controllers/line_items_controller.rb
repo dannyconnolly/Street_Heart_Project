@@ -1,4 +1,5 @@
 class LineItemsController < ApplicationController
+  before_filter :authenticate
 	skip_before_filter :authorize, :only => :create
 
   # GET /line_items
