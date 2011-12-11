@@ -14,7 +14,6 @@
           <li>Hello <%= current_user.name %></li> |
           <li><%= link_to "Your Profile", :controller => "users", :action => "your_profile" %></li>  |
           <li><%= link_to "Logout", logout_path %></li> |
-           <li><%= render @cart %>
 </li>
         </ul>
     <% else %>

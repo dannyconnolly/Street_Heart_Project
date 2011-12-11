@@ -18,6 +18,14 @@ class Product < ActiveRecord::Base
       :message => 'must be a URL for GIF, JPG or PNG image.'
   }
 
+  def self.search(search_query)
+    if search_query
+      find(:all, :conditions => ['name LIKE ?', "%#{search_query}%"])
+    else
+      find(:all)
+    end
+  end
+
   private
 
   #ensure that there are no line items referencing this product
