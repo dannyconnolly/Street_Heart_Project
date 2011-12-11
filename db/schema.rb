@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111209135755) do
+ActiveRecord::Schema.define(:version => 20111211172206) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -53,15 +53,6 @@ ActiveRecord::Schema.define(:version => 20111209135755) do
     t.string   "productimage"
   end
 
-  create_table "reviews", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.text     "body"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false
     t.text     "data"
@@ -80,12 +71,6 @@ ActiveRecord::Schema.define(:version => 20111209135755) do
     t.datetime "updated_at"
     t.string   "email"
     t.boolean  "admin",           :default => false
-    t.string   "avatar"
-  end
-
-  create_table "wishlists", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end
