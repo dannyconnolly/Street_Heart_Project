@@ -1,6 +1,7 @@
 <% if logged_in? && admin? %>
     <%= render 'layouts/adminSide' %>
 <% else %>
+
     <div class="side-nav">
       <ul>
         <li><%= link_to "Home", home_path %></li>

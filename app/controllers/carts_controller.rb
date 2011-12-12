@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
 	before_filter :authenticate
-  before_filter :authorize, :only => [:create, :update, :destroy]
+  before_filter :authorize, :only => [:create, :update]
 
   # GET /carts
   # GET /carts.xml

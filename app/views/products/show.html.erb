@@ -3,22 +3,23 @@
 <% end %>
 
 <p>
-  <b> title:</b>
+  <b> Title:</b><br />
   <%= @product.title %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b>Description:</b><br />
   <%= @product.description %>
 </p>
 
 <p>
-  <b>Image url:</b>
-  <%= image_tag @product.image_url %>
+  <b>Product Image</b><br />
+  <%= image_tag @product.productimage_url(:thumb).to_s %>
 </p>
 
+
 <p>
-  <b>Unit price:</b>
+  <b>Unit Price:</b><br />
   <%= @product.unit_price %>
 </p>
 

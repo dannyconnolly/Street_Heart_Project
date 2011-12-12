@@ -7,21 +7,28 @@
 <div id="product_list">
 
   <table>
+    <tr>
+      <th>Image</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Unit price</th>
+      <th>Actions</th>
+    </tr>
     <% @products.each do |product| %>
         <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
 
           <td>
-            <%= image_tag(product.image_url, :class => 'list_image') %>
+            <%= image_tag (product.productimage_url(:thumb).to_s), :class => 'list_image' %>
           </td>
-
+          <td><%= product.title %></td>
           <td class="list_description">
             <dl>
-              <dt><%= product.title %></dt>
+
               <dd><%= truncate(strip_tags(product.description),
                                :length => 80) %></dd>
             </dl>
           </td>
-
+          <td><%= product.unit_price %></td>
           <% if admin? %>
               <td class="list_actions">
                 <%= link_to 'Show', product %>
@@ -35,7 +42,6 @@
           <% end %>
         </tr>
 
-
     <% end %>
   </table>
 
@@ -43,51 +49,3 @@
       <%= link_to 'New Product', new_product_path %>
   <% end %>
 </div>
-<br/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<table>-->
-<!--<tr>-->
-<!--<th> title</th>-->
-<!--<th>Description</th>-->
-<!--<th>Image url</th>-->
-<!--<th>Unit price</th>-->
-<!--<th></th>-->
-<!--<th></th>-->
-<!--<th></th>-->
-<!--</tr>-->
-
-<!--
-<% @products.each do |product| %>-->
-    <!--<tr>-->
-    <!--<td><%= product.title %></td>-->
-    <!--<td><%= product.description %></td>-->
-    <!--<td><%= product.image_url %></td>-->
-    <!--<td><%= product.unit_price %></td>-->
-    <!--<td><%= link_to 'Show', product %></td>-->
-    <!--<td><%= link_to 'Edit', edit_product_path(product) %></td>-->
-    <!--<td><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>-->
-    <!--</tr>-->
-    <!--
-<% end %>-->
-<!--</table>-->
-
-<!--<br />-->
-
-<!--<%= link_to 'New Product', new_product_path %>-->

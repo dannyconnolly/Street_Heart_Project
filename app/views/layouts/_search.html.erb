@@ -1,0 +1,7 @@
+<div class="search-field">
+  <h3>Search Products</h3>
+  <% form_tag store_path, :method => 'get' do %>
+      <p><%= text_field_tag :search_query, params[:search_query], :class => 'search-box' %>
+      <%= submit_tag "Go", :name => nil, :class => 'search-btn' %></p>
+  <% end %>
+</div>

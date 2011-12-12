@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+  attr_accessible :productimage
+  mount_uploader :productimage, ProductImageUploader
 	belongs_to :user
 
   default_scope :order => 'title'
@@ -15,6 +17,14 @@ class Product < ActiveRecord::Base
       :with => %r{\.(gif|jpg|png)$}i,
       :message => 'must be a URL for GIF, JPG or PNG image.'
   }
+
+  def self.search(search_query)
+    if search_query
+      find(:all, :conditions => ['name LIKE ?', "%#{search_query}%"])
+    else
+      find(:all)
+    end
+  end
 
   private
 
