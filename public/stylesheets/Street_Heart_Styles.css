@@ -24,14 +24,16 @@ body {
 }
 
 .header {
-    padding: 5px 0;
+    width: 980px;
+    padding: 2px 10px;
+    margin: 0 auto;
+    font-size: 12px;
+    overflow: auto;
 }
-
 .social-media-links {
     width: 480px;
     float: left;
 }
-
 .site-login {
     width: 480px;
     float: right;
@@ -45,20 +47,19 @@ body {
 .site-login ul li {
     display: inline;
 }
-
-.header {
+.search-field {
     overflow: auto;
 }
-.search-field {
-     overflow: auto;
- }
+
 .search-field h3 {
     margin: 0 0 5px 0;
 }
+
 .search-field .search-box {
     width: 110px;
     float: left;
 }
+
 .search-field .search-btn {
     width: 30px;
     float: right;
@@ -70,7 +71,7 @@ body {
     width: 150px;
     padding: 0 5px 0 0;
     margin: 50px 0 0 0;
-    border-right:  solid 1px #f0f0f0;
+    border-right: solid 1px #f0f0f0;
 }
 
 .side-nav ul {
@@ -96,9 +97,7 @@ body {
 /*============Main Content==============*/
 .main {
     float: left;
-    width: 805px;
-    padding: 5px;
-
+    width: 815px;
     margin-left: 5px;
 }
 
@@ -111,12 +110,14 @@ body {
 }
 
 .welcome-tagline {
-    width: 680px;
 }
 
 .welcome-tagline h2 {
-    margin: 0 0 10px 0;
+    margin: 0 0 5px 0;
     text-align: center;
+    color: #c84e9d;
+    font-family: Arial, HELVETICA, SANS-SERIF;
+    font-size: 18px;
 }
 
 .welcome-tshirts {
@@ -143,6 +144,55 @@ body {
 
 .user-listings .list_line_even td, .user-listings .list_line_odd td {
     padding: 10px;
+}
+
+/*============User Profile Page==============*/
+.user-middle-wrap {
+    width: 600px;
+    float: left;
+}
+
+.user-profile {
+    border: solid 1px #f0f0f0;
+    border-radius: 5px;
+    overflow: auto;
+    margin: 5px;
+    padding: 5px;
+}
+
+.user-avatar {
+    float: left;
+    width: 100px;
+    padding: 0 5px;
+}
+
+.user-details {
+    float: left;
+    width: 370px;
+    padding: 30px 0 0 10px;
+
+}
+
+.user-details h1 {
+    margin: 0 0 10px 0;
+}
+
+.user-edit {
+    float: left;
+    width: 85px;
+    padding: 40px 0 0 0;
+    text-align: center;
+}
+
+.user-recommendations {
+    clear: both;
+}
+
+.user-right-side {
+    float: left;
+    width: 205px;
+    padding: 5px;
+
 }
 
 /*============Admin Nav==============*/

@@ -11,27 +11,26 @@
   <div class="site-login">
     <% if logged_in? %>
         <ul>
-          <li>Hello <%= current_user.name %></li> |
-          <li><%= link_to "Your Profile", :controller => "users", :action => "your_profile" %></li>  |
-          <li><%= link_to "Logout", logout_path %></li> |
-</li>
+          <li>Hello <%= current_user.name %></li>
+          <li><%= link_to "Your Profile", :controller => "users", :action => "your_profile" %></li>
+          <li><%= link_to "Logout", logout_path %></li>
+
         </ul>
     <% else %>
         <ul>
-          <li><%= link_to "Login", login_path %></li>  |
-          <li><%= link_to "Register", new_user_path %></li> |
+          <li><%= link_to "Login", login_path %></li>
+          <li><%= link_to "Register", new_user_path %></li>
         </ul>
     <% end %>
   </div>
   <!--end site login-->
 
 </div><!--End Header-->
+  <div class="page-wrap">
 
 <div class="welcome-title">
   <%= image_tag("Street_Art_Title_Welcome.jpg") %>
 </div><!--end logo area-->
-
-
 
 <div class="side">
 
@@ -40,11 +39,8 @@
 
   <div class="welcome-focus-logo">
     <%= image_tag("Welcome_Focus_Logo.jpg") %>
-  </div>
-</div>
-
-
-
+  </div><!-- end welcome-focus-logo-->
+</div> <!--end side-->
 
 <div class="main">
   <%= yield %>

@@ -3,7 +3,6 @@ class Removal < ActiveRecord::Migration
     drop_table :reviews
     drop_table :wishlists
     remove_column :users, :userpic
-    remove_column :users, :avatar
   end
 
   def self.down

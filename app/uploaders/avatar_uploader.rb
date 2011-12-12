@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ProductImageUploader < CarrierWave::Uploader::Base
+class AvatarUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
@@ -17,9 +17,9 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
-  # def default_url
-  #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-  # end
+   def default_url
+     "/images/fallback/" + ["heartSpatter.jpg"].compact.join('_')
+   end
 
   # Process files as they are uploaded:
   # process :scale => [200, 300]
@@ -29,23 +29,16 @@ class ProductImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :thumb do
+   version :thumb do
     process :resize_to_limit => [100, 100]
-  end
-
-  version :store_img do
-    process :resize_to_limit => [240, 253]
-  end
-
-   version :large_img do
-    process :resize_to_limit => [380, 400]
    end
+
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
-  #def extension_white_list
-  #   %w(jpg jpeg gif png)
-  # end
+   def extension_white_list
+     %w(jpg jpeg gif png)
+   end
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.

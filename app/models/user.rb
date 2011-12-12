@@ -1,6 +1,8 @@
 require 'digest/sha2'
 
 class User < ActiveRecord::Base
+
+  mount_uploader :avatar, AvatarUploader
 	has_many :products
 
 	validates :name, 	:presence => true

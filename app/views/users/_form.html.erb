@@ -1,6 +1,6 @@
 <div class="sign_up_form">
 	
-	<%= form_for(@user) do |f| %>
+	<%= form_for @user, :html => {:multipart => true} do |f| %>
 			<% if @user.errors.any? %>
 				<div id="error_explanation">
 					<h2><%= pluralize(@user.errors.count, "error") %> 
@@ -36,6 +36,11 @@
 				<%= f.label :password_confirmation, 'Please confirm your password' %><br />
 				<%= f.password_field :password_confirmation, :size => 40 %>
 			</div>
+
+          <div class="field">
+            <%= f.label :avatar, 'Add a profile picture' %><br/>
+            <%= f.file_field :avatar %>
+          </div>
 			
 		<div class="actions">
 			<%= f.submit %>

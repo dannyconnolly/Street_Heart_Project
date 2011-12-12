@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111211172206) do
+ActiveRecord::Schema.define(:version => 20111212095744) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20111211172206) do
     t.datetime "updated_at"
     t.string   "email"
     t.boolean  "admin",           :default => false
+    t.string   "avatar"
   end
 
 end
