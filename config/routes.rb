@@ -4,6 +4,7 @@
 
   get 'admin' => 'admin#index'
   get 'welcome' => 'welcome#home'
+  get 'welcome' => 'welcome#about'
   get 'store' => 'store#index'
   get 'users' => 'users#index'
   get 'users' => 'users#new'
@@ -31,6 +32,7 @@
   match '/logout' => "sessions#destroy", :as => "logout"
   match '/register' => "users#new", :as => "register"
   match '/home'     => "welcome#home", :as => "home"
+  match '/about' => "welcome#about", :as => "about"
   match '/your_profile' => "users#your_profile", :as => "your_profile"
 
 

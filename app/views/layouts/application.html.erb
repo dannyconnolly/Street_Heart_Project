@@ -1,49 +1,41 @@
 <%= render 'layouts/header' %>
 
+<%= render 'layouts/siteLogin' %>
 
-<div class="header">
 
-  <div class="social-media-links">
-    <%= link_to "Twitter", "https://twitter.com/#!/StreetHeart2011" %>
+  <div class="welcome-title">
+    <%= image_tag("Street_Art_Title_Welcome.jpg") %>
   </div>
-  <!--end social_media_links-->
+  <div class="welcome-tagline">
+  <h2>Street Heart campaign in association with Focus Ireland.</h2>
+  <h2>Helping Ireland’s homeless. #wecanchangethis</h2>
+</div>
+  <!--end logo area-->
 
-  <div class="site-login">
-    <% if logged_in? %>
-        <ul>
-          <li>Hello <%= current_user.name %></li>
-          <li><%= link_to "Your Profile", :controller => "users", :action => "your_profile" %></li>
-          <li><%= link_to "Logout", logout_path %></li>
+  <div class="horizon-bar">
+    <div class="social-media-links">
+      <%= link_to "Twitter", "https://twitter.com/#!/StreetHeart2011" %>
+      <p>Tweets Go Here?</p>
+    </div><!--end social_media_links-->
 
-        </ul>
-    <% else %>
-        <ul>
-          <li><%= link_to "Login", login_path %></li>
-          <li><%= link_to "Register", new_user_path %></li>
-        </ul>
-    <% end %>
+    <%= render 'layouts/search' %>
   </div>
-  <!--end site login-->
+  <!--End Horizon bar-->
 
-</div><!--End Header-->
-  <div class="page-wrap">
+  <div class="side">
 
-<div class="welcome-title">
-  <%= image_tag("Street_Art_Title_Welcome.jpg") %>
-</div><!--end logo area-->
+    <%= render 'layouts/storeSidebar' %>
 
-<div class="side">
+    <div class="welcome-focus-logo">
+      <%= image_tag("Welcome_Focus_Logo.jpg") %>
+    </div>
+    <!-- end welcome-focus-logo-->
+  </div>
+  <!--end side-->
 
- <%= render 'layouts/search' %>
-  <%= render 'layouts/storeSidebar' %>
-
-  <div class="welcome-focus-logo">
-    <%= image_tag("Welcome_Focus_Logo.jpg") %>
-  </div><!-- end welcome-focus-logo-->
-</div> <!--end side-->
-
-<div class="main">
-  <%= yield %>
-</div><!-- End Main-->
-
+  <div class="main">
+    <%= yield %>
+  </div>
+  <!-- End Main-->
+</div><!-- End Page Wrap-->
 <%= render 'layouts/footer' %>
