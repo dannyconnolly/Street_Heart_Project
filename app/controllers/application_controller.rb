@@ -48,5 +48,13 @@ class ApplicationController < ActionController::Base
     session[:cart_id] = cart.id
     cart
   end
+
+  def current_wishlist
+    Wishlist.find(session[:wishlist_id])
+  rescue ActiveRecord::RecordNotFound
+    wishlist = Wishlist.create
+    session[:wishlist_id] = wishlist.id
+    wishlist
+  end
 end
 

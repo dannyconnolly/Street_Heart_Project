@@ -1,5 +1,9 @@
  StreetHeartProject::Application.routes.draw do
 
+  resources :wishlist_items
+
+  resources :wishlists
+
   resources :orders
 
   get 'admin' => 'admin#index'

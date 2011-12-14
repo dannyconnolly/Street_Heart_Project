@@ -42,16 +42,19 @@ body {
 .site-login ul li {
     display: inline;
 }
+
 /*============Horizon Bar==============*/
 .horizon-bar {
     background: url(../images/horizon2.png) no-repeat top left;
     height: 61px;
     margin: 10px 0 15px 0;
 }
+
 .social-media-links {
     width: 550px;
     float: left;
 }
+
 .social-media-links a {
     display: block;
     background-image: url(../images/twitter-icon.png);
@@ -63,11 +66,13 @@ body {
     margin: 3px 0 0 10px;
     float: left;
 }
+
 .social-media-links p {
     padding: 15px 0 0 15px;
     float: left;
     color: #eeecec;
 }
+
 .search-field {
     width: 420px;
     overflow: auto;
@@ -78,7 +83,7 @@ body {
 .search-field .search-box {
     width: 300px;
     height: 30px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     padding: 0 0 0 10px;
 }
@@ -158,29 +163,36 @@ body {
     background-color: #f0f0f0;
     text-align: center;
 }
+
 /*============About Page==============*/
 .about-content {
     padding: 15px;
 }
+
 .about-content h1 {
     margin: 0 0 15px 0;
 }
+
 .about-content p {
     margin: 0 0 15px 0;
     line-height: 25px;
 }
+
 .about-content .p-two .img-position {
     float: right;
     padding: 0 0 10px 5px;
 }
+
 .about-content .p-two .img-position em {
     display: block;
     text-align: center;
     font-size: 10px;
 }
+
 .about-content .p-two .img-position img {
     width: 300px;
 }
+
 /*============User Show Page==============*/
 .user-listings .list_line_even {
     background-color: #f0f0f0;
@@ -438,3 +450,22 @@ body {
 .streetHeart_form div {
     margin: 0.5em 0;
 }
+
+/*============Wishlist page==============*/
+.wishlist-item-wrap {
+    width: 360px;
+    margin: 5px 0 0 5px;
+    padding: 20px;
+    float: left;
+    border:  solid 1px #989898;
+}
+.wishlist-image {
+    margin: 0 10px 0 0;
+}
+.wishlist-image, .wishlist-title {
+    float: left;
+
+}
+.wishlist-clear {
+    clear: both;
+    padding: 20px;}

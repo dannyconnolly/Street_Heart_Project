@@ -1,0 +1,22 @@
+<div class="wishlist-item-wrap">
+  <div class="wishlist-image">
+             <%=image_tag wishlist_item.product.productimage_url(:thumb).to_s %>
+  </div><!--End wishlist-image-->
+
+  <div class="wishlist-title">
+          <h3><%= wishlist_item.product.title %> </h3>
+  </div><!--End wishlist-title-->
+
+  <div class="wishlist-description">
+                 <p><%= wishlist_item.product.description %> </p>
+  </div><!--End wishlist-description-->
+
+  <div class="wishlist-price">
+              <p><%= wishlist_item.product.unit_price %> </p>
+  </div><!--End wishlist-price-->
+
+  <div class="wishlist-actions">
+    <%= link_to 'Edit', edit_wishlist_path(@wishlist) %> |
+    <%= link_to 'Back', wishlists_path %>
+  </div><!--End wishlist-actions-->
+</div><!--end wishlist item wrap-->
