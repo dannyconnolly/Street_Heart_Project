@@ -9,6 +9,9 @@ gem 'sqlite3'
 gem 'carrierwave'
 
 
+
+
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
