@@ -1,6 +1,6 @@
 class WishlistItemsController < ApplicationController
-  before_filter :authenticate
-	skip_before_filter :authorize, :only => :create
+  before_filter :authenticate, :except => [:create, :destroy]
+	skip_before_filter :authorize, :only => [:create, :destroy]
   # GET /wishlist_items
   # GET /wishlist_items.xml
   def index
@@ -48,7 +48,7 @@ class WishlistItemsController < ApplicationController
 
     respond_to do |format|
       if @wishlist_item.save
-        format.html { redirect_to(@wishlist_item.wishlist, :notice => 'Wishlist item was successfully created.') }
+        format.html { redirect_to(store_path, :notice => 'Wishlist item was successfully created.') }
         format.xml  { render :xml => @wishlist_item, :status => :created, :location => @wishlist_item }
       else
         format.html { render :action => "new" }
@@ -80,7 +80,7 @@ class WishlistItemsController < ApplicationController
     @wishlist_item.destroy
 
     respond_to do |format|
-      format.html { redirect_to(wishlist_items_url) }
+      format.html { redirect_to(store_path, :notice => 'Item has been removed from your wishlist.') }
       format.xml  { head :ok }
     end
   end

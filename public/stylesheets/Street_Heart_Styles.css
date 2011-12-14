@@ -143,12 +143,11 @@ body {
 .welcome-tagline {
 }
 
-.welcome-tagline h2 {
-    margin: 0 0 5px 0;
+.welcome-tagline h1 {
+    margin: 0 0 10px 0;
     text-align: center;
     color: #c84e9d;
     font-family: Arial, HELVETICA, SANS-SERIF;
-    font-size: 18px;
 }
 
 .welcome-tshirts {
@@ -252,9 +251,29 @@ body {
     float: left;
     width: 205px;
     padding: 5px;
-
 }
-
+/*============User Wishlist partial==============*/
+.user-wishlist-partial {
+    margin:  20px 0;
+}
+.user-wishlist-partial h2 {
+    margin: 0 0 10px 0;
+}
+.user-wishlist-partial .wishlist-item-wrap{
+    width: 180px;
+    padding:0 10px 10px 10px;
+    margin: 0 auto 5px auto;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom:  dotted 1px #f0f0f0;
+}
+.user-wishlist-partial .wishlist-image, .user-wishlist-partial .wishlist-description, .user-wishlist-partial .wishlist-price {
+    display: none;
+}
+.user-wishlist-partial .wishlist-actions {
+    clear: both;
+}
 /*============Admin Nav==============*/
 .admin-nav {
 
@@ -468,4 +487,5 @@ body {
 }
 .wishlist-clear {
     clear: both;
-    padding: 20px;}
+    padding: 20px;
+}

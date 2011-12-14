@@ -3,6 +3,8 @@
         <ul>
           <li>Hello <%= current_user.name %></li>
           <li><%= link_to "Your Profile", :controller => "users", :action => "your_profile" %></li>
+          <li><%= link_to "Your Wishlist", :controller => "wishlist", :action => "show" %></li>
+          <li><%= link_to "Your Cart", :controller => "cart", :action => "show" %></li>
           <li><%= link_to "Logout", logout_path %></li>
 
         </ul>
