@@ -1,6 +1,7 @@
 class WishlistItemsController < ApplicationController
-  before_filter :authenticate, :except => [:create, :destroy]
-	skip_before_filter :authorize, :only => [:create, :destroy]
+  before_filter :authenticate
+  skip_before_filter :authorize, :only => [:create, :destroy]
+
   # GET /wishlist_items
   # GET /wishlist_items.xml
   def index
@@ -8,7 +9,7 @@ class WishlistItemsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @wishlist_items }
+      format.xml { render :xml => @wishlist_items }
     end
   end
 
@@ -19,7 +20,7 @@ class WishlistItemsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @wishlist_item }
+      format.xml { render :xml => @wishlist_item }
     end
   end
 
@@ -30,7 +31,7 @@ class WishlistItemsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @wishlist_item }
+      format.xml { render :xml => @wishlist_item }
     end
   end
 
@@ -49,10 +50,10 @@ class WishlistItemsController < ApplicationController
     respond_to do |format|
       if @wishlist_item.save
         format.html { redirect_to(store_path, :notice => 'Wishlist item was successfully created.') }
-        format.xml  { render :xml => @wishlist_item, :status => :created, :location => @wishlist_item }
+        format.xml { render :xml => @wishlist_item, :status => :created, :location => @wishlist_item }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @wishlist_item.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @wishlist_item.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -65,10 +66,10 @@ class WishlistItemsController < ApplicationController
     respond_to do |format|
       if @wishlist_item.update_attributes(params[:wishlist_item])
         format.html { redirect_to(@wishlist_item, :notice => 'Wishlist item was successfully updated.') }
-        format.xml  { head :ok }
+        format.xml { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @wishlist_item.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @wishlist_item.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -81,7 +82,9 @@ class WishlistItemsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(store_path, :notice => 'Item has been removed from your wishlist.') }
-      format.xml  { head :ok }
+      format.xml { head :ok }
     end
   end
+
+
 end
