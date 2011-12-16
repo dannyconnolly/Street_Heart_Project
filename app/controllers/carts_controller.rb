@@ -89,4 +89,8 @@ class CartsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def your_cart
+    redirect_to :action => "show", :id => current_cart.id
+  end
 end

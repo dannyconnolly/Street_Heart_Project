@@ -8,7 +8,8 @@ html, body, div, h1, h2, h3, h4, h5, h6, a, p, ul, li, form, input, text-area {
 }
 
 .page-titles {
-    margin: 0 0 15px 5px;
+    margin: 0 0 15px 0;
+    padding: 5px 0 5px 5px;
 }
 
 body {
@@ -192,17 +193,18 @@ body {
     width: 300px;
 }
 
-/*============User Show Page==============*/
-.user-listings .list_line_even {
+/*============Admin Pages==============*/
+.user-listings .list_line_even, .product_list .list_line_even, .orders-list .list_line_even {
     background-color: #f0f0f0;
 }
 
-.user-listings .list_line_odd {
+.user-listings .list_line_odd, .product_list .list_line_odd, .orders-list .list_line_odd {
     background-color: #fff;
 }
 
-.user-listings .list_line_even td, .user-listings .list_line_odd td {
+.user-listings .list_line_even td, .user-listings .list_line_odd td, .product_list .list_line_even td, .product_list .list_line_odd td, .orders-list .list_line_even td, .orders-list .list_line_odd td {
     padding: 10px;
+    text-align: center;
 }
 
 /*============User Profile Page==============*/
@@ -249,8 +251,8 @@ body {
 
 .user-right-side {
     float: left;
-    width: 195px;
-    padding: 10px;
+    width: 205px;
+    padding: 5px;
     background-color: #f0f0f0;
     border-radius: 5px;
     border: none;
@@ -259,18 +261,28 @@ body {
 .user-cart-partial {
     border-bottom: solid 1px #ffffff;
     padding: 0 0 20px 0;
-    margin: 0;
-}
+    margin: 10px 0 0 0;
+    overflow: auto;
 
+
+}
+.user-cart-partial .cart-wrap form {
+   padding: 0 0 0 5px;
+}
+.user-cart-partial .cart-wrap form input {
+    float: left;
+
+}
 /*============User Wishlist partial==============*/
 .user-wishlist-partial {
     margin: 0;
     border-top: solid 1px #cccccc;
     padding: 20px 0 0 0;
+
 }
 
 .user-wishlist-partial h2 {
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
 }
 
 .user-wishlist-partial .wishlist-item-wrap {
@@ -282,13 +294,26 @@ body {
     border-right: none;
     border-bottom: dotted 1px #f0f0f0;
 }
-
-/*.user-wishlist-partial .wishlist-image, .user-wishlist-partial .wishlist-description, .user-wishlist-partial .wishlist-price {
+.user-wishlist-partial .wishlist-image img {
+    width: 50px;
+    width: 50px;
+    float: left;
+}
+ .user-wishlist-partial .wishlist-title{
+     float: left;
+     margin: 0;
+ }
+.user-wishlist-partial .wishlist-price {
+     float: left;
+ }
+.user-wishlist-partial .wishlist-description {
     display: none;
-} */
+}
 
 .user-wishlist-partial .wishlist-actions {
     clear: both;
+    padding: 5px 0;
+
 }
 
 /*============Admin Nav==============*/
@@ -375,49 +400,41 @@ body {
 }
 
 /*============Products Page==============*/
-#product_list table {
+.product_list table {
     border-collapse: collapse;
 }
 
-#product_list table tr td {
+.product_list table tr td {
     padding: 5px;
     vertical-align: top;
 }
 
-#product_list .list_image {
+.product_list .list_image {
     width: 60px;
     height: 70px;
 }
 
-#product_list .list_description {
+.product_list .list_description {
     width: 60%;
 }
 
-#product_list .list_description dl {
+.product_list .list_description dl {
     margin: 0;
 }
 
-#product_list .list_description dt {
+.product_list .list_description dt {
     color: #244;
     font-weight: bold;
     font-size: larger;
 }
 
-#product_list .list_description dd {
+.product_list .list_description dd {
 }
 
-#product_list .list_actions {
+.product_list .list_actions {
     font-size: x-small;
     text-align: right;
     padding-left: 1em;
-}
-
-#product_list .list_line_even {
-    background: #e0f8f8;
-}
-
-#product_list .list_line_odd {
-    background: #f8b0f8;
 }
 
 #columns {
@@ -502,7 +519,6 @@ body {
 
 .wishlist-image, .wishlist-title {
     float: left;
-
 }
 
 .wishlist-clear {

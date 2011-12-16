@@ -41,9 +41,10 @@ class WishlistsControllerTest < ActionController::TestCase
 
   test "should destroy wishlist" do
     assert_difference('Wishlist.count', -1) do
+      session[:wishlist_id] = @wishlist.id
       delete :destroy, :id => @wishlist.to_param
     end
 
-    assert_redirected_to wishlists_path
+    assert_redirected_to store_path
   end
 end

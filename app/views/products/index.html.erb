@@ -1,10 +1,6 @@
-<% if notice %>
-    <p id="notice"><%= notice %></p>
-<% end %>
-
 <h2 class="page-titles">Products</h2>
 
-<div id="product_list">
+<div class="product_list">
 
   <table>
     <tr>
@@ -48,4 +44,4 @@
   <% if admin? %>
       <%= link_to 'New Product', new_product_path %>
   <% end %>
-</div>
+</div> <!--End products_list-->

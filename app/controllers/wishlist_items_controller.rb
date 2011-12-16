@@ -49,7 +49,7 @@ class WishlistItemsController < ApplicationController
 
     respond_to do |format|
       if @wishlist_item.save
-        format.html { redirect_to(store_path, :notice => 'Wishlist item was successfully created.') }
+        format.html { redirect_to(store_url, :notice => 'Wishlist item was successfully created.') }
         format.xml { render :xml => @wishlist_item, :status => :created, :location => @wishlist_item }
       else
         format.html { render :action => "new" }

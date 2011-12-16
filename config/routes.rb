@@ -1,8 +1,8 @@
  StreetHeartProject::Application.routes.draw do
 
-  get 'carts' => 'cart#show'
+  get 'carts' => 'carts#your_cart'
 
-  get 'wishlist' => 'wishlist#show'
+  get 'wishlist' => 'wishlists#your_wishlist'
 
   resources :wishlist_items
   resources :wishlists
