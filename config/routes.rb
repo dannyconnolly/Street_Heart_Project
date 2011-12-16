@@ -42,8 +42,6 @@
   match '/about' => "welcome#about", :as => "about"
   match '/your_profile' => "users#your_profile", :as => "your_profile"
 
-
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -7,7 +7,7 @@ class StoreController < ApplicationController
     @wishlist = current_wishlist
   end
 
-  def show
+ def show
     @product = Product.find(params[:id])
 
     respond_to do |format|

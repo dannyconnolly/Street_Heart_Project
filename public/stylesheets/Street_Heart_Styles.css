@@ -1,4 +1,4 @@
-html, body, div, h1, h2, h3, h4, h5, h6, a, p, ul, li {
+html, body, div, h1, h2, h3, h4, h5, h6, a, p, ul, li, form, input, text-area {
     margin: 0;
     padding: 0;
 }
@@ -249,31 +249,48 @@ body {
 
 .user-right-side {
     float: left;
-    width: 205px;
-    padding: 5px;
+    width: 195px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    border: none;
 }
+
+.user-cart-partial {
+    border-bottom: solid 1px #ffffff;
+    padding: 0 0 20px 0;
+    margin: 0;
+}
+
 /*============User Wishlist partial==============*/
 .user-wishlist-partial {
-    margin:  20px 0;
+    margin: 0;
+    border-top: solid 1px #cccccc;
+    padding: 20px 0 0 0;
 }
+
 .user-wishlist-partial h2 {
     margin: 0 0 10px 0;
 }
-.user-wishlist-partial .wishlist-item-wrap{
+
+.user-wishlist-partial .wishlist-item-wrap {
     width: 180px;
-    padding:0 10px 10px 10px;
+    padding: 0 10px 10px 10px;
     margin: 0 auto 5px auto;
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom:  dotted 1px #f0f0f0;
+    border-bottom: dotted 1px #f0f0f0;
 }
-.user-wishlist-partial .wishlist-image, .user-wishlist-partial .wishlist-description, .user-wishlist-partial .wishlist-price {
+
+/*.user-wishlist-partial .wishlist-image, .user-wishlist-partial .wishlist-description, .user-wishlist-partial .wishlist-price {
     display: none;
-}
+} */
+
 .user-wishlist-partial .wishlist-actions {
     clear: both;
 }
+
 /*============Admin Nav==============*/
 .admin-nav {
 
@@ -476,15 +493,18 @@ body {
     margin: 5px 0 0 5px;
     padding: 20px;
     float: left;
-    border:  solid 1px #989898;
+    border: solid 1px #989898;
 }
+
 .wishlist-image {
     margin: 0 10px 0 0;
 }
+
 .wishlist-image, .wishlist-title {
     float: left;
 
 }
+
 .wishlist-clear {
     clear: both;
     padding: 20px;
