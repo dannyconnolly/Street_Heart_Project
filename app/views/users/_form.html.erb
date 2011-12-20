@@ -1,49 +1,57 @@
 <div class="sign_up_form">
-	
-	<%= form_for @user, :html => {:multipart => true} do |f| %>
-			<% if @user.errors.any? %>
-				<div id="error_explanation">
-					<h2><%= pluralize(@user.errors.count, "error") %> 
-					prohibited this user from being saved:</h2>
 
-					<ul>
-						<% @user.errors.full_messages.each do |msg| %>
-						<li><%= msg %></li>
-			<% end %>
-					</ul>
-				</div>
-		<% end %>
-		
-		<fieldset>
-			<legend>Please Enter Your Details</legend>
-			
-			<div class="field">
-				<%= f.label :name %><br />
-				<%= f.text_field :name, :size => 40 %>
-			</div>
-			
-			<div class="field">
-				<%= f.label :email %><br />
-				<%= f.text_field :email, :size => 40 %>
-			</div>
-	  
-			<div class="field">
-				<%= f.label :password, 'Password' %><br />
-				<%= f.password_field :password, :size => 40 %>
-			</div>
-	  
-			<div class="field">
-				<%= f.label :password_confirmation, 'Please confirm your password' %><br />
-				<%= f.password_field :password_confirmation, :size => 40 %>
-			</div>
+  <%= form_for @user, :html => {:multipart => true} do |f| %>
+      <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@user.errors.count, "error") %>
+              prohibited this user from being saved:</h2>
 
-          <div class="field">
-            <%= f.label :avatar, 'Add a profile picture' %><br/>
-            <%= f.file_field :avatar %>
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
           </div>
-			
-		<div class="actions">
-			<%= f.submit %>
-		</div>
-	<% end %>
+      <% end %>
+
+      <fieldset>
+        <legend>Please Enter Your Details</legend>
+
+        <div class="field">
+          <%= f.label :name %>
+          <br/>
+          <%= f.text_field :name, :size => 40 %>
+        </div>
+
+        <div class="field">
+          <%= f.label :email %>
+          <br/>
+          <%= f.text_field :email, :size => 40 %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password, 'Password' %>
+          <br/>
+          <%= f.password_field :password, :size => 40 %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation, 'Please confirm your password' %>
+          <br/>
+          <%= f.password_field :password_confirmation, :size => 40 %>
+        </div>
+
+        <div class="field">
+          <%= image_tag @user.avatar_url(:thumb).to_s if @user.avatar? %>  <br/>
+          <%= f.label :avatar, 'Add a profile picture' %>
+          <br/>
+          <%= f.file_field :avatar %>     <br/>
+          <%= f.hidden_field :avatar_cache %> <br/>
+          <p>Remove Avatar <%= f.check_box :remove_avatar %></p>
+        </div>
+
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+  <% end %>
 </div>
