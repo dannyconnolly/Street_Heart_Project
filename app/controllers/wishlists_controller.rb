@@ -17,6 +17,7 @@ class WishlistsController < ApplicationController
   def show
     begin
       @wishlist = Wishlist.find(params[:id])
+
     rescue ActiveRecord::RecordNotFound
       logger.error "Attempt to access invalid wishlist #{params[:id]}"
       redirect_to store_url, :notice => "Invalid Wishlist"

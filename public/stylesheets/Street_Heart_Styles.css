@@ -511,6 +511,7 @@ body {
     padding: 20px;
     float: left;
     border: solid 1px #989898;
+    border-radius: 5px;
 }
 
 .wishlist-image {
@@ -524,4 +525,7 @@ body {
 .wishlist-clear {
     clear: both;
     padding: 20px;
+}
+.wishlist-actions {
+    padding: 10px 0 0 0;
 }

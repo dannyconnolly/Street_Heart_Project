@@ -1,4 +1,4 @@
- StreetHeartProject::Application.routes.draw do
+StreetHeartProject::Application.routes.draw do
 
   get 'carts' => 'carts#your_cart'
 
@@ -6,7 +6,6 @@
 
   resources :wishlist_items
   resources :wishlists
-
   resources :orders
 
   get 'admin' => 'admin#index'
@@ -38,7 +37,7 @@
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
   match '/register' => "users#new", :as => "register"
-  match '/home'     => "welcome#home", :as => "home"
+  match '/home' => "welcome#home", :as => "home"
   match '/about' => "welcome#about", :as => "about"
   match '/your_profile' => "users#your_profile", :as => "your_profile"
 
