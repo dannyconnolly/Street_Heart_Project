@@ -1,41 +1,30 @@
 <%= render 'layouts/header' %>
 
-<%= render 'layouts/siteLogin' %>
-
-
-  <div class="welcome-title">
-    <%= image_tag("Street_Art_Title_Welcome.jpg") %>
+<div class="horizon-bar">
+  <div class="social-media-links">
+    <%= link_to "Twitter", "https://twitter.com/#!/StreetHeart2011" %>
+    <p>Tweets Go Here?</p>
   </div>
-  <div class="welcome-tagline">
-  <h2>Street Heart campaign in association with Focus Ireland.</h2>
-  <h2>Helping Ireland’s homeless. #wecanchangethis</h2>
+  <!--end social_media_links-->
+
+  <%= render 'layouts/search' %>
 </div>
-  <!--end logo area-->
+<!--End Horizon bar-->
 
-  <div class="horizon-bar">
-    <div class="social-media-links">
-      <%= link_to "Twitter", "https://twitter.com/#!/StreetHeart2011" %>
-      <p>Tweets Go Here?</p>
-    </div><!--end social_media_links-->
+<div class="side">
 
-    <%= render 'layouts/search' %>
+  <%= render 'layouts/storeSidebar' %>
+
+  <div class="welcome-focus-logo">
+    <%= image_tag("Welcome_Focus_Logo.jpg") %>
   </div>
-  <!--End Horizon bar-->
+  <!-- end welcome-focus-logo-->
+</div>
+<!--end side-->
 
-  <div class="side">
-
-    <%= render 'layouts/storeSidebar' %>
-
-    <div class="welcome-focus-logo">
-      <%= image_tag("Welcome_Focus_Logo.jpg") %>
-    </div>
-    <!-- end welcome-focus-logo-->
-  </div>
-  <!--end side-->
-
-  <div class="main">
-    <%= yield %>
-  </div>
-  <!-- End Main-->
+<div class="main">
+  <%= yield %>
+</div>
+<!-- End Main-->
 </div><!-- End Page Wrap-->
 <%= render 'layouts/footer' %>

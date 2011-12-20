@@ -25,14 +25,25 @@
 
   <div class="user-recommendations">
     <h2>Your Recommendations</h2>
-  </div>
-  <!--End user recommendations-->
+  </div><!--End user recommendations-->
+
+  <div class="user-reviews-partial">
+    <h2>Your Reviews</h2>
+  </div><!--End user reviews partial-->
+
 </div><!--End user-middle-wrap-->
 
 <div class="user-right-side">
-  <h2>Your Cart</h2>
+  <div class="user-cart-partial">
+    <%= render @cart %>
+  </div>
+  <!--End user cart partial-->
 
-  <h2>Your Wishlist</h2>
+  <div class="user-wishlist-partial">
+    <%= render @wishlist %>
+  </div>
+  <!--end user wishlist partial-->
 
-  <h2>Your Reviews</h2>
+
+
 </div> <!--End user-right-side-->

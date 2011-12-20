@@ -1,6 +1,14 @@
-html, body, div, h1, h2, h3, h4, h5, h6, a, p, ul, li {
+html, body, div, h1, h2, h3, h4, h5, h6, a, p, ul, li, form, input, text-area {
     margin: 0;
     padding: 0;
+}
+a, a:visited {
+    color: #c84e9d;
+    text-decoration: underline;
+}
+a:hover, a:active{
+    color: #e37bbf;
+    text-decoration: none;
 }
 
 .clear {
@@ -8,7 +16,8 @@ html, body, div, h1, h2, h3, h4, h5, h6, a, p, ul, li {
 }
 
 .page-titles {
-    margin: 0 0 15px 5px;
+    margin: 0 0 15px 0;
+    padding: 5px 0 5px 5px;
 }
 
 body {
@@ -42,16 +51,26 @@ body {
 .site-login ul li {
     display: inline;
 }
+ .site-login ul li a {
+     color: #666666;
+     text-decoration: none;
+ }
+.site-login ul li a:hover {
+     color: #eeeeee;
+    text-decoration: underline;
+ }
 /*============Horizon Bar==============*/
 .horizon-bar {
     background: url(../images/horizon2.png) no-repeat top left;
     height: 61px;
     margin: 10px 0 15px 0;
 }
+
 .social-media-links {
     width: 550px;
     float: left;
 }
+
 .social-media-links a {
     display: block;
     background-image: url(../images/twitter-icon.png);
@@ -63,11 +82,13 @@ body {
     margin: 3px 0 0 10px;
     float: left;
 }
+
 .social-media-links p {
     padding: 15px 0 0 15px;
     float: left;
     color: #eeecec;
 }
+
 .search-field {
     width: 420px;
     overflow: auto;
@@ -78,7 +99,7 @@ body {
 .search-field .search-box {
     width: 300px;
     height: 30px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     padding: 0 0 0 10px;
 }
@@ -109,6 +130,7 @@ body {
     font-size: small;
     text-decoration: none;
     padding: 10px 0 3px 5px;
+    color: #666666;
 }
 
 .side-nav ul li a:hover, .side-nav ul li a:active {
@@ -135,17 +157,20 @@ body {
     display: block;
 }
 
-.welcome-tagline {
-}
-
-.welcome-tagline h2 {
-    margin: 0 0 5px 0;
+.welcome-tagline h1 {
+    margin: 0 0 10px 0;
     text-align: center;
     color: #c84e9d;
     font-family: Arial, HELVETICA, SANS-SERIF;
-    font-size: 18px;
 }
-
+.welcome-tagline h1 a {
+    color: #c84e9d;
+    text-decoration: underline;
+}
+.welcome-tagline h1 a:hover{
+    text-decoration: none;
+    color: #e37bbf;
+}
 .welcome-tshirts {
     margin: 20px 0 20px 0;
 }
@@ -158,40 +183,48 @@ body {
     background-color: #f0f0f0;
     text-align: center;
 }
+
 /*============About Page==============*/
 .about-content {
     padding: 15px;
 }
+
 .about-content h1 {
     margin: 0 0 15px 0;
 }
+
 .about-content p {
     margin: 0 0 15px 0;
     line-height: 25px;
 }
+
 .about-content .p-two .img-position {
     float: right;
     padding: 0 0 10px 5px;
 }
+
 .about-content .p-two .img-position em {
     display: block;
     text-align: center;
     font-size: 10px;
 }
+
 .about-content .p-two .img-position img {
     width: 300px;
 }
-/*============User Show Page==============*/
-.user-listings .list_line_even {
+
+/*============Admin Pages==============*/
+.user-listings .list_line_even, .product_list .list_line_even, .orders-list .list_line_even {
     background-color: #f0f0f0;
 }
 
-.user-listings .list_line_odd {
+.user-listings .list_line_odd, .product_list .list_line_odd, .orders-list .list_line_odd {
     background-color: #fff;
 }
 
-.user-listings .list_line_even td, .user-listings .list_line_odd td {
+.user-listings .list_line_even td, .user-listings .list_line_odd td, .product_list .list_line_even td, .product_list .list_line_odd td, .orders-list .list_line_even td, .orders-list .list_line_odd td {
     padding: 10px;
+    text-align: center;
 }
 
 /*============User Profile Page==============*/
@@ -240,6 +273,66 @@ body {
     float: left;
     width: 205px;
     padding: 5px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    border: none;
+}
+
+.user-cart-partial {
+    border-bottom: solid 1px #ffffff;
+    padding: 0 0 20px 0;
+    margin: 10px 0 0 0;
+    overflow: auto;
+
+
+}
+.user-cart-partial .cart-wrap form {
+   padding: 0 0 0 5px;
+}
+.user-cart-partial .cart-wrap form input {
+    float: left;
+
+}
+/*============User Wishlist partial==============*/
+.user-wishlist-partial {
+    margin: 0;
+    border-top: solid 1px #cccccc;
+    padding: 20px 0 0 0;
+
+}
+
+.user-wishlist-partial h2 {
+    margin: 0 0 20px 0;
+}
+
+.user-wishlist-partial .wishlist-item-wrap {
+    width: 180px;
+    padding: 0 10px 10px 10px;
+    margin: 0 auto 5px auto;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: dotted 1px #f0f0f0;
+}
+.user-wishlist-partial .wishlist-image img {
+    width: 50px;
+    width: 50px;
+    float: left;
+}
+ .user-wishlist-partial .wishlist-title{
+     float: left;
+     margin: 0;
+ }
+.user-wishlist-partial .wishlist-price {
+     float: left;
+ }
+.user-wishlist-partial .wishlist-description {
+    display: none;
+}
+
+.user-wishlist-partial .wishlist-actions {
+    clear: both;
+    padding: 5px 0;
 
 }
 
@@ -327,49 +420,41 @@ body {
 }
 
 /*============Products Page==============*/
-#product_list table {
+.product_list table {
     border-collapse: collapse;
 }
 
-#product_list table tr td {
+.product_list table tr td {
     padding: 5px;
     vertical-align: top;
 }
 
-#product_list .list_image {
+.product_list .list_image {
     width: 60px;
     height: 70px;
 }
 
-#product_list .list_description {
+.product_list .list_description {
     width: 60%;
 }
 
-#product_list .list_description dl {
+.product_list .list_description dl {
     margin: 0;
 }
 
-#product_list .list_description dt {
+.product_list .list_description dt {
     color: #244;
     font-weight: bold;
     font-size: larger;
 }
 
-#product_list .list_description dd {
+.product_list .list_description dd {
 }
 
-#product_list .list_actions {
+.product_list .list_actions {
     font-size: x-small;
     text-align: right;
     padding-left: 1em;
-}
-
-#product_list .list_line_even {
-    background: #e0f8f8;
-}
-
-#product_list .list_line_odd {
-    background: #f8b0f8;
 }
 
 #columns {
@@ -437,4 +522,30 @@ body {
 
 .streetHeart_form div {
     margin: 0.5em 0;
+}
+
+/*============Wishlist page==============*/
+.wishlist-item-wrap {
+    width: 360px;
+    margin: 5px 0 0 5px;
+    padding: 20px;
+    float: left;
+    border: solid 1px #989898;
+    border-radius: 5px;
+}
+
+.wishlist-image {
+    margin: 0 10px 0 0;
+}
+
+.wishlist-image, .wishlist-title {
+    float: left;
+}
+
+.wishlist-clear {
+    clear: both;
+    padding: 20px;
+}
+.wishlist-actions {
+    padding: 10px 0 0 0;
 }

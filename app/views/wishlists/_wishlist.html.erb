@@ -1,0 +1,14 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+<h2 class="page-titles">Your Wishlist</h2>
+
+<div class="wishlist-wrap">
+
+  <%= render(wishlist.wishlist_items) %>
+
+  <div class="wishlist-clear">
+    <%= button_to 'Empty Wishlist', wishlist, :method => :delete, :confirm => 'Are you sure?' %>
+
+  </div>
+</div><!--End wishlist-wrap-->

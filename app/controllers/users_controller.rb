@@ -16,6 +16,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.xml
   def show
+    @cart = current_cart
+    @wishlist = current_wishlist
     @user = User.find(params[:id])
 
     respond_to do |format|
