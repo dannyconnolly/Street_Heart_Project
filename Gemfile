@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
 
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

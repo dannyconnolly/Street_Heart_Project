@@ -26,6 +26,7 @@
   <!--End single page description-->
   <div class="add-btn">
     <%= button_to 'Add to cart' %>
+    <%= button_to 'Add to Wishlist', wishlist_items_path(:product_id => @product) %>
   </div>
   <!--End add-btn-->
 
@@ -33,19 +34,18 @@
       <%= link_to 'Edit', edit_product_path(@product) %> |
       <%= link_to 'Back', products_path %>
   <% end %>
-
-  <div class="product-reviews">
-      <h3 class="page-titles">Read Customer Reviews for this product</h3>
-      <%= render @product.reviews %>
-    </div>
-    <!--End single-review-wrap-->
-
-    <div class="review-forw-wrap">
-      <h3 class="page-titles">Add a review for this product</h3>
-      <%= render 'reviews/form' %>
-    </div>
-    <!--End review-form-wrap-->
-  </div>
-  <!--End single page reviews-->
-
 </div><!--End single page wrap-->
+
+<div class="reviews">
+  <div class="product-reviews">
+    <h3 class="page-titles">Read Customer Reviews for this product</h3>
+    <%= render @product.reviews %>
+  </div>
+  <!--End single-review-wrap-->
+
+  <div class="product-reviews-form">
+    <h3 class="page-titles">Add a review for this product</h3>
+    <p>If you have already purchased this item and would like to leave your review, then please fill out the form below.</p>
+    <%= render 'reviews/form' %>
+  </div><!--End product-reviews-form-->
+ </div><!-- end reviews-->

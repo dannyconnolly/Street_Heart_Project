@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
   # GET /products/1.xml
   def show
     @product = Product.find(params[:id])
+    @wishlist = current_wishlist
 
     respond_to do |format|
       format.html # show.html.erb
