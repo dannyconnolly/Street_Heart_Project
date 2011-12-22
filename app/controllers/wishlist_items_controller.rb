@@ -52,7 +52,7 @@ class WishlistItemsController < ApplicationController
         format.html { redirect_to(store_url, :notice => 'Wishlist item was successfully created.') }
         format.xml { render :xml => @wishlist_item, :status => :created, :location => @wishlist_item }
       else
-        format.html { redirect_to(store_url, :notice => 'Item already added to wishlist')}
+        format.html { redirect_to(store_url, :notice => 'Item already added to wishlist') }
         format.xml { render :xml => @wishlist_item.errors, :status => :unprocessable_entity }
       end
     end
