@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
     @products = Product.search(params[:search_query])
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {redirect_to @products}
       format.xml { render :xml => @products }
     end
   end
