@@ -1,5 +1,7 @@
 <div class="review-wrap  <%= cycle('list_line_odd', 'list_line_even') %>">
-  <h4><%= review.user_id %>, says</h4>
+
+  <h4><%= review.name %>, says</h4>
+  <p><em>Posted <%= time_ago_in_words(review.created_at) %> ago.</em></p>
 
   <p>
     <b>Review:</b>

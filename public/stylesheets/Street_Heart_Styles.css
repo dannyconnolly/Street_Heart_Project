@@ -587,3 +587,15 @@ body {
     margin: 10px 0;
     padding: 20px;
 }
+/*============Single Product Page Reviews==============*/
+.product-reviews {
+    border: solid 1px #989898;
+    border-radius: 10px;
+    padding: 20px;
+}
+.product-reviews h3 {
+    margin: 10px 0 0 0;
+}
+.review-forw-wrap {
+    background-color: #ff3333;
+}

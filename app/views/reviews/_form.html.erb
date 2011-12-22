@@ -1,5 +1,9 @@
 <%= form_for ([@product, @product.reviews.build]) do |f| %>
 
+    <div class="field">
+    <%= f.label :name, 'Please enter your name' %><br />
+    <%= f.text_field :name %>
+  </div>
   <div class="field">
     <%= f.label :body, 'Add a review' %><br />
     <%= f.text_area :body %>

@@ -41,7 +41,6 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.xml
   def create
-    @user = User.find(params[:user_id])
     @product = Product.find(params[:product_id])
     @review = @product.reviews.create(params[:review])
 

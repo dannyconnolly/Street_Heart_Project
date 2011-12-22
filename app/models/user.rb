@@ -2,9 +2,9 @@ require 'digest/sha2'
 class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
+
 	has_many :products
   has_one :wishlist
-  has_many :reviews
 
 	validates :name, 	:presence => true
 						
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
 
   attr_accessor 	:password_confirmation
 	attr_reader		:password
-	
+
 	validate :password_must_be_present
 	
 	def User.authenticate(email, password)
@@ -50,9 +50,9 @@ class User < ActiveRecord::Base
 		if User.count.zero?
 			raise "Can't delete last User"
 		end
-	end
-	
-	private
+  end
+
+  private
 	
 		def password_must_be_present
 			errors.add(:password, "Please re-type your password") unless hashed_password.present?
