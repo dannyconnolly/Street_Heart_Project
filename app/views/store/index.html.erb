@@ -14,11 +14,11 @@
 
         <div class="price_line">
           <span class="unit_price"><%= number_to_currency(product.unit_price) %></span>
-
+         <%= link_to 'View Product', product %>
           <%= button_to 'Add to cart', line_items_path(:product_id => product) %>
           <%= button_to 'Add to Wishlist', wishlist_items_path(:product_id => product) %>
-        </div>
+        </div><!--End Prioe Line-->
 
-      </div>
+      </div><!--End entry-->
   <% end %>
-</div>
+</div><!--End store-->

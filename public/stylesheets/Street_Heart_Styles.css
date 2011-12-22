@@ -214,11 +214,11 @@ body {
 }
 
 /*============Admin Pages==============*/
-.user-listings .list_line_even, .product_list .list_line_even, .orders-list .list_line_even {
+.user-listings .list_line_even, .product_list .list_line_even, .orders-list .list_line_even, .product-reviews .list_line_even {
     background-color: #f0f0f0;
 }
 
-.user-listings .list_line_odd, .product_list .list_line_odd, .orders-list .list_line_odd {
+.user-listings .list_line_odd, .product_list .list_line_odd, .orders-list .list_line_odd, .product-reviews .list_line_odd {
     background-color: #fff;
 }
 
@@ -548,4 +548,42 @@ body {
 }
 .wishlist-actions {
     padding: 10px 0 0 0;
+}
+/*============Single Product Page==============*/
+.single-product-wrap {
+    overflow: auto;
+    padding: 10px;
+}
+.single-product-img {
+    float: left;
+    width: 380px;
+}
+.single-product-title {
+    padding: 40px 0 20px 20px;
+    float: right;
+    width: 395px;
+}
+.single-product-price {
+    float: right;
+    width: 395px;
+    padding: 20px 0 20px 20px;
+
+}
+.single-product-description {
+    float: right;
+    width: 395px;
+    padding: 20px 0 20px 20px;
+}
+.add-btn {
+     float: right;
+    width: 395px;
+    padding: 20px 0 20px 20px;
+}
+.product-reviews {
+    clear: both;
+
+}
+.review-wrap {
+    margin: 10px 0;
+    padding: 20px;
 }

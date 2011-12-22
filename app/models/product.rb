@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  has_many :reviews
   attr_accessible :productimage
   mount_uploader :productimage, ProductImageUploader
 	belongs_to :user
@@ -6,10 +7,9 @@ class Product < ActiveRecord::Base
   default_scope :order => 'title'
   has_many :line_items
   has_many :orders, :through => :line_items
-
   has_many :wishlist_items
-  before_destroy :ensure_not_referenced_by_any_wishlist_item
 
+  before_destroy :ensure_not_referenced_by_any_wishlist_item
   before_destroy :ensure_not_referenced_by_any_line_item
 
   #validation...
