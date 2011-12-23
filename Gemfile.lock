@@ -80,6 +80,6 @@ PLATFORMS
 DEPENDENCIES
   carrierwave
   rails (= 3.0.10)
-  rmagick
+  rmagick (= 2.13.1)
   sqlite3
-  will_paginate (>= 3.0.pre)
+  will_paginate
