@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
-  has_many :reviews
-  attr_accessible :productimage
+  belongs_to :category
+  has_many :reviews, :dependent => :destroy
+  attr_accessible :productimage, :title, :description, :uni
   mount_uploader :productimage, ProductImageUploader
 	belongs_to :user
 
@@ -13,14 +14,9 @@ class Product < ActiveRecord::Base
   before_destroy :ensure_not_referenced_by_any_line_item
 
   #validation...
-  validates :title, :description, :image_url, :presence => true
+  validates :title, :description, :presence => true
   validates :unit_price, :numericality => {:greater_than_or_equal_to => 0.01}
   validates :title, :uniqueness => true
-  validates :image_url, :format => {
-      :with => %r{\.(gif|jpg|png)$}i,
-      :message => 'must be a URL for GIF, JPG or PNG image.'
-
-  }
 
   def self.search(search_query)
     if search_query

@@ -36,6 +36,12 @@
       <%= f.hidden_field :productimage_cache %> <br/>
       <p>Remove product image <%= f.check_box :remove_productimage %></p>
     </div>
+
+    <div class="field">
+      <%= f.label :category_id %>
+      <%= f.collection_select :category_id, Category.find(:all), :id, :title %>
+      <br />
+    </div>
     <div class="actions">
       <%= f.submit %>
     </div>

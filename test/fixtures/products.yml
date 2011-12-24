@@ -3,18 +3,15 @@
 one:
    title: MyString
   description: MyText
-  image_url: MyString
   unit_price: 15.50
 
 two:
    title: MyString
   description: MyText
-  image_url: MyString
   unit_price: 15.50
 
 Street_Heart:
   title:  Big Fish Little Fish
   description: Cotton Tee
   price: 15.40
-  image_url: /images/tShirtI.jpg
 

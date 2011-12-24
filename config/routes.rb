@@ -1,5 +1,11 @@
 StreetHeartProject::Application.routes.draw do
 
+  resources :categories do
+    get 'category' => 'category#index'
+    get 'category' => 'category#show'
+    post 'category' => 'category#create'
+  end
+
   get 'carts' => 'carts#your_cart'
 
   get 'wishlist' => 'wishlists#your_wishlist'

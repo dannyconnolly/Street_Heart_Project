@@ -11,42 +11,32 @@
 
 Product.delete_all
 Product.create(:title => 'Urban Warfare',
-  :description =>
-    %{<p>
-        <em>Urban Warfare</em> 100% Organic cotton T-Shirt designed by Will StLeger
-      </p>},
-  :image_url =>   '/images/tShirtA.jpg ',
-  :unit_price => 15.00)
+               :description =>
+                   %{100% Organic cotton T-Shirt designed by Will StLeger
+      },
+               :unit_price => 15.00)
 # . . .
 Product.create(:title => 'Greed is the Knife',
-  :description =>
-    %{<p>
-        <em>Greed is the Knife</em>100% Organic cotton T-Shirt designed by Maser
-      </p>},
-  :image_url => '/images/tShirtB.jpg',
-  :unit_price => 15.00)
+               :description =>
+                   %{100% Organic cotton T-Shirt designed by Maser
+      },
+               :unit_price => 15.00)
 # . . .
 Product.create(:title => 'Pricks and Mortar',
-  :description =>
-    %{<p>
-        <em>Pricks and Mortar</em> 100% Organic cotton T-Shirt designed by ADW
-      </p>},
-  :image_url => '/images/tShirtC.jpg ',
-  :unit_price => 15.00)
+               :description =>
+                   %{100% Organic cotton T-Shirt designed by ADW
+      },
+               :unit_price => 15.00)
 # . . .
 Product.create(:title => 'ApexTwin',
-  :description =>
-    %{<p>
-        <em>ApexTwin</em>100% Organic cotton T-Shirt designed by Loki
-      </p>},
-  :image_url => '/images/tShirtD.jpg',
-  :unit_price => 15.00)
+               :description =>
+                   %{100% Organic cotton T-Shirt designed by Loki
+      },
+               :unit_price => 15.00)
 # . . .
 
 Product.create(:title => 'I love Lamp',
-  :description =>
-    %{<p>
-        <em>I love Lamp</em>100% Organic cotton T-Shirt designed by I Love Lamp
-      </p>},
-  :image_url => '/images/tShirtE.jpg',
-  :unit_price => 15.00)
+               :description =>
+                   %{100% Organic cotton T-Shirt designed by I Love Lamp
+      },
+               :unit_price => 15.00)

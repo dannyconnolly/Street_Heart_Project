@@ -1,6 +1,7 @@
 <% if notice %>
     <p class="notice"><%= notice %></p>
 <% end %>
+
 <div class="single-product-wrap">
 
   <div class="single-product-img">
@@ -23,6 +24,7 @@
   <div class="single-product-description">
     <p><%= @product.description %></p>
   </div>
+
   <!--End single page description-->
   <div class="add-btn">
     <%= button_to 'Add to cart' %>

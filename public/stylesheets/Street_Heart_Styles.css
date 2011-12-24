@@ -39,6 +39,12 @@ body {
     font-size: 12px;
     overflow: auto;
 }
+.footer {
+    clear: both;
+    height: 200px;
+    margin: 20px 0 0 0;
+    background-color: #000000;
+}
 
 .site-login {
     width: 480px;

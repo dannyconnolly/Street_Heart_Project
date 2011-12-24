@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
     @products = Product.search(params[:search_query])
 
     respond_to do |format|
-      format.html {redirect_to @products}
+      format.html   # index.html.erb
       format.xml { render :xml => @products }
     end
   end
@@ -44,7 +44,7 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.xml
   def create
-    @product = current_user.products.new
+    @product = current_user.products.new(params[:product])
 
     respond_to do |format|
       if @product.save

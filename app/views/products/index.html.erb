@@ -7,6 +7,7 @@
       <th>Image</th>
       <th>Title</th>
       <th>Description</th>
+      <th>Category</th>
       <th>Unit price</th>
       <th>Actions</th>
     </tr>
@@ -24,6 +25,7 @@
                                :length => 80) %></dd>
             </dl>
           </td>
+          <td><%= product.category_id %></td>
           <td><%= product.unit_price %></td>
           <% if admin? %>
               <td class="list_actions">
