@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
   belongs_to :category
   has_many :reviews, :dependent => :destroy
-  attr_accessible :productimage, :title, :description, :uni
+  attr_accessible :productimage, :title, :description, :unit_price, :category_id
   mount_uploader :productimage, ProductImageUploader
 	belongs_to :user
 

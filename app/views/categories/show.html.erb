@@ -1,6 +1,25 @@
 <h1 class="page-titles"><%= @category.title %></h1>
+   <div class="store">
+<% @category.products.each do |cat_product| %>
 
+    <div class="entry">
+      <%= image_tag (cat_product.productimage_url(:store_img).to_s) %>
+      <h3><%= cat_product.title %></h3>
 
+      <div class="price_line">
+        <span class="unit_price"><%= number_to_currency(cat_product.unit_price) %></span>
+      </div><!--End price line-->
+
+      <p><%= sanitize(cat_product.description) %></p>
+
+      <div class="product-view-actions">
+        <%= button_to 'Add to cart', line_items_path(:product_id => @product) %>
+        <%= button_to 'Add to Wishlist', wishlist_items_path(:product_id => @product) %>
+      </div><!--End product-view-actions-->
+
+    </div><!--End entry-->
+<% end %>
+</div><!--end store-->
 <% if admin? %>
     <%= link_to 'Edit', edit_category_path(@category) %> |
     <%= link_to 'Back', categories_path %>

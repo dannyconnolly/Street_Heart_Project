@@ -13,6 +13,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1
   # GET /categories/1.xml
+  # @return [Object]
   def show
     @category = Category.find(params[:id])
 

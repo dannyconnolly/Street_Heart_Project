@@ -4,26 +4,23 @@
   </div>
   <!--End wishlist-image-->
 
-  <div class="wishlist-title">
-    <h3><%= wishlist_item.product.title %> </h3>
-  </div>
-  <!--End wishlist-title-->
+  <div class="wishlist-info-wrap">
+    <div class="wishlist-title">
+      <h3><%= wishlist_item.product.title %> </h3>
+    </div>
+    <!--End wishlist-title-->
 
-  <div class="wishlist-description">
-    <p><%= wishlist_item.product.description %> </p>
-  </div>
-  <!--End wishlist-description-->
+    <div class="wishlist-price">
+      <p><%= number_to_currency(wishlist_item.product.unit_price) %></p>
+    </div>
+    <!--End wishlist-price-->
 
-  <div class="wishlist-price">
-    <p><%= wishlist_item.product.unit_price %> </p>
-    <p> <%= link_to 'View Product' %></p>
-  </div>
-  <!--End wishlist-price-->
-
-  <div class="wishlist-actions">
-    <%= button_to 'Remove from wishlist', wishlist_item, :method => :delete, :confirm => 'Are you sure?' %>
+    <div class="wishlist-actions">
+      <%= button_to 'Remove from wishlist', wishlist_item, :method => :delete, :confirm => 'Are you sure?' %>
+    </div>
+    <!--End wishlist-actions-->
 
   </div>
-  <!--End wishlist-actions-->
+  <!--end wishlist info wrap-->
 
 </div><!--end wishlist item wrap-->

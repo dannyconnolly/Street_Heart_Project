@@ -17,7 +17,7 @@
   <div class="single-product-price">
     <p>
 
-    <h2><%= @product.unit_price %></h2></p>
+    <h2><%= number_to_currency(@product.unit_price) %></h2></p>
   </div>
   <!--End single page price-->
 

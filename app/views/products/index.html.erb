@@ -1,7 +1,9 @@
 <h2 class="page-titles">Products</h2>
 
 <div class="product_list">
-
+  <% if admin? %>
+      <%= link_to 'New Product', new_product_path %>
+  <% end %>
   <table>
     <tr>
       <th>Image</th>
@@ -42,8 +44,4 @@
 
     <% end %>
   </table>
-
-  <% if admin? %>
-      <%= link_to 'New Product', new_product_path %>
-  <% end %>
 </div> <!--End products_list-->

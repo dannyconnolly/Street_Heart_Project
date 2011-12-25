@@ -3,6 +3,15 @@ html, body, div, h1, h2, h3, h4, h5, h6, a, p, ul, li, form, input, text-area {
     padding: 0;
 }
 
+#notice {
+    color: #000;
+    border: 2px solid red;
+    padding: 1em;
+    margin-bottom: 2em;
+    background-color: #cccccc;
+    font: bold smaller sans-serif;
+}
+
 a, a:visited {
     color: #c84e9d;
     text-decoration: underline;
@@ -39,10 +48,10 @@ body {
     font-size: 12px;
     overflow: auto;
 }
+
 .footer {
     clear: both;
     height: 200px;
-    margin: 20px 0 0 0;
     background-color: #000000;
 }
 
@@ -314,7 +323,6 @@ body {
     margin: 0;
     border-top: solid 1px #cccccc;
     padding: 20px 0 0 0;
-
 }
 
 .user-wishlist-partial h2 {
@@ -322,8 +330,8 @@ body {
 }
 
 .user-wishlist-partial .wishlist-item-wrap {
-    width: 180px;
-    padding: 0 10px 10px 10px;
+    width: 185px;
+    padding: 0 0 10px 5px;
     margin: 0 auto 5px auto;
     border-top: none;
     border-left: none;
@@ -337,13 +345,9 @@ body {
     float: left;
 }
 
-.user-wishlist-partial .wishlist-title {
+.user-wishlist-partial .wishlist-info-wrap {
     float: left;
     margin: 0;
-}
-
-.user-wishlist-partial .wishlist-price {
-    float: left;
 }
 
 .user-wishlist-partial .wishlist-description {
@@ -353,7 +357,6 @@ body {
 .user-wishlist-partial .wishlist-actions {
     clear: both;
     padding: 5px 0;
-
 }
 
 /*============Admin Nav==============*/
@@ -366,29 +369,6 @@ body {
 }
 
 /*============Store Page==============*/
-.entry {
-    width: 240px;
-    float: left;
-    border: solid 1px #f0f0f0;
-    padding: 5px;
-}
-
-#notice {
-    color: #000;
-    border: 2px solid red;
-    padding: 1em;
-    margin-bottom: 2em;
-    background-color: #cccccc;
-    font: bold smaller sans-serif;
-}
-
-.store h1 {
-    font: 150% sans-serif;
-    color: #226;
-    border-bottom: 3px dotted #77d;
-    margin: 0 0 10px 0;
-}
-
 .store .entry {
     overflow: auto;
     width: 240px;
@@ -398,45 +378,38 @@ body {
     margin: 5px;
 }
 
-.store .title {
-    font-size: 120%;
-    font-family: sans-serif;
-}
-
 .store .entry img {
     width: 240px;
     margin: 0 auto 5px auto;
     float: left;
 }
 
-.store .entry h3 {
-    margin-top: 0;
-    margin-bottom: 2px;
-    color: #227;
+.store .entry h3 a {
+    color: #222277;
+    margin: 0 0 10px 0;
+    text-decoration: none;
 }
 
-.store .entry p {
-    margin-top: 0.5em;
-    margin-bottom: 0.8em;
+.store .entry h3 a:hover {
+    text-decoration: underline;
 }
 
 .store .entry .price_line {
-    clear: both;
-    margin-bottom: 0.5em;
+    padding: 5px 0;
 }
 
-.store .entry .add_to_cart {
-    position: relative;
+.store .entry p {
+    font-size: 12px;
 }
 
-.store .entry .price {
-    color: #44a;
-    font-weight: bold;
-    margin-right: 2em;
+.product-view-actions {
+    overflow: auto;
 }
 
-.store .entry form, #store .entry form div {
-    display: inline;
+.product-view-actions form {
+    width: 120px;
+    margin: 10px 0;
+    float: left;
 }
 
 /*============Products Page==============*/
@@ -558,8 +531,12 @@ body {
     margin: 0 10px 0 0;
 }
 
-.wishlist-image, .wishlist-title {
+.wishlist-image, .wishlist-info-wrap {
     float: left;
+}
+
+.wishlist-price {
+    margin: 5px 0;
 }
 
 .wishlist-clear {
