@@ -1,5 +1,5 @@
 class Notifier < ActionMailer::Base
-  default :from => "dave@example.com"
+  default :from => "info@streetheart.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
