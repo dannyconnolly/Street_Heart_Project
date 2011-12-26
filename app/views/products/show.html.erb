@@ -2,27 +2,53 @@
     <p class="notice"><%= notice %></p>
 <% end %>
 
-<p>
-  <b> Title:</b><br />
-  <%= @product.title %>
-</p>
+<div class="single-product-wrap">
 
-<p>
-  <b>Description:</b><br />
-  <%= @product.description %>
-</p>
+  <div class="single-product-img">
+    <%= image_tag @product.productimage_url.to_s %>
+  </div>
+  <!--End single page img-->
 
-<p>
-  <b>Product Image</b><br />
-  <%= image_tag @product.productimage_url(:thumb).to_s %>
-</p>
+  <div class="single-product-title">
+    <h1><%= @product.title %></h1>
+  </div>
+  <!--End single page title-->
 
+  <div class="single-product-price">
+    <p>
 
-<p>
-  <b>Unit Price:</b><br />
-  <%= @product.unit_price %>
-</p>
+    <h2><%= number_to_currency(@product.unit_price) %></h2></p>
+  </div>
+  <!--End single page price-->
 
+  <div class="single-product-description">
+    <p><%= @product.description %></p>
+  </div>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+  <!--End single page description-->
+  <div class="add-btn">
+    <%= button_to 'Add to cart' %>
+    <%= button_to 'Add to Wishlist', wishlist_items_path(:product_id => @product) %>
+  </div>
+  <!--End add-btn-->
+
+  <% if admin? %>
+      <%= link_to 'Edit', edit_product_path(@product) %> |
+      <%= link_to 'Back', products_path %>
+  <% end %>
+</div><!--End single page wrap-->
+
+<div class="reviews">
+  <div class="product-reviews">
+    <h3 class="page-titles">Read Customer Reviews for this product</h3>
+    <%= render @product.reviews %>
+
+  </div>
+  <!--End single-review-wrap-->
+
+  <div class="product-reviews-form">
+    <h3 class="page-titles">Add a review for this product</h3>
+    <p>If you have already purchased this item and would like to leave your review, then please fill out the form below.</p>
+    <%= render 'reviews/form' %>
+  </div><!--End product-reviews-form-->
+ </div><!-- end reviews-->

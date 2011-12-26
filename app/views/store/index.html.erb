@@ -2,21 +2,27 @@
     <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1 class="page-titles">Street Heart Clothing</h1>
-
 <div class="store">
   <% @products.each do |product| %>
       <div class="entry">
 
         <%= image_tag (product.productimage_url(:store_img).to_s) %>
-        <h3><%= product.title %></h3>
-        <%= sanitize(product.description) %>
+        <h3><%= link_to product.title, product %></h3>
 
         <div class="price_line">
           <span class="unit_price"><%= number_to_currency(product.unit_price) %></span>
-          <%= button_to 'Add to cart', line_items_path(:product_id => product) %>
         </div>
+        <!--End price line-->
+        <p><%= sanitize(product.description) %></p>
+
+        <div class="product-view-actions">
+
+          <%= button_to 'Add to cart', line_items_path(:product_id => product) %>
+          <%= button_to 'Add to Wishlist', wishlist_items_path(:product_id => product) %>
+        </div>
+        <!--End product-view-actions-->
 
       </div>
+      <!--End entry-->
   <% end %>
-</div>
+</div><!--End store-->

@@ -1,16 +1,15 @@
-<% if notice %>
-    <p id="notice"><%= notice %></p>
-<% end %>
+<h2 class="page-titles">Products</h2>
 
-<h1 class="page-titles">Products</h1>
-
-<div id="product_list">
-
+<div class="product_list">
+  <% if admin? %>
+      <%= link_to 'New Product', new_product_path %>
+  <% end %>
   <table>
     <tr>
       <th>Image</th>
       <th>Title</th>
       <th>Description</th>
+      <th>Category</th>
       <th>Unit price</th>
       <th>Actions</th>
     </tr>
@@ -28,6 +27,7 @@
                                :length => 80) %></dd>
             </dl>
           </td>
+          <td><%= product.category_id %></td>
           <td><%= product.unit_price %></td>
           <% if admin? %>
               <td class="list_actions">
@@ -44,8 +44,4 @@
 
     <% end %>
   </table>
-
-  <% if admin? %>
-      <%= link_to 'New Product', new_product_path %>
-  <% end %>
-</div>
+</div> <!--End products_list-->

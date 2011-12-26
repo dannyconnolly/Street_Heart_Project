@@ -1,13 +1,25 @@
- StreetHeartProject::Application.routes.draw do
+StreetHeartProject::Application.routes.draw do
 
+  resources :categories do
+    get 'category' => 'category#index'
+    get 'category' => 'category#show'
+    post 'category' => 'category#create'
+  end
+
+  get 'carts' => 'carts#your_cart'
+
+  get 'wishlist' => 'wishlists#your_wishlist'
+
+  resources :wishlist_items
+  resources :wishlists
   resources :orders
 
   get 'admin' => 'admin#index'
   get 'welcome' => 'welcome#home'
+  get 'welcome' => 'welcome#about'
   get 'store' => 'store#index'
   get 'users' => 'users#index'
   get 'users' => 'users#new'
-
 
   controller :sessions do
     get 'login' => :new
@@ -23,6 +35,7 @@
   get "store/index"
   resources :products do
     get :who_bought, :on => :member
+    resources :reviews
   end
 
   resources :sessions, :only => [:new, :create, :destroy]
@@ -30,10 +43,9 @@
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
   match '/register' => "users#new", :as => "register"
-  match '/home'     => "welcome#home", :as => "home"
+  match '/home' => "welcome#home", :as => "home"
+  match '/about' => "welcome#about", :as => "about"
   match '/your_profile' => "users#your_profile", :as => "your_profile"
-
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

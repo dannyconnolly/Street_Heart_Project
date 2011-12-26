@@ -1,0 +1,26 @@
+<div class="wishlist-item-wrap">
+  <div class="wishlist-image">
+    <%= image_tag wishlist_item.product.productimage_url(:thumb).to_s %>
+  </div>
+  <!--End wishlist-image-->
+
+  <div class="wishlist-info-wrap">
+    <div class="wishlist-title">
+      <h3><%= wishlist_item.product.title %> </h3>
+    </div>
+    <!--End wishlist-title-->
+
+    <div class="wishlist-price">
+      <p><%= number_to_currency(wishlist_item.product.unit_price) %></p>
+    </div>
+    <!--End wishlist-price-->
+
+    <div class="wishlist-actions">
+      <%= button_to 'Remove from wishlist', wishlist_item, :method => :delete, :confirm => 'Are you sure?' %>
+    </div>
+    <!--End wishlist-actions-->
+
+  </div>
+  <!--end wishlist info wrap-->
+
+</div><!--end wishlist item wrap-->

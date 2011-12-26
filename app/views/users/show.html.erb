@@ -1,19 +1,49 @@
 <% if notice %>
     <p class="notice"><%= notice %></p>
 <% end %>
+<div class="user-middle-wrap">
 
-<div class="user-profile">
-  <div class="user-avatar">
-    <!-- photo here -->
-  </div> <!--End user-avatar-->
+  <div class="user-profile">
+    <div class="user-avatar">
+      <%= image_tag (@user.avatar_url(:thumb).to_s) %>
+    </div>
+    <!--End user-avatar-->
 
-  <div class="user-details">
-    <h2><%= @user.name %></h2>
-    <p><%= @user.email %></p>
-  </div><!--End user-details-->
+    <div class="user-details">
+      <h1><%= @user.name %></h1>
 
-  <div class="user-edit">
-    <%= link_to 'Edit', edit_user_path(@user) %>
-  </div><!--End user-edit-->
+      <p><%= @user.email %></p>
+    </div>
+    <!--End user-details-->
 
-</div><!--End user-profile-->
+    <div class="user-edit">
+      <%= link_to 'Edit', edit_user_path(@user) %>
+    </div>
+    <!--End user-edit-->
+  </div>
+  <!--End user-profile-->
+
+  <div class="user-recommendations">
+    <h2>Your Recommendations</h2>
+  </div><!--End user recommendations-->
+
+  <div class="user-reviews-partial">
+    <h2>Your Reviews</h2>
+  </div><!--End user reviews partial-->
+
+</div><!--End user-middle-wrap-->
+
+<div class="user-right-side">
+  <div class="user-cart-partial">
+    <%= render @cart %>
+  </div>
+  <!--End user cart partial-->
+
+  <div class="user-wishlist-partial">
+    <%= render @wishlist %>
+  </div>
+  <!--end user wishlist partial-->
+
+
+
+</div> <!--End user-right-side-->

@@ -1,0 +1,14 @@
+<%= form_for ([@product, @product.reviews.build]) do |f| %>
+
+  <div class="field">
+   <p><%= f.label :name, 'Name' %></p>
+    <p><%= f.text_field :name %></p>
+  </div>
+  <div class="field">
+   <p><%= f.label :body, 'Add a review' %></p>
+    <p><%= f.text_area :body %></p>
+  </div>
+  <div class="actions">
+    <p><%= f.submit %>    </p>
+  </div>
+<% end %>

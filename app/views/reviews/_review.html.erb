@@ -1,0 +1,9 @@
+<div class="review-wrap  <%= cycle('list_line_odd', 'list_line_even') %>">
+
+  <% @product.reviews.each do |review| %>
+  <h4><%= review.name %>, says</h4>
+  <p><em>Posted <%= time_ago_in_words(review.created_at) %> ago.</em></p>
+  <p><%= review.body %></p>
+  <% end %>
+
+</div>  <!--End review-wrap-->
