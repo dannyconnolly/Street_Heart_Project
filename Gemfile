@@ -7,13 +7,13 @@ gem 'rails', '3.0.10'
 
 gem 'sqlite3'
 gem 'carrierwave'
-<<<<<<< HEAD
+
 gem 'rmagick', '2.13.1'
 
 
-=======
+
 gem 'rmagick', '2.13.1', :require => 'RMagick'
->>>>>>> 7f0e35724881238b3598cb941cc39cd903ccfe25
+
 
 
 # Use unicorn as the web server
