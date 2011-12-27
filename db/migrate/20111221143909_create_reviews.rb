@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration
       t.integer :user_id
       t.integer :product_id
       t.text :body
-      drop_table :list_items
+
 
       t.timestamps
     end
