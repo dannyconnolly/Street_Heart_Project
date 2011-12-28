@@ -7,7 +7,13 @@ gem 'rails', '3.0.10'
 
 gem 'sqlite3'
 gem 'carrierwave'
+
+gem 'rmagick', '2.13.1'
+
+
+
 gem 'rmagick', '2.13.1', :require => 'RMagick'
+
 
 
 # Use unicorn as the web server
@@ -26,7 +32,7 @@ gem 'rmagick', '2.13.1', :require => 'RMagick'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
-gem 'will_paginate'
+gem 'will_paginate', '>= 3.0.pre'
 
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators

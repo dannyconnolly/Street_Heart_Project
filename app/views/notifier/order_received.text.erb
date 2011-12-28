@@ -1,0 +1,12 @@
+Notifier#order_received
+
+Dear <%= order.name %>
+
+Thanks you for your recent purchase from Street Heart.
+
+
+You ordered the following items
+
+<%= render order.line_items %>
+
+We'll send you a seperate e-mail when your order ships.

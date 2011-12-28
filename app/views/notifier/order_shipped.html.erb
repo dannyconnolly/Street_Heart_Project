@@ -1,0 +1,12 @@
+<h1> Your Street Heart Order Shipped</h1>
+
+<p>This email is just to let you know we dispatched your recent order:</p>
+
+<table>
+  <tr>
+    <th colspan="2">Qty</th>
+    <th>Description</th>
+  </tr>
+  <%= render @order.line_items %>
+
+</table>
