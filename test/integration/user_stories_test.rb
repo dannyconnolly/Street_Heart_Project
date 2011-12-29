@@ -10,7 +10,7 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
   test "Buying a Product" do
     LineItem.delete_all
     Order.delete_all
-    streetheart_tee = products(:products)
+    streetheart_tee = products(:ruby)
 
     get "/store"
     assert_response :success
