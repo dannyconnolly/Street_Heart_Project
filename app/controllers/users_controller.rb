@@ -53,7 +53,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to(store_path,
+        format.html { redirect_to(login_url,
                                   :notice => "User #{@user.name} was successfully created") }
         format.xml { render :xml => @user,
                             :status => :created, :location => @user }
