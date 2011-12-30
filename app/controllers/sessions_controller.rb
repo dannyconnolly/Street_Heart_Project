@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       if current_user.admin?
         redirect_to admin_url, :notice => "You have logged in successfully"
       else
-        redirect_to store_url, :notice => "You have logged in successfully"
+        redirect_to :controller => "users", :action => "your_profile", :notice => "You have logged in successfully"
       end
     else
       redirect_to login_url, :alert => "Invalid email/password combination"
