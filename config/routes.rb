@@ -1,5 +1,7 @@
 StreetHeartProject::Application.routes.draw do
 
+  resources :galleries
+
   resources :categories do
     get 'category' => 'category#index'
     get 'category' => 'category#show'

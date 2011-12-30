@@ -658,4 +658,13 @@ body {
     background-color: #c84e9d;
 
 }
-
+/*============Galleries==============*/
+ .image-wrap {
+     width: 150px;
+     padding: 5px;
+     float: left;
+     margin: 5px;
+ }
+.image-wrap .photo-wrap {
+    height: 120px;
+}

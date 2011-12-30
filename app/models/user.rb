@@ -2,6 +2,7 @@ require 'digest/sha2'
 class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
+  has_many :galleries
 
 	has_many :products
   has_one :wishlist
