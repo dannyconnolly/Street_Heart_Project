@@ -9,6 +9,8 @@ class Product < ActiveRecord::Base
   has_many :line_items
   has_many :orders, :through => :line_items
   has_many :wishlist_items
+  has_many :tags, :dependent => :destroy
+
 
   before_destroy :ensure_not_referenced_by_any_wishlist_item
   before_destroy :ensure_not_referenced_by_any_line_item

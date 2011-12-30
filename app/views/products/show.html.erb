@@ -52,3 +52,21 @@
     <%= render 'reviews/form' %>
   </div><!--End product-reviews-form-->
  </div><!-- end reviews-->
+
+
+
+<div class="product_list">
+  <h2 class="page-titles">Recommended Products</h2>
+  <div class="recommendations">
+
+    <% #draw recommendations for this product
+       @products.each do |product| %>
+        <div class="recommended_product <%= cycle('list_line_odd', 'list_line_even') %>">
+          <%= image_tag (product.productimage_url(:thumb).to_s), :class => 'list_image' %><br />
+          <span><%= product.title %></span><br />
+          <span><%= product.unit_price %></span>
+         </div>
+
+    <% end %>
+  </div>
+</div> <!--End products_list-->

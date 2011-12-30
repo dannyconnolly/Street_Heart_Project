@@ -1,5 +1,7 @@
 StreetHeartProject::Application.routes.draw do
 
+  resources :tags
+
   resources :categories do
     get 'category' => 'category#index'
     get 'category' => 'category#show'
@@ -46,6 +48,8 @@ StreetHeartProject::Application.routes.draw do
   match '/home' => "welcome#home", :as => "home"
   match '/about' => "welcome#about", :as => "about"
   match '/your_profile' => "users#your_profile", :as => "your_profile"
+
+  match '/recommendations/:id' => 'products#show_recommendations'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

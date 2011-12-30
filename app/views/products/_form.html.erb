@@ -23,6 +23,19 @@
     </div>
 
     <div class="field">
+      <%= f.label :tags %>
+      <br/>
+      <%   #convert tags into csv for ease of use in gui
+        @csv = ''
+        @product.tags.each do |tag_item|
+            @csv += tag_item.name + ','
+        end
+        @csv = @csv.chomp(",")
+      %>
+      <%= text_area 'product', 'tags', :value=>@csv, :rows=>2  %>
+    </div>
+
+    <div class="field">
       <%= f.label :unit_price %>
       <br/>
       <%= f.text_field :unit_price %>

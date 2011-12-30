@@ -17,10 +17,34 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @wishlist = current_wishlist
+    #get recommendations for this product
+    @products = get_recommendations
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml { render :xml => @product }
+    end
+  end
+
+  def get_recommendations
+    #get the products that have the most common tags to the specified product id
+    @products = Product.find_by_sql("SELECT p.*, COUNT(t2.name) as rank FROM tags AS t
+INNER JOIN tags AS t2
+	ON t2.name = t.name
+INNER JOIN products AS p
+	ON p.id = t2.product_id
+WHERE t.product_id = " + params[:id] + " AND t2.product_id <> " + params[:id] + "
+ORDER BY rank desc LIMIT 4")
+  end
+  #GET /products/1
+  # GET /products/1.xml
+  def show_recommendations
+    #get recommendations for this product
+     @products = get_recommendations
+
+    respond_to do |format|
+      format.html  # index.html.erb
+      format.xml { render :xml => @products }
     end
   end
 
@@ -64,8 +88,22 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
+
+        # Find existing associated tags
+        @tags = Tag.find_all_by_product_id(params[:id])
+        # Delete existing associated tags
+        Tag.delete(@tags)
+        #Loop through CSV from form and create new tags
+        params[:product][:tags].to_s.split(",").each do |tag|
+              @t = Tag.new
+              @t.name=tag
+              @t.product_id=params[:id]
+              @t.save
+        end
+
         format.html { redirect_to(@product, :notice => 'Product was successfully updated.') }
         format.xml { head :ok }
+
       else
         format.html { render :action => "edit" }
         format.xml { render :xml => @product.errors, :status => :unprocessable_entity }
