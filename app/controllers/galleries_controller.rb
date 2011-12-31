@@ -1,14 +1,14 @@
 class GalleriesController < ApplicationController
   skip_before_filter :authorize
+  before_filter :authenticate, :only => :new
   # GET /galleries
   # GET /galleries.xml
   def index
-    @user =
-    @galleries = Gallery.all
+    @galleries = Gallery.paginate :page=>params[:page], :order=>'created_at desc', :per_page => 9
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @galleries }
+      format.xml { render :xml => @galleries }
     end
   end
 
@@ -19,7 +19,7 @@ class GalleriesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @gallery }
+      format.xml { render :xml => @gallery }
     end
   end
 
@@ -30,7 +30,7 @@ class GalleriesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @gallery }
+      format.xml { render :xml => @gallery }
     end
   end
 
@@ -46,11 +46,11 @@ class GalleriesController < ApplicationController
 
     respond_to do |format|
       if @gallery.save
-        format.html { redirect_to(@gallery, :notice => 'Gallery was successfully created.') }
-        format.xml  { render :xml => @gallery, :status => :created, :location => @gallery }
+        format.html { redirect_to(galleries_path, :notice => 'Photo was successfully uploaded.') }
+        format.xml { render :xml => @gallery, :status => :created, :location => @gallery }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @gallery.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @gallery.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -63,10 +63,10 @@ class GalleriesController < ApplicationController
     respond_to do |format|
       if @gallery.update_attributes(params[:gallery])
         format.html { redirect_to(@gallery, :notice => 'Gallery was successfully updated.') }
-        format.xml  { head :ok }
+        format.xml { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @gallery.errors, :status => :unprocessable_entity }
+        format.xml { render :xml => @gallery.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -79,7 +79,7 @@ class GalleriesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(galleries_url) }
-      format.xml  { head :ok }
+      format.xml { head :ok }
     end
   end
 end

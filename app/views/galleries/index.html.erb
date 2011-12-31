@@ -1,26 +1,48 @@
-<h1 class="page-titles">Customer Gallery</h1>
-<p>Find inspiration from other users, or upload your photos of you and your friends in our T-shirts</p>
-<p><%= link_to 'Add your own photo', new_gallery_path %></p>
+<div class="gallery-middle-wrap">
+  <h1 class="page-titles">Street Hearts Customer Gallery</h1>
 
-<% @galleries.each do |gallery| %>
-    <div class="image-wrap">
-      <div class="photo-wrap">
-        <%= image_tag gallery.image_url(:thumb).to_s %>
-      </div><!--end photo wrap-->
-      <p><em>Posted <%= time_ago_in_words(gallery.created_at) %> ago.</em></p>
+  <p>Find inspiration from other users, or just show off how cool you look in our gear!</p>
 
-      <p>Photo uploaded by <%= gallery.user_id %>.</p>
+  <div class="gallery-wrap">
 
-      <div class="actions">
-        <% if admin? %>
-            <%= link_to 'Show', gallery %>
-            <%= link_to 'Edit', edit_gallery_path(gallery) %>
-            <%= link_to 'Destroy', gallery, :confirm => 'Are you sure?', :method => :delete %>
-        <% end %>
-      </div>
-      <!-- end actions-->
-    </div> <!-- end image wrap-->
-<% end %>
+    <% @galleries.each do |gallery| %>
+        <div class="image-wrap">
+          <div class="photo-wrap">
+            <%= image_tag gallery.image_url(:thumb).to_s %>
+          </div>
+          <!--end photo wrap-->
+          <p>Added by <%= gallery.user.name %>.</p>
+
+          <p><em>Posted <%= time_ago_in_words(gallery.created_at) %> ago.</em></p>
+
+          <div class="actions">
+            <% if admin? %>
+                <%= link_to 'Show', gallery %>
+                <%= link_to 'Edit', edit_gallery_path(gallery) %>
+                <%= link_to 'Destroy', gallery, :confirm => 'Are you sure?', :method => :delete %>
+            <% end %>
+          </div>
+          <!-- end actions-->
+        </div>
+        <!-- end image wrap-->
+    <% end %>
+    <div class="page-numbers">
+      <p><%= will_paginate @galleries %></p>
+    </div>
+    <!--end page numbers-->
+
+  </div>
+  <!--End gallery wrap-->
+
+</div><!--End gallery middle wrap-->
+
+<div class="gallery-right-side">
+  <h5>Want To upload your photo?</h5>
+
+  <p>Upload photos of you and your friends in our T-shirts.</p>
+
+  <p><%= link_to 'Add your own photo', new_gallery_path %></p>
+</div><!--End Gallery right side-->
 
 
 

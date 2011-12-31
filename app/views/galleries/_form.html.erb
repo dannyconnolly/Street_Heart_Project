@@ -17,10 +17,8 @@
     <div class="field">
       <%= f.label :image %>
       <br/>
-      <%= image_tag @gallery.image_url(:thumb).to_s if @gallery.image? %>  <br/>
       <%= f.file_field :image %>  <br/>
       <%= f.hidden_field :image_cache %> <br/>
-      <p>Remove product image <%= f.check_box :remove_image %></p>
     </div>
     <div class="actions">
       <%= f.submit %>
