@@ -1,14 +1,23 @@
-<%= form_for ([@product, @product.reviews.build]) do |f| %>
+<h3 class="page-titles">Add a review for this product</h3>
+<% if logged_in? %>
+    <p>If you have already purchased this item and would like to leave your review, then please fill out the form
+      below.</p>
+    <%= form_for ([@product, @product.reviews.build]) do |f| %>
 
-  <div class="field">
-   <p><%= f.label :name, 'Name' %></p>
-    <p><%= f.text_field :name %></p>
-  </div>
-  <div class="field">
-   <p><%= f.label :body, 'Add a review' %></p>
-    <p><%= f.text_area :body %></p>
-  </div>
-  <div class="actions">
-    <p><%= f.submit %>    </p>
-  </div>
+        <div class="field">
+          <%= f.hidden_field :user_id, :value => current_user.id %>
+        </div>
+        <div class="field">
+          <p><%= f.label :body, 'Add a review' %></p>
+
+          <p><%= f.text_area :body %></p>
+        </div>
+        <div class="actions">
+          <p><%= f.submit %></p>
+    <% end %>
+
+    </div>
+
+<% else %>
+    <p>Please <%= link_to "login", login_path %> to add a review</p>
 <% end %>

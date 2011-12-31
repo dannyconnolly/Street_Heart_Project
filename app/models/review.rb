@@ -1,4 +1,5 @@
 class Review < ActiveRecord::Base
   belongs_to :product
-  validates_presence_of :name, :body
+  belongs_to :user
+  validates_presence_of :user_id, :body
 end
