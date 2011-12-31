@@ -1,0 +1,21 @@
+<h1>Listing order_confirmations</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @order_confirmations.each do |order_confirmation| %>
+  <tr>
+    <td><%= link_to 'Show', order_confirmation %></td>
+    <td><%= link_to 'Edit', edit_order_confirmation_path(order_confirmation) %></td>
+    <td><%= link_to 'Destroy', order_confirmation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Order confirmation', new_order_confirmation_path %>
