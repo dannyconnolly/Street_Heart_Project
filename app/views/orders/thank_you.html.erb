@@ -1,0 +1,6 @@
+<% if notice %>
+    <h1 class="notice"><%= notice %></h1>
+<% end %>
+
+<p><%= link_to "Logout", :controller => "sessions", :action => :destroy %> or</p>
+<p><%= link_to "Continue Shopping", store_path %>      </p>

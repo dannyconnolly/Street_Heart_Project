@@ -57,7 +57,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         Notifier.order_received(@order).deliver
-        format.html { redirect_to(store_url, :notice => 'Thank you for your order') }
+        format.html { redirect_to( thank_you_path, :notice => 'Thank you for your order') }
 
         format.xml  { render :xml => @order, :status => :created, :location => @order }
       else
@@ -67,9 +67,7 @@ class OrdersController < ApplicationController
     end
   end
 
-
-
-  # PUT /orders/1
+   # PUT /orders/1
   # PUT /orders/1.xml
   def update
     @order = Order.find(params[:id])
@@ -95,5 +93,9 @@ class OrdersController < ApplicationController
       format.html { redirect_to(orders_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def thank_you
+
   end
 end

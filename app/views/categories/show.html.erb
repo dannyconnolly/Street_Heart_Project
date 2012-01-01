@@ -13,8 +13,8 @@
       <p><%= sanitize(cat_product.description) %></p>
 
       <div class="product-view-actions">
-        <%= button_to 'Add to cart', line_items_path(:product_id => @product) %>
-        <%= button_to 'Add to Wishlist', wishlist_items_path(:product_id => @product) %>
+        <%= button_to 'Add to cart', line_items_path(:product_id => cat_product) %>
+        <%= button_to 'Add to Wishlist', wishlist_items_path(:product_id => cat_product) %>
       </div><!--End product-view-actions-->
 
     </div><!--End entry-->
