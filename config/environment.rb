@@ -2,6 +2,6 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
-StreetHeartProject::Application.initialize! z
+StreetHeartProject::Application.initialize!
 
 

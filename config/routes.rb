@@ -1,16 +1,7 @@
 StreetHeartProject::Application.routes.draw do
 
-<<<<<<< HEAD
-  get "contact/name:string"
-
-  get "contact/email:string"
-
-  get "contact/contact_number:integer"
-
-  get "contact/enquiry:text"
-=======
   resources :galleries
->>>>>>> 927381d48eebc3e8cda5e12620b723bdce4b1b0f
+
 
   resources :categories do
     get 'category' => 'category#index'
