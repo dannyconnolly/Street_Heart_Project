@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def show
     @cart = current_cart
     @wishlist = current_wishlist
-    @user = User.find(params[:id])
+    @user = current_user
 
     respond_to do |format|
       format.html # show.html.erb

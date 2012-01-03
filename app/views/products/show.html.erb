@@ -22,12 +22,12 @@
   <!--End single page price-->
 
   <div class="single-product-description">
-    <p><%= @product.description %></p>
+    <p><%= sanitize(@product.description) %></p>
   </div>
 
   <!--End single page description-->
   <div class="add-btn">
-    <%= button_to 'Add to cart' %>
+    <%= button_to 'Add to cart', line_items_path(:product_id => @product) %>
     <%= button_to 'Add to Wishlist', wishlist_items_path(:product_id => @product) %>
   </div>
   <!--End add-btn-->

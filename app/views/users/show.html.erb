@@ -36,12 +36,22 @@
 
   <div class="user-reviews-partial">
     <h2>Your Reviews</h2>
+   <% @user.reviews.each do |user_review| %>
+        <p><%= user_review.product.title %></p>
+        <p><%=image_tag (user_review.product.productimage_url(:thumb).to_s) %></p>
+        <p><%= user_review.body %></p>
 
+    <% end %>
   </div><!--End user reviews partial-->
 
 </div><!--End user-middle-wrap-->
 
 <div class="user-right-side">
+  <% if admin? %>
+      <div class="admin-right">
+
+      </div><!--End admin right-->
+    <% else %>
   <div class="user-cart-partial">
     <%= render @cart %>
   </div>
@@ -52,6 +62,6 @@
   </div>
   <!--end user wishlist partial-->
 
-
+    <% end %>
 
 </div> <!--End user-right-side-->
