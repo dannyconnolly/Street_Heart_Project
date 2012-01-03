@@ -659,3 +659,45 @@ body {
 
 }
 
+/*============Galleries==============*/
+.gallery-middle-wrap {
+    width: 600px;
+    float: left;
+}
+.gallery-wrap {
+    padding: 10px 0;
+    width: 595px;
+    margin: 0 auto;
+}
+
+.image-wrap {
+    width: 187px;
+    padding: 5px;
+    float: left;
+    border-right: solid 1px #f0f0f0;
+}
+
+.image-wrap .photo-wrap {
+    padding: 5px 0;
+}
+.image-wrap .photo-wrap img {
+    margin: 0 auto;
+    display: block;
+}
+
+.image-wrap p {
+    font-size: 11px;
+    padding: 0 5px;
+}
+
+.gallery-right-side {
+    float: right;
+    width: 200px;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    border: none;
+}
+.page-numbers {
+    clear: both;
+}

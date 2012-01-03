@@ -1,0 +1,26 @@
+<%= form_for @gallery, :html => {:multipart => true} do |f| %>
+    <% if @gallery.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
+
+          <ul>
+            <% @gallery.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+    </div>
+    <div class="field">
+      <%= f.label :image %>
+      <br/>
+      <%= f.file_field :image %>  <br/>
+      <%= f.hidden_field :image_cache %> <br/>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

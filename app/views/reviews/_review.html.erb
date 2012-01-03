@@ -1,9 +1,15 @@
-<div class="review-wrap  <%= cycle('list_line_odd', 'list_line_even') %>">
 
   <% @product.reviews.each do |review| %>
-  <h4><%= review.name %>, says</h4>
-  <p><em>Posted <%= time_ago_in_words(review.created_at) %> ago.</em></p>
-  <p><%= review.body %></p>
+      <div class="review-wrap  <%= cycle('list_line_odd', 'list_line_even') %>">
+      <h4><%= review.user.name %>, says</h4>
+
+      <p><em>Posted <%= time_ago_in_words(review.created_at) %> ago.</em></p>
+
+      <p><%= review.body %></p>
+       <% if admin? %>
+   <%= link_to 'Destroy', @review, :confirm => 'Are you sure?', :method => :delete %>
+            <% end %>
+      </div>  <!--End review-wrap-->
   <% end %>
 
-</div>  <!--End review-wrap-->
+

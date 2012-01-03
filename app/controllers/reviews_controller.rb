@@ -42,7 +42,7 @@ class ReviewsController < ApplicationController
   # POST /reviews.xml
   def create
     @product = Product.find(params[:product_id])
-    @review = @product.reviews.create(params[:review])
+    @review = @product.reviews.new(params[:review])
 
     respond_to do |format|
       if @review.save
@@ -75,7 +75,7 @@ class ReviewsController < ApplicationController
   # DELETE /reviews/1.xml
   def destroy
     @review = Review.find(params[:id])
-    @review.destroy
+    @product.destroy
 
     respond_to do |format|
       format.html { redirect_to(reviews_url) }
