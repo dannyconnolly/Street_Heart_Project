@@ -1,14 +1,15 @@
 class Product < ActiveRecord::Base
   belongs_to :category
   has_many :reviews, :dependent => :destroy
+  has_many :recommendations
+
   attr_accessible :productimage, :title, :description, :unit_price, :category_id
   mount_uploader :productimage, ProductImageUploader
 	belongs_to :user
 
   default_scope :order => 'title'
-  has_many :line_items
-  has_many :orders, :through => :line_items
   has_many :wishlist_items
+
 
   before_destroy :ensure_not_referenced_by_any_wishlist_item
   before_destroy :ensure_not_referenced_by_any_line_item

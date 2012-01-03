@@ -17,7 +17,11 @@
   <b>Pay type:</b>
   <%= @order.pay_type %>
 </p>
-
+<!-- render partial to show line items in order-->
+<p>
+  <b>Line items:</b>
+  <%= render @order.line_items %>
+</p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

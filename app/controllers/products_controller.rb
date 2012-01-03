@@ -24,6 +24,27 @@ class ProductsController < ApplicationController
     end
   end
 
+   def get_recommendations
+    #get the products that have the most common tags to the specified product id
+    @products = Product.find_by_sql("SELECT p.*, COUNT(t2.name) as rank FROM tags AS t
+INNER JOIN tags AS t2
+ON t2.name = t.name
+INNER JOIN products AS p
+ON p.id = t2.product_id
+WHERE t.product_id = " + params[:id] + " AND t2.product_id <> " + params[:id] + "
+ORDER BY rank desc LIMIT 4")
+  end
+  #GET /products/1
+  # GET /products/1.xml
+  def show_recommendations
+    #get recommendations for this product
+     @products = get_recommendations
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml { render :xml => @products }
+    end
+  end
 
   # GET /products/new
   # GET /products/new.xml
@@ -93,4 +114,6 @@ class ProductsController < ApplicationController
 
     end
   end
+
+
 end
