@@ -61,7 +61,10 @@
       <!--End admin right-->
   <% else %>
       <div class="user-cart-partial">
+        <h4 class="page-titles">Your Cart</h4>
+       <%= hidden_div_if(@cart.line_items.empty?, :id => 'cart') do %>
         <%= render @cart %>
+      <% end %>
       </div>
       <!--End user cart partial-->
 

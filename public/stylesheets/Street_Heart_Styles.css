@@ -338,10 +338,14 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .user-cart-partial .cart-wrap .cart-row-items {
     border-bottom: dotted 1px #ffffff;
+    padding: 0 0 3px 0;
+    margin: 0 0 3px 0;
     width: 195px;
 }
+
 .user-cart-partial .cart-wrap .cart-image {
     display: none;
     margin: 0;
@@ -357,17 +361,44 @@ body {
 .user-cart-partial .cart-wrap .cart-quantity, .user-cart-partial .cart-wrap .item_price {
     padding: 0 5px;
 }
+
 .user-cart-partial .cart-wrap .total_line .total-title, .user-cart-partial .cart-wrap .total_line .total-price {
     width: 50%;
 }
-.user-cart-partial .cart-wrap .cart-product-title h3 {
+
+.user-cart-partial .cart-wrap .cart-product-title h4 {
     font-size: 12px;
     margin: 0;
     padding: 0;
 }
- .user-cart-partial .cart-wrap .checkout-options ul li a {
-     clear: both;
- }
+
+.user-cart-partial .cart-wrap .checkout-options {
+    margin: 5px auto 0 auto;
+    width: 150px;
+}
+
+.user-cart-partial .cart-wrap .checkout-options ul li a {
+    clear: both;
+    display: block;
+    background-color: #f0f0f0;
+    color: #666666;
+    border-radius: 5px;
+    border: solid 1px #989898;
+    width: 130px;
+    padding: 5px;
+    margin: 5px auto;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 11px;
+}
+
+.user-cart-partial .cart-wrap .checkout-options ul li a:hover {
+    background-color: #666666;
+    color: #f0f0f0;
+    border: solid 1px #eeecec;
+    font-size: 11px;
+}
+
 /*============User Wishlist partial==============*/
 .user-wishlist-partial {
     margin: 0;
@@ -376,7 +407,7 @@ body {
 }
 
 .user-wishlist-partial h2 {
-     font-size: 15px;
+    font-size: 15px;
     margin: 0;
     padding: 0;
 }
@@ -437,17 +468,20 @@ body {
 }
 
 .store .entry h3 a {
-    color: #222277;
-    margin: 0 0 10px 0;
+    display: block;
+    padding: 10px 0 0 0;
+    color: #c84e9d;
+    margin: 0 0 5px 0;
     text-decoration: none;
 }
 
 .store .entry h3 a:hover {
     text-decoration: underline;
+    background-color: #fff;
 }
 
 .store .entry .price_line {
-    padding: 5px 0;
+    padding: 0 0 5px 0;
 }
 
 .store .entry p {
@@ -590,11 +624,22 @@ body {
 
 .checkout-options ul li a {
     display: block;
+    background-color: #f0f0f0;
+    color: #666666;
+    border-radius: 5px;
+    border: solid 1px #989898;
     float: left;
     width: 130px;
     padding: 10px;
     margin: 10px;
     text-align: center;
+    text-decoration: underline;
+}
+
+.checkout-options ul li a:hover {
+    background-color: #666666;
+    color: #f0f0f0;
+    border: solid 1px #eeecec;
 }
 
 /* Styles for Order Form*/

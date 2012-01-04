@@ -15,6 +15,10 @@ class Cart < ActiveRecord::Base
     line_items.to_a.sum { |item| item.total_price }
   end
 
+  def total_items
+    line_items.sum(:quantity)
+  end
+
   #  @reference http://railscasts.com/episodes/141-paypal-basics
   def paypal_url(return_url, notify_url)
     values = {
@@ -23,7 +27,7 @@ class Cart < ActiveRecord::Base
         :upload => 1,
         :return => return_url,
         :invoice => id,
-        :notify_url =>  notify_url
+        :notify_url => notify_url
     }
     line_items.each_with_index do |item, index|
       values.merge!({
