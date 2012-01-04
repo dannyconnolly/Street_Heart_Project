@@ -10,17 +10,16 @@
           </ul>
         </div>
     <% end %>
+    <div class="gallery-uploader">
+      <div class="field"><%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.file_field :image %>
+        <%= f.hidden_field :image_cache %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </div><!--end gallery uploader-->
 
-    <div class="field">
-      <%= f.hidden_field :user_id, :value => current_user.id %>
-    </div>
-    <div class="field">
-      <%= f.label :image %>
-      <br/>
-      <%= f.file_field :image %>  <br/>
-      <%= f.hidden_field :image_cache %> <br/>
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+
+
 <% end %>

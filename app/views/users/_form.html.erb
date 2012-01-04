@@ -13,41 +13,42 @@
             </ul>
           </div>
       <% end %>
-
+<div class="users-form-wrap">
       <fieldset>
         <legend>Please Enter Your Details</legend>
 
         <div class="field">
           <%= f.label :name %>
-          <br/>
+
           <%= f.text_field :name, :size => 40 %>
         </div>
 
         <div class="field">
           <%= f.label :email %>
-          <br/>
+
           <%= f.text_field :email, :size => 40 %>
         </div>
 
         <div class="field">
           <%= f.label :password, 'Password' %>
-          <br/>
+
           <%= f.password_field :password, :size => 40 %>
         </div>
 
         <div class="field">
           <%= f.label :password_confirmation, 'Please confirm your password' %>
-          <br/>
+
           <%= f.password_field :password_confirmation, :size => 40 %>
         </div>
 
         <div class="field">
           <%= image_tag @user.avatar_url(:thumb).to_s if @user.avatar? %>  <br/>
           <%= f.label :avatar, 'Add a profile picture' %>
-          <br/>
-          <%= f.file_field :avatar %>     <br/>
-          <%= f.hidden_field :avatar_cache %> <br/>
-          <p>Remove Avatar <%= f.check_box :remove_avatar %></p>
+
+          <%= f.file_field :avatar %>
+          <%= f.hidden_field :avatar_cache %>
+          <label>Remove Avatar</label>
+          <%= f.check_box :remove_avatar %>
         </div>
 
         <div class="actions">
@@ -55,4 +56,5 @@
         </div>
           </fieldset>
   <% end %>
+  </div><!--end form wrap-->
 </div>

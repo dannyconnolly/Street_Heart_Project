@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def show
     @cart = current_cart
     @wishlist = current_wishlist
-    @user = User.find(params[:id])
+    @user = current_user
 
     respond_to do |format|
       format.html # show.html.erb
@@ -99,10 +99,11 @@ class UsersController < ApplicationController
   end
 
   private
+  # @reference http://ruby.railstutorial.org/chapters/updating-showing-and-deleting-users#code:correct_user_before_filter
   def authenticate
     access_denied unless logged_in?
   end
-
+  # @reference http://ruby.railstutorial.org/chapters/updating-showing-and-deleting-users#code:correct_user_before_filter
   def correct_user
     @user = User.find(params[:id])
     redirect_to(root_path) unless current_user?(@user)

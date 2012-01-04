@@ -24,27 +24,52 @@
   </div>
   <!--End user-profile-->
 
+  <div class="user-orders">
+    <h2 class="user-section-titles">Your Orders</h2>
+    <%= %>
+  </div>
+  <!--End user recommendations-->
+
+
   <div class="user-recommendations">
-    <h2>Your Recommendations</h2>
-  </div><!--End user recommendations-->
+    <h2 class="user-section-titles">Your Recommendations</h2>
+  </div>
+  <!--End user recommendations-->
 
   <div class="user-reviews-partial">
-    <h2>Your Reviews</h2>
-  </div><!--End user reviews partial-->
+    <h2 class="user-section-titles">Your Reviews</h2>
+
+    <p>Here is a list of products you have reviewed</p>
+    <% @user.reviews.each do |user_review| %>
+        <div class="<%= cycle('list_line_odd', 'list_line_even') %>">
+          <%= image_tag (user_review.product.productimage_url(:thumb).to_s) %>
+          <h5><%= user_review.product.title %></h5>
+          <p><%= user_review.body %></p>
+        </div>
+        <!--end review body-->
+    <% end %>
+  </div>
+  <!--End user reviews partial-->
 
 </div><!--End user-middle-wrap-->
 
 <div class="user-right-side">
-  <div class="user-cart-partial">
-    <%= render @cart %>
-  </div>
-  <!--End user cart partial-->
+  <% if admin? %>
+      <div class="admin-right">
 
-  <div class="user-wishlist-partial">
-    <%= render @wishlist %>
-  </div>
-  <!--end user wishlist partial-->
+      </div>
+      <!--End admin right-->
+  <% else %>
+      <div class="user-cart-partial">
+        <%= render @cart %>
+      </div>
+      <!--End user cart partial-->
 
+      <div class="user-wishlist-partial">
+        <%= render @wishlist %>
+      </div>
+      <!--end user wishlist partial-->
 
+  <% end %>
 
 </div> <!--End user-right-side-->

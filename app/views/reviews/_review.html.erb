@@ -5,7 +5,7 @@
 
       <p><em>Posted <%= time_ago_in_words(review.created_at) %> ago.</em></p>
 
-      <p><%= review.body %></p>
+      <p><%= sanitize(review.body) %></p>
        <% if admin? %>
    <%= link_to 'Destroy', @review, :confirm => 'Are you sure?', :method => :delete %>
             <% end %>

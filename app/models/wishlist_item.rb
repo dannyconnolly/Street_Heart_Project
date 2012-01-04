@@ -1,3 +1,12 @@
+#
+ #  Classname wishlist item.rb
+ #
+ #  Version information e.g. Rev 1
+ #
+ #
+ #  @author Danny Connolly, x11105810
+ #
+ #
 class WishlistItem < ActiveRecord::Base
   belongs_to :product
   belongs_to :wishlist

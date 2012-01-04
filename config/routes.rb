@@ -23,6 +23,7 @@ StreetHeartProject::Application.routes.draw do
   get 'store' => 'store#index'
   get 'users' => 'users#index'
   get 'users' => 'users#new'
+  get 'orders' => 'orders#thank_you'
 
   controller :sessions do
     get 'login' => :new
@@ -49,6 +50,7 @@ StreetHeartProject::Application.routes.draw do
   match '/home' => "welcome#home", :as => "home"
   match '/about' => "welcome#about", :as => "about"
   match '/your_profile' => "users#your_profile", :as => "your_profile"
+  match '/thank_you' => "orders#thank_you", :as => "thank_you"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

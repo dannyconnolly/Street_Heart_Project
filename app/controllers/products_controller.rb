@@ -4,10 +4,10 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.xml
   def index
-    @products = Product.search(params[:search_query])
+    @products = Product.search(params[:search])
 
     respond_to do |format|
-      format.html   # index.html.erb
+      format.html  # index.html.erb
       format.xml { render :xml => @products }
     end
   end

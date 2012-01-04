@@ -6,24 +6,25 @@
 <% end %>
 
 <h2 class="page-titles">Please Login</h2>
+<div class="form-wrap">
+  <% form_tag sessions_path do %>
+      <fieldset>
 
-<% form_tag sessions_path do %>
-       <fieldset>
-			<legend>Please Enter Your Details</legend>
-    <div class="field">
-      <%= label_tag :email %>
-      <br/>
-      <%= text_field_tag :email, params[:email] %>
-    </div>
+        <div class="field">
+          <%= label_tag :email %>
 
-    <div class="field">
-      <%= label_tag :password %>
-      <br/>
-      <%= password_field_tag :password, params[:password] %>
-    </div>
+          <%= text_field_tag :email, params[:email] %>
+        </div>
 
-    <div class="actions">
-      <%= submit_tag 'Login' %>
-    </div>
-           </fieldset>
-<% end %>
+        <div class="field">
+          <%= label_tag :password %>
+
+          <%= password_field_tag :password, params[:password] %>
+        </div>
+
+        <div class="actions">
+          <%= submit_tag 'Login' %>
+        </div>
+      </fieldset>
+  <% end %>
+</div><!--end form wrap-->

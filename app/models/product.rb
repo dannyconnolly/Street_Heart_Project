@@ -18,11 +18,11 @@ class Product < ActiveRecord::Base
   validates :unit_price, :numericality => {:greater_than_or_equal_to => 0.01}
   validates :title, :uniqueness => true
 
-  def self.search(search_query)
-    if search_query
-      find(:all, :conditions => ['name LIKE ?', "%#{search_query}%"])
+  def self.search(search)
+    if search
+      where('title LIKE ?', "%#{search}%")
     else
-      find(:all)
+      scoped
     end
   end
 
