@@ -41,7 +41,7 @@ body {
 
 .page-wrap {
     width: 980px;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     background: #ffffff;
     padding: 0 10px;
     overflow: auto;
@@ -55,8 +55,12 @@ body {
 
 .footer {
     clear: both;
+
+    background: url(../images/footer.png) repeat-x left top;
+}
+.footer .footer-content {
+    background-color: #0f0c0e;
     height: 200px;
-    background-color: #000000;
 }
 
 .site-login {
