@@ -1,3 +1,8 @@
+#
+ #
+ # @reference Agile Web Develoment with Rails book pg 102
+ #
+ #
 class WishlistItemsController < ApplicationController
   before_filter :authenticate
   skip_before_filter :authorize, :only => [:create, :destroy]
@@ -49,7 +54,7 @@ class WishlistItemsController < ApplicationController
 
     respond_to do |format|
       if @wishlist_item.save
-        format.html { redirect_to(store_url, :notice => 'Wishlist item was successfully created.') }
+        format.html { redirect_to(@wishlist, :notice => 'Wishlist item was successfully created.') }
         format.xml { render :xml => @wishlist_item, :status => :created, :location => @wishlist_item }
       else
         format.html { redirect_to(store_url, :notice => 'Item already added to wishlist') }

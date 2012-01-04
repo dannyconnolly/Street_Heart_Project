@@ -1,15 +1,26 @@
 <div class="cart-wrap">
-  <h2 class="page-titles">Your Cart</h2>
-  <table>
-    <%= render(cart.line_items) %>
 
-    <tr class="total_line">
-      <td colspan="2">Total</td>
-      <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
-    </tr>
+  <%= render(cart.line_items) %>
 
-  </table>
-  <%= button_to 'Checkout', new_order_path, :method => :get %>
-  <%= button_to 'Empty Cart', cart, :method => :delete, :confirm => 'Are you sure?' %>
+  <div class="total_line">
+    <div class="total-title">Total</div>
+
+    <div class="total-price">
+      <%= number_to_currency(cart.total_price) %>
+    </div>
+    <!--end total price-->
+  </div>
+
+  <div class="checkout-options">
+    <ul>
+      <li><%= link_to 'Continue Shopping', store_url %> </li>
+      <li><%= link_to 'Empty Cart', cart, :method => :delete, :confirm => 'Are you sure?' %> </li>
+      <li><%= link_to 'Checkout', new_order_path, :method => :get %></li>
+      <li><%= link_to 'Checkout With Paypal', @cart.paypal_url(store_url, payment_notifications_url) %></li>
+    </ul>
+
+  </div>
+  <!--End checkout options-->
+
 
 </div>

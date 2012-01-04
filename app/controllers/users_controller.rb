@@ -1,3 +1,8 @@
+#
+#
+#  @reference Agile Web Development with Rails fourth edition page 183
+#
+#
 class UsersController < ApplicationController
   before_filter :authenticate, :except => [:new, :create, :your_profile]
   before_filter :authorize, :only => [:index, :destroy]

@@ -1,3 +1,8 @@
+ #
+ #
+ # @reference Agile Web Develoment with Rails book pg 102
+ #
+ #
 class WishlistsController < ApplicationController
   before_filter :authenticate
   before_filter :authorize, :only => :index

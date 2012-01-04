@@ -25,19 +25,19 @@
   <!--End user-profile-->
 
   <div class="user-orders">
-    <h2 class="user-section-titles">Your Orders</h2>
+    <h3 class="user-section-titles">Your Orders</h3>
     <%= %>
   </div>
   <!--End user recommendations-->
 
 
   <div class="user-recommendations">
-    <h2 class="user-section-titles">Your Recommendations</h2>
+    <h3 class="user-section-titles">Your Recommendations</h3>
   </div>
   <!--End user recommendations-->
 
   <div class="user-reviews-partial">
-    <h2 class="user-section-titles">Your Reviews</h2>
+    <h3 class="user-section-titles">Your Reviews</h3>
 
     <p>Here is a list of products you have reviewed</p>
     <% @user.reviews.each do |user_review| %>
@@ -61,11 +61,15 @@
       <!--End admin right-->
   <% else %>
       <div class="user-cart-partial">
+        <h4 class="user-section-titles">Your Cart</h4>
+       <%= hidden_div_if(@cart.line_items.empty?, :id => 'cart') do %>
         <%= render @cart %>
+      <% end %>
       </div>
       <!--End user cart partial-->
 
       <div class="user-wishlist-partial">
+        <h4 class="user-section-titles">Your Wishlist</h4>
         <%= render @wishlist %>
       </div>
       <!--end user wishlist partial-->
