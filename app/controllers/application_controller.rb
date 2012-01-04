@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user
 
-  # @reference Agile web develoment with rails book
+  # @reference Agile Web Develoment with Rails book pg 198
   def authorize
     unless admin?
       flash[:notice] = "Please login or register to continue"
@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # @reference Agile web develoment with rails book
+ # @reference Agile Web Develoment with Rails book pg 198
   def admin?
     logged_in? && current_user.admin?
   end
@@ -58,7 +58,7 @@ class ApplicationController < ActionController::Base
     @current_cart
   end
 
-  # @reference Agile web develoment with rails book
+  # @reference Agile Web Develoment with Rails book pg 102
   def current_wishlist
     Wishlist.find(session[:wishlist_id])
   rescue ActiveRecord::RecordNotFound

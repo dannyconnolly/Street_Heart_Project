@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :authorize, :except => :show
+  before_filter :authorize, :except => [:show]
 
   # GET /products
   # GET /products.xml

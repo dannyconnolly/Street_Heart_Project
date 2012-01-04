@@ -1,3 +1,8 @@
+#
+ #
+ # @reference Agile Web Develoment with Rails book pg 102
+ #
+ #
 class WishlistItemsController < ApplicationController
   before_filter :authenticate
   skip_before_filter :authorize, :only => [:create, :destroy]
