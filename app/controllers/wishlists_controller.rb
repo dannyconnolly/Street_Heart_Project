@@ -89,7 +89,7 @@ class WishlistsController < ApplicationController
       format.xml { head :ok }
     end
   end
-
+   # @reference Agile web develoment with rails book
   def your_wishlist
     redirect_to :action => "show", :id => current_wishlist.id
   end

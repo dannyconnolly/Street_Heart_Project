@@ -288,8 +288,35 @@ body {
     text-align: center;
 }
 
+.user-section-titles {
+    margin: 5px 0;
+}
+
 .user-recommendations {
     clear: both;
+}
+
+.user-reviews-partial, .user-recommendations, .user-orders {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid 1px #f0f0f0;
+}
+
+.user-reviews-partial .list_line_odd, .user-reviews-partial .list_line_even {
+    padding: 5px;
+    overflow: auto;
+    margin: 10px 0;
+}
+
+.user-reviews-partial .list_line_odd {
+    background-color: #f0f0f0;
+
+}
+
+.user-reviews-partial .list_line_odd img, .user-reviews-partial .list_line_even img {
+    float: left;
+    margin: 0 10px 0 0;
 }
 
 .user-right-side {
@@ -399,7 +426,7 @@ body {
 }
 
 .store .entry p {
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .product-view-actions {
@@ -664,6 +691,7 @@ body {
     width: 600px;
     float: left;
 }
+
 .gallery-wrap {
     padding: 10px 0;
     width: 595px;
@@ -680,6 +708,7 @@ body {
 .image-wrap .photo-wrap {
     padding: 5px 0;
 }
+
 .image-wrap .photo-wrap img {
     margin: 0 auto;
     display: block;
@@ -698,6 +727,70 @@ body {
     border-radius: 5px;
     border: none;
 }
+
 .page-numbers {
     clear: both;
+}
+
+.users-form-wrap {
+    width: 550px;
+    margin: 0 auto;
+}
+
+.form-wrap {
+    width: 450px;
+    margin: 0 auto;
+}
+
+.form-wrap fieldset, .users-form-wrap fieldset {
+    border-radius: 5px;
+    border: solid 1px #010101;
+    padding: 20px;
+}
+
+.form-wrap fieldset .field, .users-form-wrap fieldset .field {
+    padding: 5px 0;
+}
+
+.form-wrap fieldset .field label {
+    width: 100px;
+    display: block;
+    float: left;
+}
+
+.users-form-wrap fieldset .field label {
+    width: 150px;
+    display: block;
+    float: left;
+}
+
+.form-wrap fieldset .field input, .users-form-wrap fieldset .field input {
+    width: 300px;
+    height: 25px;
+}
+
+.form-wrap fieldset .actions input, .users-form-wrap fieldset .actions input {
+    float: right;
+}
+
+.gallery-uploader {
+    padding: 10px;
+}
+
+.cat-entry {
+    text-align: center;
+    overflow: auto;
+    width: 230px;
+    float: left;
+    border: solid 1px #f0f0f0;
+    padding: 10px;
+    margin: 5px;
+}
+.cat-entry h3 a {
+    color: #c84e9d;
+    text-decoration: none;
+}
+
+.cat-entry h3 a:hover {
+    text-decoration: underline;
 }

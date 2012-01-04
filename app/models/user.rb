@@ -1,5 +1,5 @@
 #
-#  Classname e.g. user.rb
+#  Classname user.rb
 #
 #
 #  Date e.g. 29/10/2009
