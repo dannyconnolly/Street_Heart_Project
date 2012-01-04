@@ -22,3 +22,4 @@ class Notifier < ActionMailer::Base
     mail :to => order.email, :subject => "Your Street Heart order has been shipped"
   end
 end
+

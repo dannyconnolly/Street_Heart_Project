@@ -18,6 +18,11 @@
   <%= @order.pay_type %>
 </p>
 
+<p>
+  <b>Line items:</b>
+  <%= render @order.line_items %>
+</p>
+
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
