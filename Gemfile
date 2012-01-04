@@ -12,8 +12,6 @@ gem 'rmagick', '2.13.1'
 
 gem 'rmagick', '2.13.1', :require => 'RMagick'
 
-gem 'acts-as-taggable-on'
-
 # Use unicorn as the web server
 # gem 'unicorn'
 
