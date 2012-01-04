@@ -1,9 +1,25 @@
 <% if line_item == @current_item %>
-<tr id="current_item"></tr>
+    <div id="current_item"></div>
 <% else %>
-<tr>
+
+    <div class="<%= cycle('list_line_odd', 'list_line_even') %> cart-row-items">
+
 <% end %>
-  <td><%= line_item.quantity %>&times;</td>
-  <td><%= line_item.product.title %></td>
-  <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
-</tr>
+
+<div class="cart-image">
+  <%= image_tag (line_item.product.productimage_url(:thumb).to_s) %>
+</div><!--End Cart Image-->
+
+<div class="cart-product-title">
+  <h3><%= line_item.product.title %></h3>
+</div><!--end cart title-->
+
+<div class="cart-quantity">
+  <p>&times;<%= line_item.quantity %></p>
+</div><!--End cart quantity-->
+
+<div class="item_price">
+  <%= number_to_currency(line_item.total_price) %>
+</div><!--end item-price-->
+
+</div><!--end cart-row-->

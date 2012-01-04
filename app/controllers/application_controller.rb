@@ -45,13 +45,17 @@ class ApplicationController < ActionController::Base
   end
 
   private
-
+  # @reference http://railscasts.com/episodes/142-paypal-notifications
   def current_cart
-    Cart.find(session[:cart_id])
-  rescue ActiveRecord::RecordNotFound
-    cart = Cart.create
-    session[:cart_id] = cart.id
-    cart
+    if session[:cart_id]
+      @current_cart ||= Cart.find(session[:cart_id])
+      session[:cart_id] = nil if @current_cart.purchased_at
+    end
+    if session[:cart_id].nil?
+      @current_cart = Cart.create!
+      session[:cart_id] = @current_cart.id
+    end
+    @current_cart
   end
 
   # @reference Agile web develoment with rails book

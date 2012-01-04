@@ -1,5 +1,7 @@
 StreetHeartProject::Application.routes.draw do
 
+  resources :payment_notifications
+
   resources :galleries
 
   resources :categories do
