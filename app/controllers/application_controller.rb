@@ -5,10 +5,9 @@ class ApplicationController < ActionController::Base
   protected
   # @reference Laptoshop Tutorial 2, Wesley Gorman
   def current_user
-    return unless session[:user_id]
-    @current_user ||= User.find_by_id(session[:user_id])
+    return unless cookies[:auth_token]
+    @current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
   end
-
   helper_method :current_user
 
   # @reference Agile Web Develoment with Rails book pg 198

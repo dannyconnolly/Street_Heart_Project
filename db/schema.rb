@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120104224028) do
+ActiveRecord::Schema.define(:version => 20120116122221) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -96,8 +96,11 @@ ActiveRecord::Schema.define(:version => 20120104224028) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
-    t.boolean  "admin",           :default => false
+    t.boolean  "admin",                  :default => false
     t.string   "avatar"
+    t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   create_table "wishlist_items", :force => true do |t|

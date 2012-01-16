@@ -1,5 +1,7 @@
 StreetHeartProject::Application.routes.draw do
 
+  resources :password_resets
+
   resources :payment_notifications
 
   resources :galleries
