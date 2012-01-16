@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   def authorize
     unless admin?
       flash[:notice] = "Please login or register to continue"
-      redirect_to store_path
+      redirect_to login_path
       false
     end
   end
