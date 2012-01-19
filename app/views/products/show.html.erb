@@ -1,7 +1,3 @@
-<% if notice %>
-    <p class="notice"><%= notice %></p>
-<% end %>
-
 <div class="single-product-wrap">
 
   <div class="single-product-img">
@@ -24,8 +20,14 @@
   <div class="single-product-description">
     <p><%= sanitize(@product.description) %></p>
   </div>
-
   <!--End single page description-->
+
+  <div class="single-product-keywords">
+    <p class="tags">Tags: <%= @product.tags.collect { |t| t.name }.join(", ") %></p>
+
+  </div>
+  <!--End single-product-keywords-->
+
   <div class="add-btn">
     <%= button_to 'Add to cart', line_items_path(:product_id => @product) %>
     <%= button_to 'Add to Wishlist', wishlist_items_path(:product_id => @product) %>
@@ -49,5 +51,6 @@
   <div class="product-reviews-form">
 
     <%= render 'reviews/form' %>
-  </div><!--End product-reviews-form-->
- </div><!-- end reviews-->
+  </div>
+  <!--End product-reviews-form-->
+</div><!-- end reviews-->

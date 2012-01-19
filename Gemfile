@@ -7,6 +7,7 @@ gem 'rails', '3.0.10'
 
 gem 'sqlite3'
 gem 'carrierwave'
+gem 'acts-as-taggable-on', '~> 2.2.2'
 
 
 gem 'rmagick', '2.13.1'

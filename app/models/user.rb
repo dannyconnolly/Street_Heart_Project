@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
 
   validates :password, :confirmation => true,
             :length => {:within => 4..20},
-            :presence => true
+            :presence => true, :on => :create
 
   attr_accessor :password_confirmation
   attr_reader :password

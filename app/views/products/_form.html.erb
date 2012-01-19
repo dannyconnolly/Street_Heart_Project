@@ -38,6 +38,12 @@
     </div>
 
     <div class="field">
+      <%= f.label :tags %>
+      <br/>
+     <%= text_field :product, :tag_list %>
+    </div>
+
+    <div class="field">
       <%= f.label :category_id %>
       <%= f.collection_select :category_id, Category.find(:all), :id, :title %>
       <br />

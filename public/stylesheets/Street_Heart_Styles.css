@@ -7,13 +7,10 @@ html, body, div, h1, h2, h3, h4, h5, h6, a, p, ul, li, form, input, text-area {
     background-color: #f0f0f0;
 }
 
-#notice {
+.notice {
     color: #000;
-    border: 2px solid red;
     padding: 1em;
-    margin-bottom: 2em;
-    background-color: #cccccc;
-    font: bold smaller sans-serif;
+    background-color: #f0f0f0;
 }
 
 a, a:visited {
@@ -55,9 +52,9 @@ body {
 
 .footer {
     clear: both;
-
     background: url(../images/footer.png) repeat-x left top;
 }
+
 .footer .footer-content {
     background-color: #0f0c0e;
     height: 200px;
@@ -446,7 +443,6 @@ body {
 /*============Store Page==============*/
 .store .entry {
     overflow: auto;
-    width: 240px;
     float: left;
     border: solid 1px #f0f0f0;
     padding: 5px;
@@ -454,12 +450,10 @@ body {
 }
 
 .store .entry img {
-    width: 240px;
     margin: 0 auto 5px auto;
-    float: left;
 }
 
-.store .entry h3 a {
+.store .entry h4 a {
     display: block;
     padding: 10px 0 0 0;
     color: #c84e9d;
@@ -467,7 +461,7 @@ body {
     text-decoration: none;
 }
 
-.store .entry h3 a:hover {
+.store .entry h4 a:hover {
     text-decoration: underline;
     background-color: #fff;
 }

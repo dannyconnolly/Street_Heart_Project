@@ -23,6 +23,9 @@
 <!--end side-->
 
 <div class="main">
+  <% if notice %>
+    <p class="notice"><%= notice %></p>
+<% end %>
   <%= yield %>
 </div>
 <!-- End Main-->
