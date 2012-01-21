@@ -1,0 +1,12 @@
+<h3 class="user-section-titles">Your Reviews</h3>
+
+<p>Here is a list of products you have reviewed</p>
+<% @user.reviews.each do |user_review| %>
+    <div class="<%= cycle('list_line_odd', 'list_line_even') %>">
+      <%= image_tag (user_review.product.productimage_url(:thumb).to_s) %>
+      <h5><%= user_review.product.title %></h5>
+
+      <p><%= user_review.body %></p>
+    </div>
+    <!--end review body-->
+<% end %>

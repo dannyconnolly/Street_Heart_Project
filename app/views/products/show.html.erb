@@ -11,9 +11,7 @@
   <!--End single page title-->
 
   <div class="single-product-price">
-    <p>
-
-    <h2><%= number_to_currency(@product.unit_price) %></h2></p>
+    <h2><%= number_to_currency(@product.unit_price) %></h2>
   </div>
   <!--End single page price-->
 
@@ -37,19 +35,23 @@
       <%= link_to 'Edit', edit_product_path(@product) %> |
       <%= link_to 'Back', products_path %>
   <% end %>
+
+  <div class="reviews">
+    <div id="tabs">
+      <ul>
+        <li><a href="#tabs-1">Read Customer Reviews for this product</a></li>
+        <li><a href="#tabs-2">Write a review for this product</a></li>
+      </ul>
+
+      <div id="tabs-1">
+        <%= render @product.reviews %>
+      </div>
+      <!--End review-wrap-->
+
+      <div id="tabs-2">
+        <%= render 'reviews/form' %>
+      </div><!--End product-reviews-form-->
+
+    </div><!-- end tabs-->
+  </div><!-- end reviews-->
 </div><!--End single page wrap-->
-
-<div class="reviews">
-  <div class="product-reviews">
-    <h3 class="page-titles">Read Customer Reviews for this product</h3>
-    <%= render @product.reviews %>
-
-  </div>
-  <!--End single-review-wrap-->
-
-  <div class="product-reviews-form">
-
-    <%= render 'reviews/form' %>
-  </div>
-  <!--End product-reviews-form-->
-</div><!-- end reviews-->

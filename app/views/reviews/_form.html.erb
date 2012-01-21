@@ -3,20 +3,20 @@
     <p>If you have already purchased this item and would like to leave your review, then please fill out the form
       below.</p>
     <%= form_for ([@product, @product.reviews.build]) do |f| %>
+        <fieldset>
+          <div class="field">
+            <%= f.hidden_field :user_id, :value => current_user.id %>
+          </div>
+          <div class="field">
+            <%= f.label :body, 'Add a review' %>
+            <%= f.text_area :body %>
+          </div>
 
-        <div class="field">
-          <%= f.hidden_field :user_id, :value => current_user.id %>
-        </div>
-        <div class="field">
-          <p><%= f.label :body, 'Add a review' %></p>
-
-          <p><%= f.text_area :body %></p>
-        </div>
-        <div class="actions">
-          <p><%= f.submit %></p>
+          <div class="actions">
+            <p><%= f.submit %></p>
+          </div>
+        </fieldset>
     <% end %>
-
-    </div>
 
 <% else %>
     <p>Please <%= link_to "login", login_path %> to add a review</p>
