@@ -95,6 +95,6 @@ class ProductsController < ApplicationController
   end
 
   def tag
-  @products = Product.find_tagged_with params[:id]
-end
+    @products = Product.find_tagged_with params[:id]
+  end
 end
