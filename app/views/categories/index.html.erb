@@ -1,14 +1,15 @@
-<h1 class="page-titles">Listing categories</h1>
-
-<% @categories.each do |category| %>
-    <div class="cats-titles">
-      <h3 class="page-titles"><%=category.title %></h3>
+<div class="middle-wrap">
+  <h1 class="page-titles">Listing categories</h1>
+  <% @categories.each do |category| %>
+      <div class="cats-titles">
+        <h3 class="page-titles"><%= category.title %></h3>
       </div>
-    <% if admin? %>
-        <%= link_to 'Show', category %>
-        <%= link_to 'Edit', edit_category_path(category) %>
-        <%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %>
-        <%= link_to 'New Category', new_category_path %>
-    <% end %>
+      <% if admin? %>
+          <%= link_to 'Show', category %>
+          <%= link_to 'Edit', edit_category_path(category) %>
+          <%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %>
+          <%= link_to 'New Category', new_category_path %>
+      <% end %>
   <% end %>
+</div><!-- end middle wrap-->
 

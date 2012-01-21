@@ -16,6 +16,7 @@ class CategoriesController < ApplicationController
   # @return [Object]
   def show
     @category = Category.find(params[:id])
+    @product = Product.limit(5)
 
     respond_to do |format|
       format.html # show.html.erb

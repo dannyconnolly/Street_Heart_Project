@@ -3,9 +3,7 @@ class StoreController < ApplicationController
 
   def index
     @categories = Category.all
-    @cart = current_cart
-    @wishlist = current_wishlist
-    @products = Product.search(params[:search])
+    @product = Product.limit(5)
   end
 
 

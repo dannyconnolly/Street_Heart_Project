@@ -1,4 +1,4 @@
-<div class="store">
+<div class="middle-wrap">
   <p>Browse through product by category</p>
   <% @categories.each do |category| %>
       <div class="cat-entry">
@@ -6,4 +6,9 @@
       </div>
       <!--End entry-->
   <% end %>
-</div><!--End store-->
+</div><!--End middle wrap-->
+
+<div class="right-side">
+  <%= render 'products/recent_products' %>
+</div>
+<!--end right-side-->

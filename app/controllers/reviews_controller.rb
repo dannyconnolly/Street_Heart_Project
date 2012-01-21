@@ -82,4 +82,8 @@ class ReviewsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def recent_reviews
+    @review = Review.limit(5)
+  end
 end

@@ -1,4 +1,4 @@
-<div class="user-middle-wrap">
+<div class="middle-wrap">
 
   <div class="user-profile">
     <div class="user-avatar">
@@ -28,17 +28,17 @@
       <li><a href="#tabs-3">Your Reviews</a></li>
     </ul>
 
-    <div class="user-orders" id="tabs-1">
+    <div id="tabs-1">
       <%= render 'orders/user_order' %>
     </div>
     <!--End user recommendations-->
 
-    <div class="user-recommendations" id="tabs-2">
+    <div id="tabs-2">
       <h3 class="user-section-titles">Your Recommendations</h3>
     </div>
     <!--End user recommendations-->
 
-    <div class="user-reviews-partial" id="tabs-3">
+    <div id="tabs-3">
       <%= render 'reviews/user_review' %>
     </div>
     <!--End user reviews partial-->
@@ -47,25 +47,20 @@
 
 </div><!--End user-middle-wrap-->
 
-<div class="user-right-side">
+<div class="right-side">
   <% if admin? %>
-      <div class="admin-right">
-
-      </div>
-      <!--End admin right-->
 
   <% else %>
-      <div class="user-cart-partial">
-        <h4 class="user-section-titles">Your Cart</h4>
+      <div class="partial">
+        <h4 class="partial-titles">Your Cart</h4>
         <%= hidden_div_if(@cart.line_items.empty?, :id => 'cart') do %>
             <%= render @cart %>
         <% end %>
       </div>
       <!--End user cart partial-->
 
-      <div class="user-wishlist-partial">
-        <h4 class="user-section-titles">Your Wishlist</h4>
-        <%= render @wishlist %>
+      <div class="partial">
+       <%= render @wishlist %>
       </div>
       <!--end user wishlist partial-->
   <% end %>

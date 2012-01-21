@@ -6,6 +6,7 @@
 class WishlistsController < ApplicationController
   before_filter :authenticate
   before_filter :authorize, :only => :index
+
   # GET /wishlists
   # GET /wishlists.xml
   def index

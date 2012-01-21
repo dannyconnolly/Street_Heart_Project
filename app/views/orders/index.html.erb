@@ -1,6 +1,5 @@
 <h2 class="page-titles">Listing orders</h2>
-
-<div class="orders-list">
+<div class="middle-wrap">
 
   <table>
     <tr>
@@ -29,5 +28,6 @@
   <br/>
 
   <%= link_to 'New Order', new_order_path %>
-</div><!-- end orders-list-->
+
 <p><%= will_paginate @orders %></p>
+</div><!-- end middle wrap-->
