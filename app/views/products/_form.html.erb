@@ -10,45 +10,46 @@
           </ul>
         </div>
     <% end %>
+    <fieldset>
+      <div class="field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
 
-    <div class="field">
-      <%= f.label :title %>
-      <br/>
-      <%= f.text_field :title %>
-    </div>
-    <div class="field">
-      <%= f.label :description %>
-      <br/>
-      <%= f.text_area :description, :rows => 6 %>
-    </div>
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description, :rows => 6 %>
+      </div>
 
-    <div class="field">
-      <%= f.label :unit_price %>
-      <br/>
-      <%= f.text_field :unit_price %>
-    </div>
+      <div class="field">
+        <%= f.label :unit_price %>
+        <%= f.text_field :unit_price %>
+      </div>
 
-    <div class="field">
-      <%= f.label :productimage %>
-      <br/>
-      <%= image_tag @product.productimage_url(:thumb).to_s if @product.productimage? %>  <br/>
-      <%= f.file_field :productimage %>  <br/>
-      <%= f.hidden_field :productimage_cache %> <br/>
-      <p>Remove product image <%= f.check_box :remove_productimage %></p>
-    </div>
+      <div class="field">
+        <%= f.label :tags %>
+        <%= text_field :product, :tag_list %>
+      </div>
 
-    <div class="field">
-      <%= f.label :tags %>
-      <br/>
-     <%= text_field :product, :tag_list %>
-    </div>
+      <div class="field">
+        <%= f.label :category_id %>
+        <%= f.collection_select :category_id, Category.find(:all), :id, :title %>
+      </div>
 
-    <div class="field">
-      <%= f.label :category_id %>
-      <%= f.collection_select :category_id, Category.find(:all), :id, :title %>
-      <br />
-    </div>
-    <div class="actions">
-      <%= f.submit %>
-    </div>
+      <div class="field">
+        <%= f.label :productimage %>
+        <%= f.file_field :productimage %>
+        <%= f.hidden_field :productimage_cache %>
+      </div>
+
+      <div class="remove-field">
+        <%= f.label :remover_productimage, 'Remove product image' %>
+        <%= f.check_box :remove_productimage %>
+        <%= image_tag @product.productimage_url(:thumb).to_s if @product.productimage? %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </fieldset>
 <% end %>

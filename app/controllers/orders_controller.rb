@@ -27,6 +27,7 @@ class OrdersController < ApplicationController
   # GET /orders/new.xml
   def new
     @cart = current_cart
+    @categories = Category.all
     if @cart.line_items.empty?
       redirect_to store_url, :notice => "your cart is empty!"
       return
@@ -95,6 +96,6 @@ class OrdersController < ApplicationController
   end
 
   def thank_you
-
+    @categories = Category.all
   end
 end

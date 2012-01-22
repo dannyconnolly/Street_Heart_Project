@@ -5,6 +5,7 @@ class GalleriesController < ApplicationController
   # GET /galleries.xml
   def index
     @galleries = Gallery.paginate :page=>params[:page], :order=>'created_at desc', :per_page => 9
+    @categories = Category.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,6 +28,7 @@ class GalleriesController < ApplicationController
   # GET /galleries/new.xml
   def new
     @gallery = Gallery.new
+    @categories = Category.all
 
     respond_to do |format|
       format.html # new.html.erb

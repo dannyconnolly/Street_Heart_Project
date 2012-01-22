@@ -1,15 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>User:</b>
-  <%= @gallery.user_id %>
-</p>
-
-<p>
-  <b>Image:</b>
-  <%= image_tag @gallery.image_url(:thumb).to_s %>
-</p>
-
+<p>Photo uploaded by <%= @gallery.user.name %></p>
+<%= image_tag @gallery.image_url(:normal).to_s %>
 
 <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
 <%= link_to 'Back', galleries_path %>

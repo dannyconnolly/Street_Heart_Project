@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   skip_before_filter :authenticate
 
   def new
+    @categories = Category.all
   end
 
   # @reference Agile web development with rails book

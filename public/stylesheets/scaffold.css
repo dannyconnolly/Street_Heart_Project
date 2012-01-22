@@ -2,7 +2,7 @@ body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {
   font-family: arial, helvetica, sans-serif;
-  font-size:   13px;
+  font-size:   12px;
   line-height: 18px;
 }
 
@@ -39,7 +39,7 @@ div.field, div.actions {
   text-align: left;
   font-weight: bold;
   padding: 5px 5px 5px 15px;
-  font-size: 12px;
+
   margin: -7px;
   margin-bottom: 0px;
   background-color: #c00;
@@ -47,6 +47,6 @@ div.field, div.actions {
 }
 
 #error_explanation ul li {
-  font-size: 12px;
+
   list-style: square;
 }

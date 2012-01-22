@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.xml
   def index
-    @products = Product.search(params[:search])
+    @products = Product.search(params[:search]).paginate :page=>params[:page], :per_page => 10
 
     respond_to do |format|
       format.html  # index.html.erb
@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @wishlist = current_wishlist
+    @categories = Category.all
 
     respond_to do |format|
       format.html # show.html.erb

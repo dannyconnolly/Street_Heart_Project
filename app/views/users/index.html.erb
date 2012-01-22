@@ -1,22 +1,30 @@
 <h2 class="page-titles">Listing users</h2>
+<div class="page-numbers">
+  <p><%= will_paginate @users %></p>
+</div>
+<table class="admin-tables">
+  <tr>
+    <th>User Image</th>
+    <th>Name</th>
+    <th>E-mail</th>
+    <th colspan="3">Actions</th>
+  </tr>
 
-<div class="user-listings">
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>E-mail</th>
-      <th colspan="3">Actions</th>
-    </tr>
+  <% @users.each do |user| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td>
+          <%= image_tag (user.avatar_url(:small_thumb).to_s), :class => 'list_image' %>
+        </td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Delete', user, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+  <% end %>
+</table>
 
-    <% @users.each do |user| %>
-        <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-          <td><%= user.name %></td>
-          <td><%= user.email %></td>
-          <td><%= link_to 'Show', user %></td>
-          <td><%= link_to 'Edit', edit_user_path(user) %></td>
-          <td><%= link_to 'Delete', user, :confirm => 'Are you sure?', :method => :delete %></td>
-        </tr>
-    <% end %>
-  </table>
+<div class="page-numbers">
+  <p><%= will_paginate @users %></p>
 </div>
 

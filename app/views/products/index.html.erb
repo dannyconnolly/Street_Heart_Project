@@ -1,45 +1,53 @@
-<h2 class="page-titles">Products</h2>
+<h2 class="page-titles">Listing Products</h2>
 
-<div class="product_list">
-  <% if admin? %>
-      <%= link_to 'New Product', new_product_path %>
+<% if admin? %>
+    <p>To upload a product click <%= link_to 'New Product', new_product_path %></p>
+<% end %>
+
+<div class="page-numbers">
+  <p><%= will_paginate @products %></p>
+</div>
+
+
+<table class="admin-tables">
+  <tr>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Category</th>
+    <th>Unit price</th>
+    <th>Actions</th>
+  </tr>
+  <% @products.each do |product| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+
+        <td>
+          <%= image_tag (product.productimage_url(:small_thumb).to_s), :class => 'list_image' %>
+        </td>
+        <td><%= product.title %></td>
+        <td class="list_description">
+          <dl>
+
+            <dd><%= truncate(strip_tags(product.description),
+                             :length => 80) %></dd>
+          </dl>
+        </td>
+        <td><%= product.category_id %></td>
+        <td><%= product.unit_price %></td>
+        <% if admin? %>
+            <td class="list_actions">
+              <%= link_to 'Show', product %>
+              <br/>
+              <%= link_to 'Edit', edit_product_path(product) %>
+              <br/>
+              <%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %>
+            </td>
+        <% end %>
+      </tr>
+
   <% end %>
-  <table>
-    <tr>
-      <th>Image</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Category</th>
-      <th>Unit price</th>
-      <th>Actions</th>
-    </tr>
-    <% @products.each do |product| %>
-        <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+</table>
 
-          <td>
-            <%= image_tag (product.productimage_url(:thumb).to_s), :class => 'list_image' %>
-          </td>
-          <td><%= product.title %></td>
-          <td class="list_description">
-            <dl>
-
-              <dd><%= truncate(strip_tags(product.description),
-                               :length => 80) %></dd>
-            </dl>
-          </td>
-          <td><%= product.category_id %></td>
-          <td><%= product.unit_price %></td>
-          <% if admin? %>
-              <td class="list_actions">
-                <%= link_to 'Show', product %>
-                <br/>
-                <%= link_to 'Edit', edit_product_path(product) %>
-                <br/>
-                <%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %>
-              </td>
-          <% end %>
-        </tr>
-
-    <% end %>
-  </table>
-</div> <!--End products_list-->
+<div class="page-numbers">
+  <p><%= will_paginate @products %></p>
+</div>

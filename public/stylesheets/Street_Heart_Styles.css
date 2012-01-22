@@ -2,6 +2,9 @@ html, body, div, h1, h2, h3, h4, h5, h6, a, p, ul, li, form, input, text-area {
     margin: 0;
     padding: 0;
 }
+ul {
+    list-style: none;
+}
 
 .list_line_even {
     background-color: #f0f0f0;
@@ -35,21 +38,22 @@ a:hover, a:active {
 /*============Button Styles==============*/
 .btns {
     background-color: #c84e9d;
-	padding: 5px 10px;
-	color: #fff;
-	text-decoration: none;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
-	border: solid 1px #e37bbf;
-	cursor: pointer;
+    padding: 5px 10px;
+    color: #fff;
+    text-decoration: none;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+    border: solid 1px #e37bbf;
+    cursor: pointer;
     font-size: 11px;
     margin: 0 0 2px 0;
 }
 
 .btns:hover {
-      background-color: #e37bbf;
+    background-color: #e37bbf;
 }
+
 /*============Page Titles Styles==============*/
 .page-titles {
     margin: 0 0 15px 0;
@@ -92,7 +96,7 @@ body {
 }
 
 .middle-wrap {
-    width:610px;
+    width: 610px;
     padding: 0 5px;
     float: left;
 }
@@ -123,7 +127,6 @@ body {
 }
 
 .site-login ul {
-    list-style: none;
     float: right;
 }
 
@@ -178,10 +181,8 @@ body {
 
 /*============Side Nav==============*/
 .side-nav ul {
-    list-style: none;
     margin: 0 0 20px 0;
 }
-
 
 .side-nav ul li a, .side-nav ul li a:visited {
     display: block;
@@ -221,7 +222,7 @@ body {
 }
 
 .welcome-statement {
-   border: solid 2px #c84e9d;
+    border: solid 2px #c84e9d;
     padding: 5px;
 }
 
@@ -248,12 +249,6 @@ body {
 
 .about-content .p-two .img-position img {
     width: 300px;
-}
-
-/*============Admin Pages==============*/
-.user-listings .list_line_even td, .user-listings .list_line_odd td, .product_list .list_line_even td, .product_list .list_line_odd td, .orders-list .list_line_even td, .orders-list .list_line_odd td {
-    padding: 10px;
-    text-align: center;
 }
 
 /*============User Profile Page==============*/
@@ -388,10 +383,7 @@ body {
     padding: 5px 0;
 }
 
-/*============Admin Nav==============*/
-.admin-nav ul {
-    list-style: none;
-}
+
 
 /*============Store Page==============*/
 .entry {
@@ -447,51 +439,20 @@ body {
     width: 395px;
     text-align: center;
 }
+
 .add-btn form {
     width: 195px;
     float: left;
 }
-
-/*============Products Page==============*/
-.product_list table {
-    border-collapse: collapse;
+/*============Admin Tables==============*/
+.admin-tables {
+    width: 95%;
+    margin: 0 auto;
 }
-
-.product_list table tr td {
-    padding: 5px;
-    vertical-align: top;
-}
-
-.product_list .list_image {
-    width: 60px;
-    height: 70px;
-}
-
-.product_list .list_description {
-    width: 60%;
-}
-
-.product_list .list_description dl {
-    margin: 0;
-}
-
-.product_list .list_description dt {
-    color: #244;
-    font-weight: bold;
-    font-size: larger;
-}
-
-.product_list .list_description dd {
-}
-
-.product_list .list_actions {
-    font-size: x-small;
-    text-align: right;
-    padding-left: 1em;
-}
-
-#columns {
-    background: #989898;
+.admin-tables tr td, .admin-tables tr th {
+   padding: 5px;
+   vertical-align: top;
+   text-align: center;
 }
 
 /*============Cart==============*/
@@ -581,40 +542,6 @@ body {
     border: solid 1px #eeecec;
 }
 
-/* Styles for Order Form*/
-
-.streetHeart_form fieldset {
-    background: #efe;
-}
-
-.streetHeart_form legend {
-    color: #dfd;
-    background: #141;
-    font-family: calibri, sans-serif;
-    padding: 0.2em 1em;
-}
-
-.streetHeart_form label {
-    width: 5em;
-    float: left;
-    text-align: right;
-    padding-top: 0.2em;
-    margin-right: 0.1em;
-    display: block;
-}
-
-.streetHeart_form select, .streetHeart_form textarea, .streetHeart_form input {
-    margin-left: 0.5em;
-}
-
-.streetHeart_form .submit {
-    margin-left: 4em;
-}
-
-.streetHeart_form div {
-    margin: 0.5em 0;
-}
-
 /*============Wishlist page==============*/
 .wishlist-item-wrap {
     width: 360px;
@@ -642,11 +569,6 @@ body {
     padding: 20px;
 }
 
-.wishlist-actions {
-    padding: 10px 0 0 0;
-}
-
-
 /*============Reviews==============*/
 .reviews {
     clear: both;
@@ -654,6 +576,7 @@ body {
     padding: 5px;
     border-bottom: dotted 1px #f0f0f0;
 }
+
 .reviews img {
     float: left;
     margin: 0 5px 0 0;
@@ -662,10 +585,12 @@ body {
 .reviews #tabs #tabs-2 form {
     margin: 20px 0;
 }
+
 .reviews #tabs #tabs-2 form label {
     margin: 0 0 10px 0;
 }
-.reviews #tabs #tabs-2 form textarea{
+
+.reviews #tabs #tabs-2 form textarea {
     width: 600px;
     height: 200px;
     display: block;
@@ -702,63 +627,63 @@ body {
 
 .page-numbers {
     clear: both;
+    text-align: right;
+    padding: 10px;
+    width: 95%;
+    margin: 0 auto;
 }
 
 /*============Forms==============*/
-.users-form-wrap {
-    width: 550px;
-    margin: 0 auto;
-}
-
-.form-wrap {
-    width: 450px;
-    margin: 0 auto;
-}
-
-fieldset{
+fieldset {
     border-radius: 5px;
     border: solid 1px #989898;
     padding: 20px;
+    width: 460px;
+    margin: 0 auto;
 }
 
-.field{
-    padding: 5px 0;
+.actions {
+    overflow: auto;
+    text-align: right;
+    clear: both;
+}
+.field {
+    clear: both;
+}
+.field em {
+    font-size: 11px;
 }
 
-.form-wrap fieldset .field label {
-    width: 100px;
+.field label, .remove-field label {
+    width: 140px;
     display: block;
     float: left;
+    padding: 5px;
+    clear: both;
+}
+.remove-field input {
+    clear:both;
 }
 
-.users-form-wrap fieldset .field label {
-    width: 150px;
-    display: block;
+.remove-field img {
     float: left;
+    margin:  5px;
 }
 
-.form-wrap fieldset .field input, .users-form-wrap fieldset .field input {
-    width: 300px;
-    height: 25px;
+fieldset .field input, fieldset .field textarea {
+    width: 290px;
+    padding: 5px;
 }
 
-.form-wrap fieldset .actions input, .users-form-wrap fieldset .actions input {
-    float: right;
-}
 
-.gallery-uploader {
-    padding: 10px;
-}
 
 /*============Categories Menu Page==============*/
 .cat-entry {
     text-align: center;
     overflow: auto;
-    width: 230px;
+    width: 180px;
     float: left;
-    border: solid 1px #f0f0f0;
     padding: 10px;
-    margin: 5px;
 }
 
 .cat-entry h3 a {
@@ -769,7 +694,6 @@ fieldset{
 .cat-entry h3 a:hover {
     text-decoration: underline;
 }
-/*============category right side==============*/
 
 /*============thank you page==============*/
 .thankyou-actions {

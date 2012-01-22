@@ -18,6 +18,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @product = Product.order('created_at DESC').limit(5)
     @cart = current_cart
+    @categories = Category.all
 
     respond_to do |format|
       format.html # show.html.erb

@@ -23,6 +23,7 @@ class WishlistsController < ApplicationController
   def show
     begin
       @wishlist = Wishlist.find(params[:id])
+      @categories = Category.all
 
     rescue ActiveRecord::RecordNotFound
       logger.error "Attempt to access invalid wishlist #{params[:id]}"

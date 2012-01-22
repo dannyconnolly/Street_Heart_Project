@@ -2,6 +2,7 @@ class PasswordResetsController < ApplicationController
   skip_before_filter :authorize
 
   def new
+    @categories = Category.all
   end
 
   def create

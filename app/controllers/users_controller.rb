@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
   def index
-    @users = User.order(:name)
+    @users = User.order(:name).paginate :page=>params[:page], :per_page => 10
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     @cart = current_cart
     @wishlist = current_wishlist
     @user = current_user
+    @categories = Category.all
 
     respond_to do |format|
       format.html # show.html.erb
@@ -39,6 +40,7 @@ class UsersController < ApplicationController
   # GET /users/new.xml
   def new
     @user = User.new
+    @categories = Category.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,6 +51,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+    @categories = Category.all
   end
 
   # POST /users
@@ -77,7 +80,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to(store_path, :notice => "User #{@user.name} was successfully updated.") }
+        format.html { redirect_to :controller => "users", :action => "your_profile", :notice => "User #{@user.name} was successfully updated." }
         format.xml { head :ok }
       else
         format.html { render :action => "edit" }
