@@ -97,8 +97,4 @@ class ProductsController < ApplicationController
   def tag
     @products = Product.find_tagged_with params[:id]
   end
-
-  def recent_products
-    @product = Product.limit(5)
-  end
 end

@@ -1,6 +1,7 @@
 class Product < ActiveRecord::Base
   acts_as_taggable
   acts_as_taggable_on :tags
+  scope :by_join_date, order("created_at DESC")
 
   belongs_to :category
   has_many :reviews, :dependent => :destroy
@@ -27,6 +28,10 @@ class Product < ActiveRecord::Base
     else
       scoped
     end
+  end
+
+  def recommend
+    @recommend = Product.taggable?
   end
 
   private

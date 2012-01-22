@@ -3,8 +3,8 @@
   <% @product.each do |recent_product| %>
       <table>
         <tr>
-          <td><%= image_tag (recent_product.productimage_url(:small_thumb).to_s), :class => 'list_image' %>  </td>
-          <td><%= recent_product.title %></td>
+          <td ><%= image_tag (recent_product.productimage_url(:small_thumb).to_s) %></td>
+          <td><%=link_to recent_product.title, recent_product %></td>
           <td><%= number_to_currency(recent_product.unit_price) %></td>
         </tr>
       </table>

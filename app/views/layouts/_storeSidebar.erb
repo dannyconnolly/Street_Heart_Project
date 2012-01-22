@@ -6,7 +6,13 @@
       <ul>
         <li><%= link_to "Home", home_path %></li>
         <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "Categories", store_path %></li>
+        <li><%= link_to "Focus Ireland", "http://www.focusireland.ie/" %></li>
+        <li><%= link_to "Galleries", galleries_path %></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <h3><%= link_to "Categories", store_path %></h3>
         <ul>
           <li><%= link_to "T-shirts", "http://localhost:3000/categories/1" %></li>
           <li><%= link_to "Hoodies", "http://localhost:3000/categories/2" %></li>
@@ -17,10 +23,5 @@
           <li><%= link_to "Laptop Skins", "http://localhost:3000/categories/3" %></li>
           <li><%= link_to "Smart Phone Skins", "http://localhost:3000/categories/4" %></li>
         </ul>
-        <li><%= link_to "Focus Ireland", "http://www.focusireland.ie/" %></li>
-        <li><%= link_to "Galleries", galleries_path %></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
     </div><!--End Side-->
 <% end %>

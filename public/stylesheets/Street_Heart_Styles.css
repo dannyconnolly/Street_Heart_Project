@@ -24,14 +24,13 @@ table {
 /*============Link Styles==============*/
 a, a:visited {
     color: #c84e9d;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 a:hover, a:active {
     color: #e37bbf;
-    text-decoration: none;
+    text-decoration: underline;
 }
-
 
 /*============Button Styles==============*/
 .btns {
@@ -180,7 +179,9 @@ body {
 /*============Side Nav==============*/
 .side-nav ul {
     list-style: none;
+    margin: 0 0 20px 0;
 }
+
 
 .side-nav ul li a, .side-nav ul li a:visited {
     display: block;
@@ -220,8 +221,8 @@ body {
 }
 
 .welcome-statement {
-    background-color: #f0f0f0;
-    text-align: center;
+   border: solid 2px #c84e9d;
+    padding: 5px;
 }
 
 /*============About Page==============*/
@@ -646,10 +647,18 @@ body {
 }
 
 
-/*============Single Product Page Reviews==============*/
+/*============Reviews==============*/
 .reviews {
     clear: both;
+    overflow: auto;
+    padding: 5px;
+    border-bottom: dotted 1px #f0f0f0;
 }
+.reviews img {
+    float: left;
+    margin: 0 5px 0 0;
+}
+
 .reviews #tabs #tabs-2 form {
     margin: 20px 0;
 }
@@ -789,4 +798,3 @@ fieldset{
     border: solid 1px #eeecec;
 }
 
-/*============recent products partial==============*/
