@@ -6,4 +6,6 @@ class LineItem < ActiveRecord::Base
   def total_price
     product.unit_price * quantity
   end
+
+
 end

@@ -30,8 +30,8 @@ class Product < ActiveRecord::Base
     end
   end
 
-  def recommend
-    @recommend = Product.taggable?
+  def five_recent_products
+    products = Product.where("created_at <= ?", Time.now)
   end
 
   private

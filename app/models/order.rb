@@ -13,4 +13,8 @@ class Order < ActiveRecord::Base
       line_items << item
     end
   end
+
+  def find_current_user_orders
+    orders = Order.find(params[:user_id])
+  end
 end

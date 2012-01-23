@@ -1,6 +1,6 @@
 <div class="partial">
   <h4 class="partial-titles">Recent Products</h4>
-  <% @product.each do |recent_product| %>
+  <% @products.each do |recent_product| %>
       <table>
         <tr>
           <td ><%= image_tag (recent_product.productimage_url(:small_thumb).to_s) %></td>

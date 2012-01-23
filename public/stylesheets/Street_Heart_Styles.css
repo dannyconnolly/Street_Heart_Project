@@ -2,6 +2,7 @@ html, body, div, h1, h2, h3, h4, h5, h6, a, p, ul, li, form, input, text-area {
     margin: 0;
     padding: 0;
 }
+
 ul {
     list-style: none;
 }
@@ -113,11 +114,12 @@ body {
 .footer {
     clear: both;
     background: url(../images/footer.png) repeat-x left top;
+    padding: 20px 0 0 0;
 }
 
 .footer .footer-content {
+   height: 200px;
     background-color: #0f0c0e;
-    height: 200px;
 }
 
 /*============Site Login==============*/
@@ -199,7 +201,10 @@ body {
     margin: 20px auto;
 }
 
-/*============Home Page==============*/
+/*============Header Styles==============*/
+.welcome-title {
+    clear: both;
+}
 .welcome-title img {
     width: 788px;
     height: 174px;
@@ -211,14 +216,6 @@ body {
     margin: 0 0 15px 0;
     text-align: center;
     color: #c84e9d;
-}
-
-.welcome-tshirts {
-    margin: 20px 0 20px 0;
-}
-
-.welcome-tshirts img {
-    margin: 0 20px 0 20px;
 }
 
 .welcome-statement {
@@ -354,10 +351,10 @@ body {
     width: 185px;
     padding: 0 0 10px 5px;
     margin: 0 auto 5px auto;
-    border-top: none;
-    border-left: none;
-    border-right: none;
     border-bottom: dotted 1px #f0f0f0;
+}
+.partial h1 {
+    font-size: 16px;
 }
 
 .partial .wishlist-image img {
@@ -379,7 +376,6 @@ body {
     clear: both;
     padding: 5px 0;
 }
-
 
 
 /*============Store Page==============*/
@@ -441,21 +437,33 @@ body {
     width: 195px;
     float: left;
 }
+
 /*============Admin Tables==============*/
 .admin-tables {
     width: 95%;
     margin: 0 auto;
 }
+
+.admin-tables tr, .partial-table tr {
+    border-bottom: solid 1px #0f0c0e;
+}
+
 .admin-tables tr td, .admin-tables tr th {
    padding: 5px;
    vertical-align: top;
    text-align: center;
 }
-.admin-tables tr th {
+
+.admin-tables tr th, .partial-table tr th {
     background-color: #f0f0f0;
-    border: solid 1px #0f0c0e;
 }
 
+/*============User Tables==============*/
+.partial-table {
+    margin:  10px 0 0 0;
+    width: 100%;
+    text-align: center;
+}
 /*============Cart==============*/
 .cart-wrap {
     margin: 5px;
@@ -506,7 +514,6 @@ body {
     width: 690px;
     margin: 0 auto;
     border-top: solid 1px #f0f0f0;
-
 }
 
 .total-title {
@@ -536,6 +543,7 @@ body {
     text-align: center;
     text-decoration: underline;
 }
+
 .checkout-btns:hover {
     background-color: #666666;
     color: #f0f0f0;
@@ -576,6 +584,7 @@ body {
     padding: 5px;
     border-bottom: dotted 1px #f0f0f0;
 }
+
 .reviews #tabs #tabs-2 form {
     margin: 20px 0;
 }
@@ -715,7 +724,6 @@ fieldset .field input, fieldset .field textarea {
     margin: 10px;
     text-align: center;
     text-decoration: underline;
-
 }
 
 .thankyou-actions a:hover {

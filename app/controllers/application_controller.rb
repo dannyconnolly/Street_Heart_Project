@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
     return unless cookies[:auth_token]
     @current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
   end
+
   helper_method :current_user
 
   # @reference Agile Web Develoment with Rails book pg 198
@@ -19,7 +20,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
- # @reference Agile Web Develoment with Rails book pg 198
+  # @reference Agile Web Develoment with Rails book pg 198
   def admin?
     logged_in? && current_user.admin?
   end
@@ -31,7 +32,7 @@ class ApplicationController < ActionController::Base
     logged_in? ? true : access_denied
   end
 
-   # @reference Laptoshop Tutorial 2, Wesley Gorman
+  # @reference Laptoshop Tutorial 2, Wesley Gorman
   def logged_in?
     current_user.is_a? User
   end

@@ -92,11 +92,10 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.atom
       format.xml { render :xml => @product }
-
     end
   end
 
-  def tag
-    @products = Product.find_tagged_with params[:id]
+  def recent_products
+    @products = Product.recent_products
   end
 end

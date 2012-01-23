@@ -98,4 +98,5 @@ class OrdersController < ApplicationController
   def thank_you
     @categories = Category.all
   end
+
 end

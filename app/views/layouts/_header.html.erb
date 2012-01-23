@@ -2,24 +2,24 @@
 <html>
 <head>
   <title>Street Heart Project</title>
+  <%= csrf_meta_tag %>
   <%= stylesheet_link_tag 'scaffold', 'Street_Heart_Styles', 'jquery-ui-1.8.17.custom.css', :media => "all" %>
   <%= javascript_include_tag :defaults %>
   <%= javascript_include_tag 'jquery-1.7.1.min.js', 'jquery-ui-1.8.17.custom.min.js', 'application' %>
-  <%= csrf_meta_tag %>
 </head>
 
 <body>
 <div class="page-wrap">
   <div class="header">
     <%= render 'layouts/siteLogin' %>
-
-
     <div class="welcome-title">
-      <%=link_to image_tag("Street_Art_Title_Welcome.jpg"), home_url%>
+      <%= link_to image_tag("Street_Art_Title_Welcome.jpg"), home_url %>
     </div>
+
     <div class="welcome-tagline">
       <h1>Street Heart campaign in association with Focus Ireland.</h1>
-
       <h1>Helping Ireland’s homeless. <%= link_to "#wecanchangethis", "https://twitter.com/#!/FocusIreland" %></h1>
     </div>
     <!--end logo area-->
+  </div>
+  <!--end header-->

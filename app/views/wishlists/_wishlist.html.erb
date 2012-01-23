@@ -1,3 +1,7 @@
 <div class="wishlist-wrap">
+  <% if wishlist.wishlist_items.empty? %>
+      <h1 class="page-titles">Your wishlist is currently empty</h1>
+  <% else %>
   <%= render(wishlist.wishlist_items) %>
+      <% end %>
 </div><!--End wishlist-wrap-->

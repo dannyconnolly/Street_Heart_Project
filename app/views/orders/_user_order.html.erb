@@ -1,25 +1,29 @@
 <h3 class="user-section-titles">Your Orders</h3>
 
 <p>Here is a list of your recent orders</p>
-<div class="<%= cycle('list_line_odd', 'list_line_even') %>">
-  <table>
-    <% @orders.each do |order| %>
-        <tr>
-          <th>Ordered On</th>
-          <th>Sent To</th>
-          <th>Paid By</th>
-          <th>Items</th>
-        </tr>
 
-        <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-          <td><%= time_ago_in_words(order.created_at) %> ago.</td>
-          <td><%= order.address %></td>
-          <td><%= order.pay_type %></td>
-          <td><%= order.line_items %></td>
-        </tr>
-        </table>
+<table class="partial-table">
+  <% @orders.each do |order| %>
+      <tr>
+        <th>Ordered On</th>
+        <th>Sent To</th>
+        <th>Paid By</th>
+        <th>Items</th>
+      </tr>
 
-    <% end %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td><%= time_ago_in_words(order.created_at) %> ago.</td>
+        <td><%= order.address %></td>
+        <td><%= order.pay_type %></td>
+        <td>
+          <% order.line_items.each do |line_item| %>
+              <ul>
+                <li><%= line_item.product.title %></li>
+              </ul>
+          <% end %>
+        </td>
+      </tr>
+      </table>
 
-    </div>
-<!--end review body-->
+  <% end %>
+
