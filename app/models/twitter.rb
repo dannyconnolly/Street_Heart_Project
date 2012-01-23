@@ -1,3 +1,5 @@
+require 'grackle'
+
 class Tweet < ActiveRecord::Base
 
   StreetHeart = "StreetHeart_"
@@ -16,7 +18,7 @@ class Tweet < ActiveRecord::Base
   
   private
   def self.client
-    Twitter::Client.new(:auth=>{
+    Grackle::Client.new(:auth=>{
       :type=>:oauth,
       :consumer_key=>'urVlC6l3NKxIvYyshw9GKw',
       :consumer_secret=>'e1j5thkhcqwPtOKpLlwJI6EN3yMuGZNRHQd9PmMwCg',
