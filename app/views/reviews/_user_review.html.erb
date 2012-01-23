@@ -2,11 +2,21 @@
 
 <p>Here is a list of products you have reviewed</p>
 
-<% @user.reviews.each do |user_review| %>
-    <div class="reviews <%= cycle('list_line_odd', 'list_line_even') %>">
-      <%= image_tag (user_review.product.productimage_url(:small_thumb).to_s) %>
-      <h5><%= user_review.product.title %></h5>
-      <p><em>Posted <%= time_ago_in_words(user_review.created_at) %> ago.</em></p>
-      <%= user_review.body %>
-    </div>
-<% end %>
+<table class="admin-tables">
+  <% @user.reviews.each do |review| %>
+      <tr>
+        <th>Image</th>
+        <th>Date</th>
+        <th>Title</th>
+        <th>Review</th>
+      </tr>
+
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td><%= image_tag (review.product.productimage_url(:small_thumb).to_s) %></td>
+        <td><%= time_ago_in_words(review.created_at) %> ago.</td>
+        <td><%= review.product.title %></td>
+        <td><%= review.body %></td>
+      </tr>
+
+  <% end %>
+</table>

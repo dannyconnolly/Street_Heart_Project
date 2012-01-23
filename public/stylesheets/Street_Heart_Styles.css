@@ -222,7 +222,6 @@ body {
 }
 
 .welcome-statement {
-    border: solid 2px #c84e9d;
     padding: 5px;
 }
 
@@ -329,26 +328,24 @@ body {
     width: 150px;
 }
 
-.partial .cart-wrap .checkout-options ul li a {
+.partial .cart-wrap .checkout-options .checkout-btns {
     clear: both;
-    display: block;
     background-color: #f0f0f0;
     color: #666666;
     border-radius: 5px;
     border: solid 1px #989898;
     width: 130px;
-    padding: 5px;
-    margin: 5px auto;
+    padding: 3px 0;
+    margin: 3px auto;
     text-align: center;
     text-decoration: underline;
     font-size: 11px;
 }
 
-.partial .cart-wrap .checkout-options ul li a:hover {
+.partial .cart-wrap .checkout-options .checkout-btns:hover {
     background-color: #666666;
     color: #f0f0f0;
     border: solid 1px #eeecec;
-    font-size: 11px;
 }
 
 /*============User Wishlist partial==============*/
@@ -454,6 +451,10 @@ body {
    vertical-align: top;
    text-align: center;
 }
+.admin-tables tr th {
+    background-color: #f0f0f0;
+    border: solid 1px #0f0c0e;
+}
 
 /*============Cart==============*/
 .cart-wrap {
@@ -522,7 +523,7 @@ body {
     display: inline;
 }
 
-.checkout-options ul li a {
+.checkout-btns, .checkout-btns:visited {
     display: block;
     background-color: #f0f0f0;
     color: #666666;
@@ -535,8 +536,7 @@ body {
     text-align: center;
     text-decoration: underline;
 }
-
-.checkout-options ul li a:hover {
+.checkout-btns:hover {
     background-color: #666666;
     color: #f0f0f0;
     border: solid 1px #eeecec;
@@ -576,12 +576,6 @@ body {
     padding: 5px;
     border-bottom: dotted 1px #f0f0f0;
 }
-
-.reviews img {
-    float: left;
-    margin: 0 5px 0 0;
-}
-
 .reviews #tabs #tabs-2 form {
     margin: 20px 0;
 }
@@ -591,10 +585,7 @@ body {
 }
 
 .reviews #tabs #tabs-2 form textarea {
-    width: 600px;
     height: 200px;
-    display: block;
-    margin: 0 auto;
 }
 
 /*============Galleries==============*/
@@ -650,6 +641,7 @@ fieldset {
 .field {
     clear: both;
 }
+
 .field em {
     font-size: 11px;
 }
@@ -675,7 +667,17 @@ fieldset .field input, fieldset .field textarea {
     padding: 5px;
 }
 
-
+.destroy-btns {
+    background: url('../images/delete.png') no-repeat left top;
+    text-indent: -9999px;
+    width: 16px;
+    height: 16px;
+    border: none;
+    cursor: pointer;
+}
+.destroy-btns:hover {
+    background: url('../images/delete.png') no-repeat left bottom;
+}
 
 /*============Categories Menu Page==============*/
 .cat-entry {

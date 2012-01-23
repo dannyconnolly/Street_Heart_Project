@@ -1,5 +1,7 @@
 StreetHeartProject::Application.routes.draw do
 
+  get "tags/show"
+
   resources :password_resets
 
   resources :payment_notifications

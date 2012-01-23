@@ -18,6 +18,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @wishlist = current_wishlist
     @categories = Category.all
+    @tags = Tag.all
 
     respond_to do |format|
       format.html # show.html.erb

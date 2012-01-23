@@ -25,6 +25,7 @@ class UsersController < ApplicationController
     @wishlist = current_wishlist
     @user = current_user
     @categories = Category.all
+    @orders = Order.where("user_id = #{current_user.id}")
 
     respond_to do |format|
       format.html # show.html.erb

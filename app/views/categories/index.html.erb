@@ -7,7 +7,7 @@
       <% if admin? %>
           <%= link_to 'Show', category %>
           <%= link_to 'Edit', edit_category_path(category) %>
-          <%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %>
+          <%= button_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete, :class => 'destroy-btns' %>
           <%= link_to 'New Category', new_category_path %>
       <% end %>
   <% end %>

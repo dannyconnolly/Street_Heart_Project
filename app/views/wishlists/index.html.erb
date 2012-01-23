@@ -11,7 +11,7 @@
   <tr>
     <td><%= link_to 'Show', wishlist %></td>
     <td><%= link_to 'Edit', edit_wishlist_path(wishlist) %></td>
-    <td><%= link_to 'Destroy', wishlist, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= button_to 'Destroy', wishlist, :confirm => 'Are you sure?', :method => :delete, :class => 'destroy-btns' %></td>
   </tr>
 <% end %>
 </table>

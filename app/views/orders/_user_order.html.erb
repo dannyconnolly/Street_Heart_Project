@@ -2,6 +2,24 @@
 
 <p>Here is a list of your recent orders</p>
 <div class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  <table>
+    <% @orders.each do |order| %>
+        <tr>
+          <th>Ordered On</th>
+          <th>Sent To</th>
+          <th>Paid By</th>
+          <th>Items</th>
+        </tr>
 
-</div>
+        <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+          <td><%= time_ago_in_words(order.created_at) %> ago.</td>
+          <td><%= order.address %></td>
+          <td><%= order.pay_type %></td>
+          <td><%= order.line_items %></td>
+        </tr>
+        </table>
+
+    <% end %>
+
+    </div>
 <!--end review body-->

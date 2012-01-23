@@ -17,7 +17,7 @@
     <td><%= review.body %></td>
     <td><%= link_to 'Show', review %></td>
     <td><%= link_to 'Edit', edit_review_path(review) %></td>
-    <td><%= link_to 'Destroy', review, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= button_to 'Destroy', review, :confirm => 'Are you sure?', :method => :delete, :class => 'destroy-btns' %></td>
   </tr>
 <% end %>
 </table>

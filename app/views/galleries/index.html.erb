@@ -18,7 +18,7 @@
             <% if admin? %>
                 <%= link_to 'Show', gallery %>
                 <%= link_to 'Edit', edit_gallery_path(gallery) %>
-                <%= link_to 'Destroy', gallery, :confirm => 'Are you sure?', :method => :delete %>
+                <%= button_to 'Destroy', gallery, :confirm => 'Are you sure?', :method => :delete, :class => 'destroy-btns' %>
             <% end %>
           </div>
           <!-- end actions-->

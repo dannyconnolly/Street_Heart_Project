@@ -16,6 +16,7 @@
     <!--End wishlist-price-->
 
     <div class="actions">
+      <%= button_to 'Add to cart', line_items_path(:product_id => wishlist_item.product), :class => "btns" %>
       <%= button_to 'Remove from wishlist', @wishlist_item, :method => :delete, :confirm => 'Are you sure?' %>
     </div>
     <!--End wishlist-actions-->

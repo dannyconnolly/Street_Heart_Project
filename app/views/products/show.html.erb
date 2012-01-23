@@ -21,7 +21,10 @@
   <!--End single page description-->
 
   <div class="single-product-keywords">
-    <p class="tags">Tags: <%= @product.tags.collect { |t| t.name }.join(", ") %></p>
+    <p class="tags">Find similar products:
+    <% @product.tags.each do |tag| %>
+    <%= link_to tag.name, :controller => :tags, :action => :show %>,
+    <% end %></p>
   </div>
   <!--End single-product-keywords-->
 
