@@ -2,8 +2,9 @@ class TagsController < ApplicationController
   skip_before_filter :authorize, :authenticate
 
   def show
-    @tags = Tag.all
+      @products = Product.limit(3)
     @categories = Category.all
+
 
     respond_to do |format|
       format.html # show.html.erb

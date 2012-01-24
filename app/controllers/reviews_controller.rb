@@ -42,15 +42,17 @@ class ReviewsController < ApplicationController
   # POST /reviews.xml
   def create
     @product = Product.find(params[:product_id])
-    @review = @product.reviews.new(params[:review])
+    @review = @product.review.new(params[:review])
 
     respond_to do |format|
       if @review.save
         format.html { redirect_to(@product, :notice => "Review added") }
         format.xml  { render :xml => @review, :status => :created, :location => @review }
+        format.js
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @review.errors, :status => :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -83,7 +85,4 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def recent_reviews
-    @review = Review.limit(5)
-  end
 end

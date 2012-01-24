@@ -48,6 +48,7 @@ StreetHeartProject::Application.routes.draw do
     resources :reviews
   end
 
+  get 'reviews' => 'reviews#index'
   resources :sessions, :only => [:new, :create, :destroy]
 
   match '/login' => "sessions#new", :as => "login"

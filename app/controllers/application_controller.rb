@@ -44,6 +44,12 @@ class ApplicationController < ActionController::Base
     redirect_to login_url, :notice => "Please log in to continue" and return false
   end
 
+  before_filter :create_body_id
+
+  def create_body_id
+    @body_id = "#{params[:controller]}-#{params[:action]}"
+  end
+
   private
   # @reference http://railscasts.com/episodes/142-paypal-notifications
   def current_cart

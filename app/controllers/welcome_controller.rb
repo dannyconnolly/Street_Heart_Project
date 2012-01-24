@@ -8,6 +8,7 @@ class WelcomeController < ApplicationController
 
   def home
     @categories = Category.all
+    @products = Product.limit(4)
   end
 
   def about

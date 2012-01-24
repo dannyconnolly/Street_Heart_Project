@@ -26,6 +26,7 @@ class UsersController < ApplicationController
     @user = current_user
     @categories = Category.all
     @orders = Order.where("user_id = #{current_user.id}")
+    @tag_counts  = Product.tag_counts_on(:tags)
 
     respond_to do |format|
       format.html # show.html.erb

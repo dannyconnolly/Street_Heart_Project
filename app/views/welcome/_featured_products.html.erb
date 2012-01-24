@@ -1,0 +1,5 @@
+<h1 class="page-titles">Featured Products</h1>
+<% @products.each do |recent_product| %>
+    <h2><%= link_to recent_product.title, recent_product %></h2>
+    <div><%= image_tag (recent_product.productimage_url(:large_img).to_s) %></div>
+<% end %>
